@@ -15,6 +15,7 @@ require_once "inc/header.inc.php";
         <section class="container">
             <ul class='slider'>
                 <li class='item' style="background-image: url('assets/img/playaguardalavaca.JPG')">
+
                     <div class='content'>
                         <h2 class='title'>"Lossless Youths"</h2>
                         <p class='description'> Lorem ipsum, dolor sit amet consectetur
@@ -76,22 +77,31 @@ require_once "inc/header.inc.php";
         </section>
 
     </div>
-    <div class="pub">
-        <div class="card mb-3 mx-5 mt-5" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4  md-mt-5">
-                    <img src="assets/img/premium_photo-1661859256790-5ead8d1a3d6f.avif" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    <section class="pub">
+        <div class=" mx-5">
+
+            <h3 class=" emplacement">Emplacements priseé</h3>
+
+            <div class="card mb-3 " style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4  md-mt-5">
+                        <img src="assets/img/premium_photo-1661859256790-5ead8d1a3d6f.avif" class="img-fluid rounded-start " alt="image couple contemple paysage">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. </p>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="populars ">
+
+    </section>
 </main>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

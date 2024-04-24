@@ -42,7 +42,7 @@
             <li><a href="hero">Accueil</a></li>
             <li><a href="explore">Explorer</a></li>
             <li><a href="about">À propos</a></li>
-            <li><a href="reserver">Réserver</a></li>
+            <li><a href="reserver">Populaires</a></li>
             <li><a href="contact">contact</a></li>
         </ul>
         <div class="buttons">

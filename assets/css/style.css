@@ -16,10 +16,7 @@ li {
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
+
 
 a:hover {
     color: aquamarine;
@@ -40,6 +37,12 @@ header {
     align-items: center;
     justify-content: space-between;
 
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
 }
 
 .navbar .logo a {
@@ -268,7 +271,8 @@ Responsive Image Carousel ( Animation )-----------------------*/
     }
 }
 
-.nav {
+
+nav {
     position: absolute;
     bottom: 2rem;
     left: 50%;
@@ -369,13 +373,29 @@ Responsive Image Carousel ( Animation )-----------------------*/
     }
 }
 
+/****************BODY******************/
+
+.pub {
+
+    background-color: #a99b9c;
+    min-height: 110vh;
+    padding-top: 1%;
+
+}
+
 
 
 
 /* ***************   footer*************** */
 
-footer {
+body footer {
     min-height: 500px;
+
+    a {
+        color: black !important;
+    }
+
+
 }
 
 
