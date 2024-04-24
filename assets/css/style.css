@@ -173,7 +173,7 @@ Responsive Image Carousel ( Animation )-----------------------*/
 }
 
 .item {
-    width: 250px;
+    width: 200px;
     height: 300px;
     list-style-type: none;
     position: absolute;
@@ -291,7 +291,7 @@ Responsive Image Carousel ( Animation )-----------------------*/
     }
 }
 
-@media (width > 650px) and (width < 900px) {
+@media (width > 650px) and (width < 1001px) {
     .content {
         & .title {
             font-size: 1rem;
@@ -307,8 +307,9 @@ Responsive Image Carousel ( Animation )-----------------------*/
     }
 
     .item {
+        top: 70%;
         width: 160px;
-        height: 270px;
+        height: 170px;
 
         &:nth-child(3) {
             left: 50%;
@@ -345,8 +346,9 @@ Responsive Image Carousel ( Animation )-----------------------*/
     }
 
     .item {
+        top: 70%;
         width: 130px;
-        height: 220px;
+        height: 170px;
 
         &:nth-child(3) {
             left: 50%;
