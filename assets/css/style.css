@@ -398,7 +398,8 @@ main {
 
 .cartas {
     background-color: #a99b9c !important;
-    border-radius: 10px;
+    /* border-radius: 10px; */
+
 }
 
 /* .populars {

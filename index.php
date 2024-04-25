@@ -102,7 +102,7 @@ require_once "inc/header.inc.php";
         <div class="row p-5 cartas">
             <div class="col-3">
                 <div class="card text-bg-dark">
-                    <img src="assets/img/femmeBalance.png" class="card-img" alt="...">
+                    <img src="assets/img/femmeBalance.png" class="card-img" alt="Femme dans une balançoire à la plage...">
                     <div class="card-img-overlay">
                         <button type="button" class="btn btn-dark">Dark</button>
 
@@ -112,11 +112,11 @@ require_once "inc/header.inc.php";
             </div>
             <div class="col-3">
                 <div class="card text-bg-dark cartas">
-                    <img src="assets/img/havane.png" class="card-img" alt="Femme dans une balançoire à la plage">
+                    <img src="assets/img/havane.png" class="card-img" alt="La havana">
                     <div class="card-img-overlay">
                         <button type="button" class="btn btn-dark">Dark</button>
                     </div>
-                    <div class="card text-bg-dark cartas">
+                    <div class="card text-bg-dark cartas mt-3">
                         <img src="assets/img/santiago.jpeg" class="card-img" alt="...">
                         <div class="card-img-overlay">
                             <button type="button" class="btn btn-dark">Dark</button>
@@ -126,29 +126,23 @@ require_once "inc/header.inc.php";
             </div>
             <div class="col-3">
                 <div class="card text-bg-dark cartas">
-                    <img src="assets/img/havane.png" class="card-img" alt="...">
+                    <img src="assets/img/vinallesLink.jpeg" class="card-img" alt="...">
                     <div class="card-img-overlay">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                        <button type="button" class="btn btn-dark">Dark</button>
                     </div>
                 </div>
             </div>
             <div class="col-3">
                 <div class="card text-bg-dark cartas">
-                    <img src="assets/img/havane.png" class="card-img" alt="...">
+                    <img src="assets/img/trinidadLink.jpeg" class="card-img" alt="Paysage de viñales">
                     <div class="card-img-overlay">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                        <button type="button" class="btn btn-dark">Dark</button>
                     </div>
                 </div>
                 <div class="card text-bg-dark cartas">
-                    <img src="assets/img/havane.png" class="card-img" alt="...">
+                    <img src="assets/img/cienfuegosLink.jpeg" class="card-img mt-3" alt="...">
                     <div class="card-img-overlay">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                        <button type="button" class="btn btn-dark">Dark</button>
                     </div>
                 </div>
             </div>
