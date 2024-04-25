@@ -15,7 +15,6 @@ require_once "inc/header.inc.php";
         <section class="container">
             <ul class='slider'>
                 <li class='item' style="background-image: url('assets/img/playaguardalavaca.JPG')">
-
                     <div class='content'>
                         <h2 class='title'>"Lossless Youths"</h2>
                         <p class='description'> Lorem ipsum, dolor sit amet consectetur
@@ -26,11 +25,11 @@ require_once "inc/header.inc.php";
                 </li>
                 <li class='item' style="background-image: url('assets/img/playa.jpg')">
                     <div class='content'>
-                        <h2 class='title'> Un paradis tropical aux multiples facettes</h2>
+                        <h2 class='title'>"Estrange Bond"</h2>
                         <p class='description'> Lorem ipsum, dolor sit amet consectetur
                             adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
                             praesentium nisi. Id laboriosam ipsam enim. </p>
-                        <button>Voire plus</button>
+                        <button>Read More</button>
                     </div>
                 </li>
                 <li class='item' style="background-image: url('assets/img/espectaculo-en-el-cabaret.jpg')">
@@ -39,25 +38,25 @@ require_once "inc/header.inc.php";
                         <p class='description'> Lorem ipsum, dolor sit amet consectetur
                             adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
                             praesentium nisi. Id laboriosam ipsam enim. </p>
-                        <button>Voire plus</button>
+                        <button>Read More</button>
                     </div>
                 </li>
                 <li class='item' style="background-image: url('assets/img/cienfuegos.jpg')">
                     <div class='content'>
-                        <h2 class='title'>"CIENFUEGOS"</h2>
+                        <h2 class='title'>"Last Trace Of Us"</h2>
                         <p class='description'>
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
                         </p>
-                        <button>Voire plus</button>
+                        <button>Read More</button>
                     </div>
                 </li>
                 <li class='item' style="background-image: url('assets/img/istockphoto-1093639450-612x612.jpg')">
                     <div class='content'>
-                        <h2 class='title'>"VARADERO"</h2>
+                        <h2 class='title'>"Urban Decay"</h2>
                         <p class='description'>
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
                         </p>
-                        <button>Voire plus</button>
+                        <button>Read More</button>
                     </div>
                 </li>
                 <li class='item' style="background-image: url('assets/img/toomas-tartes-ME72-VPJH2I-unsplash.jpg')">
@@ -66,7 +65,7 @@ require_once "inc/header.inc.php";
                         <p class='description'> Lorem ipsum, dolor sit amet consectetur
                             adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
                             praesentium nisi. Id laboriosam ipsam enim. </p>
-                        <button>Voire plus</button>
+                        <button>Read More</button>
                     </div>
                 </li>
             </ul>
@@ -77,6 +76,7 @@ require_once "inc/header.inc.php";
         </section>
 
     </div>
+
     <section class="pub">
         <div class=" mx-5">
 
@@ -98,17 +98,62 @@ require_once "inc/header.inc.php";
             </div>
         </div>
     </section>
+    <section class="main">
+        <div class="row p-5 cartas">
+            <div class="col-3">
+                <div class="card text-bg-dark">
+                    <img src="assets/img/femmeBalance.png" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <button type="button" class="btn btn-dark">Dark</button>
 
-    <section class="populars ">
-        <div class="mx-5">
-            <h3 class=" emplacement">Populaires</h3>
-            <div class="row mx-auto text-center">
-                <div class="col-3 "><a href="#"><img src="assets/img/femmeBalance.png" class="rounded-4" alt="Femme dans une balançoire à la plage.">image</a></div>
-                <div class="col-3"><a href="#"><img src="assets/img/havane.png" class="rounded-4" alt="image de la havane">image</a><a href="#"><img src="assets/img/santiago.jpeg" class="rounded-4" alt="image de santiago"></a></div>
-                <div class="col-3"><a href="#"><img src="assets/img/vinallesLink.jpeg" class="rounded-4" alt="image de viñales">image</a></a></div>
-                <div class="col-3"><a href="#"><img src="assets/img/trinidadLink.jpeg" class="rounded-4" alt="image de trinidad Cuba">image</a><img src="assets/img/cienfuegosLink.jpeg" class="rounded-4" </div>
 
+                    </div>
                 </div>
+            </div>
+            <div class="col-3">
+                <div class="card text-bg-dark cartas">
+                    <img src="assets/img/havane.png" class="card-img" alt="Femme dans une balançoire à la plage">
+                    <div class="card-img-overlay">
+                        <button type="button" class="btn btn-dark">Dark</button>
+                    </div>
+                    <div class="card text-bg-dark cartas">
+                        <img src="assets/img/santiago.jpeg" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <button type="button" class="btn btn-dark">Dark</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card text-bg-dark cartas">
+                    <img src="assets/img/havane.png" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card text-bg-dark cartas">
+                    <img src="assets/img/havane.png" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card text-bg-dark cartas">
+                    <img src="assets/img/havane.png" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </section>
 </main>
