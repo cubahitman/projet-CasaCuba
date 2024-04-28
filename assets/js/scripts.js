@@ -8,6 +8,7 @@ burgerMenuButton.onclick = function () {
     burgerMenu.classList.toggle('open')
     const isOpen = burgerMenu.classList.contains('open')
     burgerMenuButtonIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+
 }
 
 
@@ -21,6 +22,7 @@ function activate(e) {
     const items = document.querySelectorAll('.item');
     e.target.matches('.next') && slider.append(items[0])
     e.target.matches('.prev') && slider.prepend(items[items.length - 1]);
+
 }
 
 document.addEventListener('click', activate, false);
