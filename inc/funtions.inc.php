@@ -23,6 +23,19 @@ function debug($var)
     echo '</pre>';
 }
 
+////////////////////// Fonction d'alert ////////////////////////////////////////
+
+function alert(string $contenu, string $class)
+{
+
+    return "<div class='alert alert-$class alert-dismissible fade show text-center w-50 m-auto mb-5' role='alert'>
+        $contenu
+
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+
+        </div>";
+}
+
 /**
  * On va utiliser l'extension PHP Data Object (PDO), elle définit une excellente interface pour accèder à une base de données depuis PHP et d'éxécuter des requêtes SQL.
  * pour se connecter à la BDD avec PDO, il faut créer une instance de cette Class/Objet (PDO) qui représente une connexion à la BDD.
@@ -71,3 +84,96 @@ function connexionBdd()
     return $pdo;
 }
 // connexionBdd();
+
+
+////////////////// Fonction pour vérifier si un email existe dans la BDD ///////////////////////////////
+
+
+function checkEmailUser(string $email): mixed
+{
+    $pdo = connexionBdd();
+    $sql = "SELECT * FROM users WHERE email = :email";
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+        ':email' => $email
+
+    ));
+
+    $resultat = $request->fetch();
+    return $resultat;
+}
+
+
+
+////////////////// Fonction pour vérifier si un pseudo existe dans la BDD ///////////////////////////////
+
+function checkPseudoUser(string $pseudo)
+{
+    $pdo = connexionBdd();
+    $sql = "SELECT * FROM users WHERE pseudo = :pseudo";
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+        ':pseudo' => $pseudo
+
+    ));
+
+    $resultat = $request->fetch();
+    return $resultat;
+}
+//////////////////// Fonctions du CRUD pour les utilisateurs Users /////////////////////
+
+function inscriptionUsers(string $firstName, string $lastName, string $pseudo, string $email, string $mdp, string $phone, string $civility, string $address, string $zipCode, string $city, string $country): void
+{
+
+    $pdo = connexionBdd(); // je stock ma connexion  à la BDD dans une variable
+
+    $sql = "INSERT INTO users 
+        (firstName, lastName, pseudo, email, mdp, phone, civility, address, zipCode, city, country)
+        VALUES
+        (:firstName, :lastName, :pseudo, :email, :mdp, :phone, :civility, :address, :zipCode, :city, :country)"; // Requête d'insertion que je stock dans une variable
+    $request = $pdo->prepare($sql); // Je prépare ma requête et je l'exécute
+    $request->execute(
+        array(
+            ':firstName' => $firstName,
+            ':lastName' => $lastName,
+            ':pseudo' => $pseudo,
+            ':email' => $email,
+            ':mdp' => $mdp,
+            ':phone' => $phone,
+            ':civility' => $civility,
+
+            ':address' => $address,
+            ':zipCode' => $zipCode,
+            ':city' => $city,
+            ':country' => $country
+
+        )
+    );
+}
+///////////////// Une fonction pour créer la table users ////////////////////
+function createTableUsers()
+{
+
+    $pdo = connexionBdd();
+
+    $sql = "CREATE TABLE IF NOT EXISTS users (
+            id_user INT PRIMARY KEY AUTO_INCREMENT,
+            firstName VARCHAR(50) NOT NULL,
+            lastName VARCHAR(50) NOT NULL,
+            pseudo VARCHAR(50) NOT NULL,
+            email VARCHAR(100) NOT NULL,
+            mdp VARCHAR(255) NOT NULL,
+            phone VARCHAR(30) NOT NULL,
+            civility ENUM('f', 'h') NOT NULL,
+            birthday DATE NOT NULL,
+            address VARCHAR(50) NOT NULL,
+            zipCode VARCHAR(50) NOT NULL,
+            city VARCHAR(50) NOT NULL,
+            country VARCHAR(50) NOT NULL,
+            role ENUM('ROLE_USER', 'ROLE_ADMIN') DEFAULT 'ROLE_USER'
+        )";
+
+    $request = $pdo->exec($sql);
+}
+
+// createTableUsers();

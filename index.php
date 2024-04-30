@@ -80,7 +80,7 @@ require_once "inc/header.inc.php";
     <section class="pub">
         <div class=" mx-5">
 
-            <h3 class=" ">Emplacements priseé</h3>
+            <h3 class=" ">Changer le point de vue...</h3>
 
             <div class="card mb-3 " style="max-width: 540px;">
                 <div class="row g-0">
@@ -89,7 +89,7 @@ require_once "inc/header.inc.php";
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">Emplacements priseé</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </p>
 
                         </div>
@@ -101,7 +101,7 @@ require_once "inc/header.inc.php";
     <section class="main container-fluid mx-3">
         <h2 class="ms-3">Titre achanger</h2>
         <div class="row p-3 ">
-            <div class="col-sm-3 col-md-3">
+            <div class="col-12 col-md-6 col-lg-3">
                 <div class="card text-bg-dark cartas">
                     <img src="assets/img/femmeBalance.png" class="card-img cartas bordure" alt="Femme dans une balançoire à la plage...">
                     <div class="card-img-overlay">
@@ -111,7 +111,7 @@ require_once "inc/header.inc.php";
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3 ">
+            <div class="col-12 col-md-6  col-lg-3">
                 <div class="card text-bg-dark cartas">
                     <img src="assets/img/havane.png" class="card-img cartas bordure" alt="Rue de la havana">
                     <div class="card-img-overlay">
@@ -125,7 +125,7 @@ require_once "inc/header.inc.php";
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
+            <div class="col-12 col-md-6 col-lg-3">
                 <div class="card text-bg-dark cartas bordure">
                     <img src="assets/img/vinallesLink.jpeg" class="card-img cartas bordure" alt="homme descedant a pie d'un montagne">
                     <div class="card-img-overlay">
@@ -133,7 +133,7 @@ require_once "inc/header.inc.php";
                     </div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-3">
+            <div class="col-12 col-md-6 col-lg-3">
                 <div class="card text-bg-dark cartas ">
                     <img src="assets/img/trinidadLink.jpeg" class="card-img cartas bordure" alt="Paysage d'un vilage en montagne a viñales">
                     <div class="card-img-overlay">
@@ -153,9 +153,9 @@ require_once "inc/header.inc.php";
     </section>
     <section class="container-fluid mx-3">
         <h2 class="ms-3">Titre achanger</h2>
-        <div class=" card-group ">
-            <div class=" card m-3 cartas ">
-                <img src="assets/img/CasaHabana.jpeg" class="card-img-top cartas bordure" alt="Interieur de chambre avec lit de casa a la havane">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 card  cartas ">
+                <img src=" assets/img/CasaHabana.jpeg" class="card-img-top cartas bordure" alt="Interieur de chambre avec lit de casa a la havane">
                 <div class="card-img-overlay">
                     <button type="button" class="btn btn-dark">Dark</button>
                 </div>
@@ -165,7 +165,7 @@ require_once "inc/header.inc.php";
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                 </div>
             </div>
-            <div class="card m-3 cartas">
+            <div class="col-12 col-md-6 col-lg-3 card  cartas">
                 <img src="assets/img/CasaDelValle.jpeg" class="card-img-top cartas bordure" alt="Interieur de apartament avec vue dnas la mer a viñales">
                 <div class="card-img-overlay">
                     <button type="button" class="btn btn-dark">Dark</button>
@@ -176,7 +176,7 @@ require_once "inc/header.inc.php";
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                 </div>
             </div>
-            <div class="card m-3 cartas">
+            <div class="col-12 col-md-6 col-lg-3 card  cartas">
                 <img src="assets/img/CasaDeLaPlaya.jpeg" class="card-img-top cartas bordure" alt="Vue d'inmeuble a varadero">
                 <div class="card-img-overlay">
                     <button type="button" class="btn btn-dark">Dark</button>
@@ -187,7 +187,7 @@ require_once "inc/header.inc.php";
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
                 </div>
             </div>
-            <div class="card m-3 cartas">
+            <div class="col-12 col-md-6 col-lg-3 card  cartas">
                 <img src="assets/img/CasaMontaña.jpeg" class="card-img-top cartas bordure" alt="Femme qui nage dans l'eau a viñales">
                 <div class="card-img-overlay">
                     <button type="button" class="btn btn-dark">Dark</button>

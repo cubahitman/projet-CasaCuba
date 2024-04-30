@@ -47,10 +47,21 @@ require_once "funtions.inc.php";
         </ul>
         <div class="buttons">
             <a href="#" class="action-button pro">Espace Pro</a>
-            <a href="#" class="action-button">Se connecter</a>
+
+            <li class="nav-item dropdown">
+                <button class="action-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Connexion
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
+                    <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php"">Inscriptions</a></li>
+
+                </ul>
+            </li>
+
         </div>
-        <div class="burger-menu-button">
-            <i class="fa-solid fa-bars"></i>
+        <div class=" burger-menu-button">
+                            <i class="fa-solid fa-bars"></i>
         </div>
     </div>
 
@@ -64,7 +75,16 @@ require_once "funtions.inc.php";
             <div class="divider"></div>
             <div class="buttons-burger-menu">
                 <a href="#" class="action-button pro">Espace Pro</a>
-                <a href="#" class="action-button">Se connecter</a>
+
+                <button class="action-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Connexion
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item " href="<?= RACINE_SITE ?>profil.php"">Connexion</a></li>
+
+                    <li><a class=" dropdown-item" href="<?= RACINE_SITE ?>register.php">Inscriptions</a></li>
+                </ul>
+
             </div>
         </ul>
     </div>

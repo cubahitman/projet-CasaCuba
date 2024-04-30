@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <!-- div>p*5>a -->
-            <div class="col-2">
+            <div class=" col-md-3 col-lg-2">
                 <p><a href="#">About</a></p>
                 <p><a href="#">Support</a></p>
                 <p><a href="#">Contact</a></p>
@@ -11,7 +11,7 @@
                 <p><a href="#">Policy</a></p>
             </div>
 
-            <div class="col-2">
+            <div class=" col-md-3 col-lg-2">
                 <p><a href="#">Appartements</a></p>
                 <p><a href="#">Houses</a></p>
                 <p><a href="#">Villas</a></p>
@@ -19,7 +19,7 @@
                 <p><a href="#">...</a></p>
             </div>
 
-            <div class="col-2">
+            <div class=" col-md-3 col-lg-2">
                 <p><a href="#">New York</a></p>
                 <p><a href="#">Los Angeles</a></p>
                 <p><a href="#">Miami</a></p>
@@ -27,7 +27,7 @@
                 <p><a href="#">...</a></p>
             </div>
 
-            <div class="col-6">
+            <div class=" col-md-6 col-lg-6">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
                     aut repellendus blanditiis dolor dolorum veniam consequatur,

@@ -45,6 +45,8 @@ header {
 .navbar a {
     text-decoration: none;
     color: white;
+
+
 }
 
 .navbar .logo a {
@@ -144,6 +146,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .buttons-burger-menu {
@@ -151,6 +154,7 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+
 }
 
 
@@ -444,6 +448,7 @@ body footer {
     .navbar .links,
     .navbar .action-button {
         display: none;
+
 
 
     }
