@@ -69,10 +69,10 @@ require_once "inc/header.inc.php";
                     </div>
                 </li>
             </ul>
-            <nav class='nav'>
+            <nav1 class='nav'>
                 <ion-icon class='btn next' name="arrow-back-outline"></ion-icon>
                 <ion-icon class='btn prev' name="arrow-forward-outline"></ion-icon>
-            </nav>
+            </nav1>
         </section>
 
     </div>
@@ -80,7 +80,9 @@ require_once "inc/header.inc.php";
     <section class="pub">
         <div class=" mx-5">
 
-            <h3 class=" ">Changer le point de vue...</h3>
+            <a href="explorer.php">
+                <h3 class=" ">Changer le point de vue...</h3>
+            </a>
 
             <div class="card mb-3 " style="max-width: 540px;">
                 <div class="row g-0">
@@ -152,7 +154,9 @@ require_once "inc/header.inc.php";
 
     </section>
     <section class="container-fluid mx-3">
-        <h2 class="ms-3">Titre achanger</h2>
+        <a hr>
+            <h2 class="ms-3">Titre achanger</h2>
+        </a>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-3 card  cartas ">
                 <img src=" assets/img/CasaHabana.jpeg" class="card-img-top cartas bordure" alt="Interieur de chambre avec lit de casa a la havane">

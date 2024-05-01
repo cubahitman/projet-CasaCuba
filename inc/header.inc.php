@@ -3,7 +3,7 @@ require_once "funtions.inc.php";
 
 
 // déconnexion ($_SESSION)
-// logOut();
+logOut();
 
 
 // $categories =  allCategories();
@@ -33,7 +33,7 @@ require_once "funtions.inc.php";
     <title><?= $title ?></title>
 </head>
 <header>
-    <div class="navbar">
+    <div class="navbar nav-main" id="sidebar">
         <div class="logo">
 
             <a href="#">CasaCuba</a>
@@ -43,25 +43,33 @@ require_once "funtions.inc.php";
             <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
             <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
             <li><a href="<?= RACINE_SITE ?>populaires.php">Populaires</a></li>
-            <li><a href="<?= RACINE_SITE ?>contact.php">contact</a></li>
+            <li><a href="<?= RACINE_SITE ?>compte.php">Compte <?php if (isset($_SESSION['user'])) { ?>
+                        <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
+                    <?php    } ?> </li>
         </ul>
         <div class="buttons">
             <a href="#" class="action-button pro">Espace Pro</a>
-
-            <li class="nav-item dropdown">
-                <button class="action-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Connexion
-                </button>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                    <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php"">Inscriptions</a></li>
+            <?php if (empty($_SESSION['user'])) { ?>
+                <li class="nav-item dropdown">
+                    <button class="action-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Connexion
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
+                        <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php"">Inscriptions</a></li>
 
                 </ul>
             </li>
+            <?php } else { ?>
 
+                <a href=" ?action=deconnexion" class="action-button ">Deconnexion</a>
+
+
+
+                        <?php } ?>
         </div>
         <div class=" burger-menu-button">
-                            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars"></i>
         </div>
     </div>
 
@@ -71,7 +79,7 @@ require_once "funtions.inc.php";
             <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
             <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
             <li><a href="<?= RACINE_SITE ?>populaires.php">Populaires</a></li>
-            <li><a href="<?= RACINE_SITE ?>contact.php">contact</a></li>
+            <li><a href="<?= RACINE_SITE ?>compte.php">Compte<sup class="badge rounded-pill text-bg-danger ms-2 fs-6"><?= $_SESSION['user']['firstName'] ?></sup></a></li>
             <div class="divider"></div>
             <div class="buttons-burger-menu">
                 <a href="#" class="action-button pro">Espace Pro</a>

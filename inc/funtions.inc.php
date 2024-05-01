@@ -35,6 +35,30 @@ function alert(string $contenu, string $class)
 
         </div>";
 }
+///////////////////////////// Fonction de déconnexion/////////////////////////
+/**
+ * funtion qui deconecte le users
+ *
+ * @return void
+ */
+function logOut()
+{
+
+    if (isset($_GET['action']) && !empty($_GET['action']) && $_GET['action'] == 'deconnexion') {
+
+
+        unset($_SESSION['user']);
+        // On supprime l'indice "user " de la session pour se déconnecter // cette fonction détruit les variables  stocké  comme 'firstName' et 'email'.
+
+        //session_destroy(); // Détruit toutes les données de la session déjà  établie . cette fonction détruit la session sur le serveur 
+
+        header("location:" . RACINE_SITE . "index.php");
+    }
+}
+// logOut();
+
+
+///////////////////////////  Fonction de connexion à la BDD //////////////////////////
 
 /**
  * On va utiliser l'extension PHP Data Object (PDO), elle définit une excellente interface pour accèder à une base de données depuis PHP et d'éxécuter des requêtes SQL.
@@ -103,6 +127,24 @@ function checkEmailUser(string $email): mixed
     return $resultat;
 }
 
+/////////// Fonction pour vérifier un utilisateur ////////////////////
+
+function checkUser(string $email, string $pseudo): mixed
+{
+
+    $pdo = connexionBdd();
+
+    $sql = "SELECT * FROM users WHERE pseudo = :pseudo AND email = :email";
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+        ':pseudo' => $pseudo,
+        ':email' => $email
+
+
+    ));
+    $resultat = $request->fetch();
+    return $resultat;
+}
 
 
 ////////////////// Fonction pour vérifier si un pseudo existe dans la BDD ///////////////////////////////

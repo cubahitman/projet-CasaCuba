@@ -40,16 +40,16 @@ burgerMenuButton.onclick = function () {
 // **************nav barre scroll *************/
 
 
-// const navbar = document.querySelector('.nav-main');
-// // console.log(navbar);
+// const navbar1 = document.querySelector('.nav-main');
+// console.log(navbar1);
 
 // window.addEventListener('scroll', () => {
 //     if (window.scrollY > 136) {
-//         navbar.classList.add('sticky');
+//         navbar1.classList.add('sticky');
 //         sidebar.style.position = "fixed";
 //         btn.style.top = "30px";
 //     } else {
-//         navbar.classList.remove('sticky');
+//         navbar1.classList.remove('sticky');
 //         btn.style.top = "60px";
 //     }
 // });
