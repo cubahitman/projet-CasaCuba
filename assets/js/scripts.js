@@ -47,10 +47,10 @@ burgerMenuButton.onclick = function () {
 //     if (window.scrollY > 136) {
 //         navbar1.classList.add('sticky');
 //         sidebar.style.position = "fixed";
-//         btn.style.top = "30px";
+//         // btn.styl e.top = "30px";
 //     } else {
 //         navbar1.classList.remove('sticky');
-//         btn.style.top = "60px";
+//         // btn.style.top = "60px";
 //     }
 // });
 

@@ -9,6 +9,7 @@ if (!empty($_SESSION['user'])) {
     header("location:" . RACINE_SITE . "profil.php");
 }
 
+echo "<br><br><br><br><br>";
 
 
 

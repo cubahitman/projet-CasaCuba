@@ -219,3 +219,60 @@ function createTableUsers()
 }
 
 // createTableUsers();
+//  /////////////////Fonction pour récupérer tous les utilisateurs///////////////////
+
+
+function allUsers(): array
+{
+
+    $pdo = connexionBdd();
+    $sql = "SELECT * FROM users";
+    $request = $pdo->query($sql);
+    $result = $request->fetchAll();
+    return $result;
+}
+
+// /////////////////  Fonction pour recupereer un seul utilisateur  //////////////////////
+
+function showUser(int $id): array
+{
+    $pdo = connexionBdd();
+    $sql = "SELECT * FROM users WHERE id_user = :id_user";
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+
+        ':id_user' => $id
+
+    ));
+    $result = $request->fetch();
+    return $result;
+}
+
+// /////////////////  Fonction pour supprimer un utilisateur  ///////////////////////
+
+
+function deleteUser(int $id): void
+{
+    $pdo = connexionBdd();
+    $sql = "DELETE FROM users WHERE id_user = :id_user";
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+
+        ':id_user' => $id
+
+    ));
+}
+
+// ////////////////////  Fonction pour modifier le role d'un utilisateur//////////////
+
+function updateRole(string $role, int $id): void
+{
+    $pdo = connexionBdd();
+    $sql = "UPDATE users SET role = :role WHERE id_user = :id_user";
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+        ':role' => $role,
+        ':id_user' => $id
+
+    ));
+}

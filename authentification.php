@@ -8,7 +8,7 @@ require_once "inc/funtions.inc.php";
 $info = '';
 
 if (!empty($_POST)) {
-    debug($_POST);
+    // debug($_POST);
 
     $verif = true;
 
@@ -22,7 +22,7 @@ if (!empty($_POST)) {
     }
 
     if (!$verif) {
-        debug($_POST);
+        // debug($_POST);
 
 
         $info = alert("Veuillez renseigner tout les champs", "danger");
@@ -34,7 +34,7 @@ if (!empty($_POST)) {
         $mdp = isset($_POST['mdp']) ? $_POST['mdp'] : null;
 
         $user = checkUser($email, $pseudo);
-        debug($user);
+        // debug($user);
 
         if ($user) {
 

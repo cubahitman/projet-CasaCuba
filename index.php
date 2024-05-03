@@ -12,7 +12,7 @@ require_once "inc/header.inc.php";
 
 <main class="main">
     <div class="block-pen">
-        <section class="container">
+        <section class="containerPen">
             <ul class='slider'>
                 <li class='item' style="background-image: url('assets/img/playaguardalavaca.JPG')">
                     <div class='content'>
@@ -84,7 +84,7 @@ require_once "inc/header.inc.php";
                 <h3 class=" ">Changer le point de vue...</h3>
             </a>
 
-            <div class="card mb-3 " style="max-width: 540px;">
+            <div class="card mb-3 " style="max-width: 640px;">
                 <div class="row g-0">
                     <div class="col-md-4  md-mt-5">
                         <img src="assets/img/premium_photo-1661859256790-5ead8d1a3d6f.avif" class="img-fluid rounded-start h-100 " alt="image couple contemple paysage">

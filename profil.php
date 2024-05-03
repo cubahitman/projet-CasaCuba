@@ -20,8 +20,16 @@ require_once "inc/header.inc.php";
 
 
 <main>
-    <h2 class="text-center">Bonjour <?= $_SESSION['user']['firstName'] ?></h2>
-
+    <section class="m-5">
+        <h2 class="text-center">Bonjour <?= $_SESSION['user']['firstName'] ?></h2>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                <?= $_SESSION['user']['firstName'] ?>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Nom: <?= $_SESSION['user']['lastName'] ?></a>
+            <a href="#" class="list-group-item list-group-item-action">Telephonne: <?= $_SESSION['user']['phone'] ?></a>
+            <a href="#" class="list-group-item list-group-item-action">E-mail: <?= $_SESSION['user']['email'] ?></a>
+    </section>
 </main>
 
 
