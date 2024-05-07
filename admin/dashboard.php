@@ -53,7 +53,7 @@ require_once "../inc/header.inc.php";
                         <a href="?dashboard_php" class="nav-link ">Backoffice</a>
                     </li>
                     <li>
-                        <a href="?films_php" class="nav-link ">Films</a>
+                        <a href="?compte_php" class="nav-link ">Compte</a>
                     </li>
                     <li>
                         <a href="?categories_php" class="nav-link ">Catégories</a>
@@ -84,6 +84,49 @@ require_once "../inc/header.inc.php";
 
         ?>
 
+        <section class="container my-5">
+            <div>
+                <h1>Bienvenue <?= $_SESSION['user']['pseudo'] ?></h1>
+
+
+
+
+
+
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        <?= $_SESSION['user']['firstName'] ?>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">Nom: <?= $_SESSION['user']['lastName'] ?></a>
+                    <a href="#" class="list-group-item list-group-item-action">Telephonne: <?= $_SESSION['user']['phone'] ?></a>
+                    <a href="#" class="list-group-item list-group-item-action">E-mail: <?= $_SESSION['user']['email'] ?></a>
+                    <a class="list-group-item list-group-item-action ">Adresse: <?= $_SESSION['user']['address'] ?> <?= $_SESSION['user']['zipCode'] ?></a>
+                    <!-- <a class="list-group-item list-group-item-action ">Adresse: <?= $user['firstName'] ?> </a> -->
+                    <?php
+                    $user = showUser($_SESSION['user']['id_user']);
+                    // debug($user);
+                    echo "prenom " . $user['firstName'];
+                    //foreach ($users as $user) {     
+                    ?>
+                    <div>qdfgsdfgcf<?= $user['id_user'] ?></div>
+
+
+                    <div class="text-center">
+                        <!-- <a href="dashboard.php?users_php&action=delete&id_user=<?= $user['id_user'] ?>"><i class="bi bi-trash3-fill text-danger"></i></a> -->
+                    </div>
+                    <!-- <td class="text-center"> //////////////////
+                        <a href="dashboard.php?users_php&action=update&id_user=<? //= $user['id_user'] 
+                                                                                ?>" class="btn btn-danger"><? //= ($user['role']) == 'ROLE_ADMIN' ? 'Rôle user' : 'Rôle admin' 
+                                                                                                            ?>
+                    </td> -->
+                    <?php
+                    // debug($users);
+                    //}
+                    ?>
+                </div>
+
+            </div>
+        </section>
 
         <div class="col-sm-12">
             <?php
@@ -102,18 +145,18 @@ require_once "../inc/header.inc.php";
              *                   );
              */
 
-            // if (!empty($_GET)) {   //si ma variable $_GET n'est pas vide, cela veut dire que j'ai cliqué sur un lien de la sidebar ( l'indice de la variable $_GET change selon le lien indiqué dans la balise a)
+            if (!empty($_GET)) {   //si ma variable $_GET n'est pas vide, cela veut dire que j'ai cliqué sur un lien de la sidebar ( l'indice de la variable $_GET change selon le lien indiqué dans la balise a)
 
-            //     if (isset($_GET['films_php'])) {
-            //         require_once "films.php";
-            //     } else if (isset($_GET['categories_php'])) {
-            //         require_once "categories.php";
-            //     } else if (isset($_GET['users_php'])) {
-            //         require_once "users.php";
-            //     } else {
-            //         require_once "dashboard.php";
-            //     }
-            // }
+                if (isset($_GET['compte_php'])) {
+                    require_once "compte.php";
+                } else if (isset($_GET['gestionMaisons_php'])) {
+                    require_once "gestionMaisons.php";
+                } else if (isset($_GET['users_php'])) {
+                    require_once "users.php";
+                } else {
+                    require_once "dashboard.php";
+                }
+            }
             ?>
         </div>
     </div>

@@ -29,6 +29,8 @@ logOut();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Icons Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= RACINE_SITE ?>assets/css/style.css">
     <title><?= $title ?></title>
 </head>
@@ -43,7 +45,7 @@ logOut();
             <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
             <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
             <li><a href="<?= RACINE_SITE ?>populaires.php">Populaires</a></li>
-            <li><a href="<?= RACINE_SITE ?>compte.php">Compte <?php if (isset($_SESSION['user'])) { ?>
+            <li><a href="<?= RACINE_SITE ?>profil.php">Compte <?php if (isset($_SESSION['user'])) { ?>
                         <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
                     <?php    } ?> </li>
         </ul>
@@ -79,7 +81,7 @@ logOut();
             <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
             <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
             <li><a href="<?= RACINE_SITE ?>populaires.php">Populaires</a></li>
-            <li><a href="<?= RACINE_SITE ?>compte.php">Compte<sup class="badge rounded-pill text-bg-danger ms-2 fs-6"><?= $_SESSION['user']['firstName'] ?></sup></a></li>
+            <li><a href="<?= RACINE_SITE ?>profil.php">Compte<sup class="badge rounded-pill text-bg-danger ms-2 fs-6"><?= $_SESSION['user']['firstName'] ?></sup></a></li>
             <div class="divider"></div>
             <div class="buttons-burger-menu">
                 <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button pro">Espace Pro</a>
