@@ -1,52 +1,5 @@
 <footer class=" footer  mt-5">
 
-    <div class="container">
-        <div class="row">
-            <!-- div>p*5>a -->
-            <div class=" col-md-3 col-lg-2">
-                <p><a href="#">About</a></p>
-                <p><a href="#">Support</a></p>
-                <p><a href="#">Contact</a></p>
-                <p><a href="#">Terms</a></p>
-                <p><a href="#">Policy</a></p>
-            </div>
-
-            <div class=" col-md-3 col-lg-2">
-                <p><a href="#">Appartements</a></p>
-                <p><a href="#">Houses</a></p>
-                <p><a href="#">Villas</a></p>
-                <p><a href="#">Maisons</a></p>
-                <p><a href="#">...</a></p>
-            </div>
-
-            <div class=" col-md-3 col-lg-2">
-                <p><a href="#">New York</a></p>
-                <p><a href="#">Los Angeles</a></p>
-                <p><a href="#">Miami</a></p>
-                <p><a href="#">Washington</a></p>
-                <p><a href="#">...</a></p>
-            </div>
-
-            <div class=" col-md-6 col-lg-6">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum
-                    aut repellendus blanditiis dolor dolorum veniam consequatur,
-                    corporis quis quo ipsum maxime totam sapiente iste, ab illo.
-                    Consectetur laborum fugiat quibusdam.
-                </p>
-                <br />
-                <p>
-                    <a href="#"><ion-icon name="logo-github"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-google"></ion-icon></a>
-                    <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
-                </p>
-            </div>
-        </div><!-- fin de la rangée -->
-
-        <hr />
-        <p class="copyright">CasaCuba &copy; 2021 JPF - CasaCuba. All rights reserved</p>
-    </div><!-- fin de conteneur -->
 
 
 </footer>
@@ -54,6 +7,16 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="assets/js/headroom.min.js"></script>
+<script src="assets/js/jQuery.headroom.min.js"></script>
+<script src="assets/js/template.js"></script>
+
+<!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false&amp;extension=.js"></script>
+<script src="assets/js/google-map.js"></script>
 
 
 

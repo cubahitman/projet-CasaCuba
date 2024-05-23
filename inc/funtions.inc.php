@@ -276,3 +276,52 @@ function updateRole(string $role, int $id): void
 
     ));
 }
+// ==========Function ajouter annonce =============//
+
+
+function addAnnonce($photo, string $title, string $description, string $postal_code, string $city, string $type,  float $price,)
+{
+
+    $pdo = connexionBdd();
+
+    $sql = "INSERT INTO advert (photo, title, description, postal_code, city, type, price) VALUES (:photo, :title, :description, :postal_code, :city, :type, :price)";
+
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+
+        ':photo' => $photo,
+        ':title' => $title,
+        ':description' => $description,
+        ':postal_code' => $postal_code,
+        ':city' => $city,
+        ':type' => $type,
+        ':price' => $price,
+
+
+    ));
+}
+
+// =============================montrer les annonces=====================://
+
+
+function allAnnonces(): array
+{
+
+    $pdo = connexionBdd();
+    $sql = "SELECT * FROM advert";
+    $request = $pdo->query($sql);
+    $result = $request->fetchAll();
+    return $result;
+}
+
+
+// ===============================petit paneau qui montre que ce reservee ============================//
+
+function displayAdvertAnnonce($annonce)
+{
+    if ($annonce['is_reserved']) {
+        return "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
+    } else {
+        return "<h5 class='card-title'>" . $annonce['title'] . "</h5>";
+    }
+}

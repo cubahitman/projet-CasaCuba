@@ -9,11 +9,11 @@ if (empty($_SESSION['user'])) {
     header("location:" . RACINE_SITE . "authentification.php");
 } else if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {
 
-    header("location:" . RACINE_SITE . "admin/dashboard.php?dashboard_php");
+    // header("location:" . RACINE_SITE . "admin/dashboard.php?dashboard_php");
 }
 
 $title = "Profil";
-require_once "..inc/header.inc.php";
+require_once "../inc/header.inc.php";
 
 
 
@@ -29,7 +29,7 @@ require_once "..inc/header.inc.php";
 
 
 
-            <div class="list-group">
+            <div class="list-group ">
                 <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
                     <?= $_SESSION['user']['firstName'] ?>
                 </a>
@@ -41,17 +41,13 @@ require_once "..inc/header.inc.php";
                 <?php
                 $user = showUser($_SESSION['user']['id_user']);
                 // debug($user);
-                echo "prenom" . $user['firstName'];
+                // echo "prenom" . $user['firstName'];
                 //foreach ($users as $user) {     
                 ?>
                 <!-- <td class="text-center">
                     <a href="dashboard.php?users_php&action=delete&id_user=<?= $user['id_user'] ?>"><i class="bi bi-trash3-fill text-danger"></i></a>
                 </td> -->
-                <td class="text-center"> //////////////////
-                    <a href="dashboard.php?users_php&action=update&id_user=<? //= $user['id_user'] 
-                                                                            ?>" class="btn btn-danger"><? //= ($user['role']) == 'ROLE_ADMIN' ? 'Rôle user' : 'Rôle admin' 
-                                                                                                        ?>
-                </td>
+
                 <?php
                 // debug($users);
                 //}
