@@ -9,7 +9,7 @@ if (!empty($_SESSION['user'])) {
     header("location:" . RACINE_SITE . "profil.php");
 }
 
-echo "<br><br><br><br><br>";
+
 
 
 
@@ -157,7 +157,7 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
     }
 } else {
     // debug($_sPOST);
-    echo 'Non SUBMIT';
+    // echo 'Non SUBMIT';
 }
 
 
