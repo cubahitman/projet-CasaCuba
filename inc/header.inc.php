@@ -18,77 +18,80 @@ logOut();
 
 <!DOCTYPE html>
 <html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="assets/images/gt_favicon.png">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="description" content="">
+    <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
+
+    <title>Progressus - Free business bootstrap template by GetTemplate</title>
+
+    <link rel="shortcut icon" href="assets/images/gt_favicon.png">
+
+    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+
     <!-- Custom styles for our template -->
     <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
     <link rel="stylesheet" href="assets/css/main.css">
-    <!-- Icons Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="<?= RACINE_SITE ?>assets/css/style.css">
-    <title><?= $title ?></title>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	<script src="assets/js/html5shiv.js"></script>
+	<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
 </head>
 
-
-<header>
-    <div class="navbar nav-main" id="sidebar">
-        <div class="logo">
-
-            <a href="#"><img src="<?= RACINE_SITE ?>assets/img/logo.png" alt="logo du site(casa avec palmier)"></a>
-        </div>
-        <ul class="links mt-3">
-            <li><a href="<?= RACINE_SITE ?>index.php">Accueil</a></li>
-            <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
-            <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
-            <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
-            <li><a href="<?= RACINE_SITE ?>profil.php">Profil <?php if (isset($_SESSION['user'])) { ?>
-                        <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
-                    <?php    } ?> </li>
-        </ul>
-        <div class="buttons">
-            <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button pro">Espace Pro</a>
-            <?php if (empty($_SESSION['user'])) { ?>
-                <li class="nav-item dropdown">
-                    <button class="action-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Connexion
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                        <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php"">Inscriptions</a></li>
-
+<body class="home">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top headroom">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Button for smallest screens -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="sidebar-left.html">Left Sidebar</a></li>
+                            <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a class="btn" href="signin.html">SIGN IN / SIGN UP</a></li>
                 </ul>
-            </li>
-            <?php } else { ?>
-
-                <a href=" ?action=deconnexion" class="action-button ">Deconnexion</a>
-
-
-
-                        <?php } ?>
-        </div>
-        <div class=" burger-menu-button">
-            <i class="fa-solid fa-bars"></i>
+            </div><!--/.nav-collapse -->
         </div>
     </div>
+    <!-- /.navbar -->
 
-    <div class="burquer-menu ">
-        <ul class="links">
-            <li><a href="<?= RACINE_SITE ?>index.php">Accueil</a></li>
-            <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
-            <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
-            <li><a href="<?= RACINE_SITE ?>contact.php">Populaires</a></li>
-            <li><a href="<?= RACINE_SITE ?>profil.php">Compte<sup class="badge rounded-pill text-bg-danger ms-2 fs-6"><?= $_SESSION['user']['firstName'] ?></sup></a></li>
-            <div class="divider"></div>
-            <div class="buttons-burger-menu">
+
+
+    <header>
+        <div class="navbar nav-main" id="sidebar">
+            <div class="logo">
+
+                <a href="#"><img src="<?= RACINE_SITE ?>assets/img/logo.png" alt="logo du site(casa avec palmier)"></a>
+            </div>
+            <ul class="links mt-3">
+                <li><a href="<?= RACINE_SITE ?>index.php">Accueil</a></li>
+                <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
+                <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
+                <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
+                <li><a href="<?= RACINE_SITE ?>profil.php">Profil <?php if (isset($_SESSION['user'])) { ?>
+                            <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
+                        <?php    } ?> </li>
+            </ul>
+            <div class="buttons">
                 <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button pro">Espace Pro</a>
                 <?php if (empty($_SESSION['user'])) { ?>
                     <li class="nav-item dropdown">
@@ -97,7 +100,43 @@ logOut();
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php"">Inscriptions</a></li>
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php">Inscriptions</a></li>
+
+                        </ul>
+                    </li>
+                <?php } else { ?>
+
+                    <a href=" ?action=deconnexion" class="action-button ">Deconnexion</a>
+
+
+
+                <?php } ?>
+            </div>
+            <div class=" burger-menu-button">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <div class="burquer-menu ">
+            <ul class="links">
+                <li><a href="<?= RACINE_SITE ?>index.php">Accueil</a></li>
+                <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
+                <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
+                <li><a href="<?= RACINE_SITE ?>contact.php">Populaires</a></li>
+                <li><a href="<?= RACINE_SITE ?>profil.php">Profil <?php if (isset($_SESSION['user'])) { ?>
+                            <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
+                        <?php    } ?> </li>
+                <div class="divider"></div>
+                <div class="buttons-burger-menu">
+                    <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button pro">Espace Pro</a>
+                    <?php if (empty($_SESSION['user'])) { ?>
+                        <li class="nav-item dropdown">
+                            <button class="action-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Connexion
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
+                                <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php"">Inscriptions</a></li>
 
                 </ul>
             </li>
@@ -107,10 +146,10 @@ logOut();
 
 
 
-                            <?php } ?>
-            </div>
-        </ul>
-    </div>
-</header>
+                                <?php } ?>
+                </div>
+            </ul>
+        </div>
+    </header>
 
-<body>
+    <body>
