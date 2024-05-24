@@ -18,8 +18,7 @@ logOut();
 
 <!DOCTYPE html>
 <html lang="fr">
-<!DOCTYPE html>
-<html lang="fr">
+
 
 <head>
     <meta charset="utf-8">
@@ -38,7 +37,7 @@ logOut();
     <!-- Custom styles for our template -->
     <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
     <link rel="stylesheet" href="assets/css/main.css">
-
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>
@@ -72,19 +71,19 @@ logOut();
                         </ul>
                     </li>
                     <li class="espace-pro">
-                        <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button ">Espace Pro</a>
+                        <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button btn ">Espace Pro</a>
                         <?php if (empty($_SESSION['user'])) { ?>
                     <li class="nav-item dropdown">
-                        <button class="action-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="action-button btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Connexion
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                            <li><a class="dropdown-item" href="?contact_Pro=<?= RACINE_SITE ?>register.php">Contact</a></li>
+                            <li><a class="dropdown-item" href="?contact_Pro<?= RACINE_SITE ?>register.php">Contact</a></li>
                         </ul>
                     </li>
                 <?php } else { ?>
-                    <a href=" ?action=deconnexion" class="action-button ">Deconnexion</a>
+                    <li><a href=" ?action=deconnexion" class="action-button btn ">Deconnexion</a></li>
                 <?php } ?>
                 </li>
 

@@ -65,7 +65,7 @@ $title = "Authentification";
 require_once "inc/header.inc.php";
 ?>
 
-<main style="background:url(assets/img/5818.png) no-repeat; background-size: cover; background-attachment: fixed;" class="pt-5 mt-5">
+<main style="background:url(assets/img/5818.png) no-repeat; background-size: cover; background-attachment: fixed;" class=" container pt-5 mt-5">
 
     <div class="w-75 m-auto p-5" style="background: rgba(0, 0, 0, 0.1);">
         <h2 class="text-center p-3 mb-5">Connexion</h2>

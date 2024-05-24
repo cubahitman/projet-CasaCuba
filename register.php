@@ -13,8 +13,6 @@ if (!empty($_SESSION['user'])) {
 
 
 
-
-
 // $year1 = ((int) date('Y')) - 12; // 2012
 // $month = (date('m'));
 // $date = (date('d'));
@@ -25,6 +23,13 @@ if (!empty($_SESSION['user'])) {
 // $dateLimitInf = $year2 . "-" . $month . "-" . $date;
 
 $info = '';
+
+if (isset($_GET['contact_Pro'])) {
+    $info = alert("message de annoceur", "danger");
+
+
+    echo $info;
+}
 
 if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" ) 
 {
@@ -179,7 +184,7 @@ require_once "inc/header.inc.php";
 
 ?>
 
-<main style="background:url(assets/img/5818.png) no-repeat; background-size: cover; background-attachment: fixed;" class="pt-5">
+<main style="background:url(assets/img/5818.png) no-repeat; background-size: cover; background-attachment: fixed;" class="container-fluid pt-5">
 
     <div class="w-75 m-auto p-5" style="background: rgba(00, 00, 00, 0.1);">
         <h2 class="text-center p-3 mb-3">Créer un compte</h2>
