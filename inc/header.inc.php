@@ -38,60 +38,57 @@ logOut();
     <title><?= $title ?></title>
 </head>
 
-<body class="home">
-    <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top headroom">
-        <div class="container">
-            <div class="navbar-header">
-                <!-- Button for smallest screens -->
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="sidebar-left.html">Left Sidebar</a></li>
-                            <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a class="btn" href="signin.html">SIGN IN / SIGN UP</a></li>
+
+<header>
+    <div class="navbar nav-main" id="sidebar">
+        <div class="logo">
+
+            <a href="#"><img src="<?= RACINE_SITE ?>assets/img/logo.png" alt="logo du site(casa avec palmier)"></a>
+        </div>
+        <ul class="links mt-3">
+            <li><a href="<?= RACINE_SITE ?>index.php">Accueil</a></li>
+            <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
+            <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
+            <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
+            <li><a href="<?= RACINE_SITE ?>profil.php">Profil <?php if (isset($_SESSION['user'])) { ?>
+                        <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
+                    <?php    } ?> </li>
+        </ul>
+        <div class="buttons">
+            <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button pro">Espace Pro</a>
+            <?php if (empty($_SESSION['user'])) { ?>
+                <li class="nav-item dropdown">
+                    <button class="action-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Connexion
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
+                        <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php"">Inscriptions</a></li>
+
                 </ul>
-            </div><!--/.nav-collapse -->
+            </li>
+            <?php } else { ?>
+
+                <a href=" ?action=deconnexion" class="action-button ">Deconnexion</a>
+
+
+
+                        <?php } ?>
+        </div>
+        <div class=" burger-menu-button">
+            <i class="fa-solid fa-bars"></i>
         </div>
     </div>
-    <!-- /.navbar -->
 
-    <!-- Header -->
-    <header id="head">
-        <div class="container">
-            <div class="row">
-                <h1 class="lead">AWESOME, CUSTOMIZABLE, FREE</h1>
-                <p class="tagline">PROGRESSUS: free business bootstrap template by <a href="http://www.gettemplate.com/?utm_source=progressus&amp;utm_medium=template&amp;utm_campaign=progressus">GetTemplate</a></p>
-                <p><a class="btn btn-default btn-lg" role="button">MORE INFO</a> <a class="btn btn-action btn-lg" role="button">DOWNLOAD NOW</a></p>
-            </div>
-        </div>
-    </header>
-    <header>
-        <div class="navbar nav-main" id="sidebar">
-            <div class="logo">
-
-                <a href="#"><img src="<?= RACINE_SITE ?>assets/img/logo.png" alt="logo du site(casa avec palmier)"></a>
-            </div>
-            <ul class="links mt-3">
-                <li><a href="<?= RACINE_SITE ?>index.php">Accueil</a></li>
-                <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
-                <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
-                <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
-                <li><a href="<?= RACINE_SITE ?>profil.php">Profil <?php if (isset($_SESSION['user'])) { ?>
-                            <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
-                        <?php    } ?> </li>
-            </ul>
-            <div class="buttons">
+    <div class="burquer-menu ">
+        <ul class="links">
+            <li><a href="<?= RACINE_SITE ?>index.php">Accueil</a></li>
+            <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
+            <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
+            <li><a href="<?= RACINE_SITE ?>contact.php">Populaires</a></li>
+            <li><a href="<?= RACINE_SITE ?>profil.php">Compte<sup class="badge rounded-pill text-bg-danger ms-2 fs-6"><?= $_SESSION['user']['firstName'] ?></sup></a></li>
+            <div class="divider"></div>
+            <div class="buttons-burger-menu">
                 <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button pro">Espace Pro</a>
                 <?php if (empty($_SESSION['user'])) { ?>
                     <li class="nav-item dropdown">
@@ -112,42 +109,8 @@ logOut();
 
                             <?php } ?>
             </div>
-            <div class=" burger-menu-button">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
+        </ul>
+    </div>
+</header>
 
-        <div class="burquer-menu ">
-            <ul class="links">
-                <li><a href="<?= RACINE_SITE ?>index.php">Accueil</a></li>
-                <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
-                <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
-                <li><a href="<?= RACINE_SITE ?>contact.php">Populaires</a></li>
-                <li><a href="<?= RACINE_SITE ?>profil.php">Compte<sup class="badge rounded-pill text-bg-danger ms-2 fs-6"><?= $_SESSION['user']['firstName'] ?></sup></a></li>
-                <div class="divider"></div>
-                <div class="buttons-burger-menu">
-                    <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button pro">Espace Pro</a>
-                    <?php if (empty($_SESSION['user'])) { ?>
-                        <li class="nav-item dropdown">
-                            <button class="action-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Connexion
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                                <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php"">Inscriptions</a></li>
-
-                </ul>
-            </li>
-            <?php } else { ?>
-
-                <a href=" ?action=deconnexion" class="action-button ">Deconnexion</a>
-
-
-
-                                <?php } ?>
-                </div>
-            </ul>
-        </div>
-    </header>
-
-    <body>
+<body>
