@@ -34,11 +34,12 @@ if (!isset($_SESSION['user'])) {
 
 
 
-
+// require_once "../inc/header.inc.php"; //Pas besoin 
 
 
 $title = "Backoffice";
-require_once "../inc/header.inc.php";
+require_once "../inc/boostrap.inc.php";
+
 ?>
 
 <main>

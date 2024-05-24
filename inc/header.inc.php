@@ -48,32 +48,33 @@ logOut();
 
 <body class="home">
     <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top headroom">
+    <div class="navbar navbar-inverse navbar-fixed-top headroom ">
         <div class="container">
             <div class="navbar-header">
                 <!-- Button for smallest screens -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+                <a class="navbar-brand  " href="index.html"><img src="assets/images/CUBA(3).png" alt="Mon Logo" style="height: 100%;">LailahailaAllah</a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class=" navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-right">
                     <li><a href="<?= RACINE_SITE ?>index.php">Accueil</a></li>
                     <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
-                    <li><a href="<?= RACINE_SITE ?>a_propos.php">À propos</a></li>
+
                     <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profil <?php if (isset($_SESSION['user'])) { ?>
+                                <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
+                            <?php    } ?> <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="sidebar-left.html">Left Sidebar</a></li>
-                            <li class="active"><a href="sidebar-right.html">Right Sidebar</a></li>
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php">Inscriptions</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="<?= RACINE_SITE ?>profil.php">Profil <?php if (isset($_SESSION['user'])) { ?>
-                                <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
-                            <?php    } ?> </li>
+
+
                 </ul>
+
             </div><!--/.nav-collapse -->
         </div>
     </div>
@@ -141,17 +142,17 @@ logOut();
                             </button>
                             <ul class="dropdown-menu dropdown-menu-dark">
                                 <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                                <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php"">Inscriptions</a></li>
+                                <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php">Inscriptions</a></li>
 
-                </ul>
-            </li>
-            <?php } else { ?>
+                            </ul>
+                        </li>
+                    <?php } else { ?>
 
-                <a href=" ?action=deconnexion" class="action-button ">Deconnexion</a>
+                        <a href=" ?action=deconnexion" class="action-button ">Deconnexion</a>
 
 
 
-                                <?php } ?>
+                    <?php } ?>
                 </div>
             </ul>
         </div>

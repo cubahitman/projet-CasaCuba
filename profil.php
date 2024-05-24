@@ -4,10 +4,11 @@ require_once "inc/funtions.inc.php";
 
 if (!isset($_SESSION['user'])) {
     header("location:" . RACINE_SITE . "authentification.php");
-} else if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {
-
-    header("location:" . RACINE_SITE . "admin/dashboard.php?dashboard_php");
 }
+// else if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {
+
+//     header("location:" . RACINE_SITE . "admin/dashboard.php?dashboard_php");
+// }
 
 
 
@@ -17,7 +18,7 @@ require_once "inc/header.inc.php";
 ?>
 
 
-<main>
+<main class="container">
     <div class="list-group m-5">
         <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
             <?= $_SESSION['user']['firstName'] ?>

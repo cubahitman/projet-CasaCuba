@@ -325,3 +325,16 @@ function displayAdvertAnnonce($annonce)
         return "<h5 class='card-title'>" . $annonce['title'] . "</h5>";
     }
 }
+
+
+// ==========================Afiche le 1( derniers annnces )
+function dernieresAnnonces(): array
+{
+
+    $pdo = connexionBdd();
+    $sql = "SELECT * FROM advert ORDER BY id_advert DESC
+    LIMIT 15";
+    $request = $pdo->query($sql);
+    $result = $request->fetchAll();
+    return $result;
+}
