@@ -9,27 +9,21 @@ if (!empty($_SESSION['user'])) {
     header("location:" . RACINE_SITE . "profil.php");
 }
 
+echo "<br><br><br><br><br>";
 
 
 
-
-// $year1 = ((int) date('Y')) - 12; // 2012
-// $month = (date('m'));
-// $date = (date('d'));
-// // date limite supèrieure
-// $dateLimitSup = $year1 . "-" . $month . "-" . $date;
-// // date limite infèrieur
-// $year2 = ((int) date('Y')) - 90;
-// $dateLimitInf = $year2 . "-" . $month . "-" . $date;
 
 $info = '';
+$contact = '';
 
 if (isset($_GET['contact_Pro'])) {
-    $info = alert("message de annoceur", "danger");
 
 
-    echo $info;
+
+    $contact = alert(" message de professionnel", "danger");
 }
+
 
 if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" ) 
 {
@@ -162,7 +156,7 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
     }
 } else {
     // debug($_sPOST);
-    // echo 'Non SUBMIT';
+    // echo $info;
 }
 
 
@@ -184,10 +178,11 @@ require_once "inc/header.inc.php";
 
 ?>
 
-<main style="background:url(assets/img/5818.png) no-repeat; background-size: cover; background-attachment: fixed;" class="container-fluid pt-5">
+<main style="background:url(assets/img/5818.png) no-repeat; background-size: cover; background-attachment: fixed;" class="pt-5">
 
     <div class="w-75 m-auto p-5" style="background: rgba(00, 00, 00, 0.1);">
-        <h2 class="text-center p-3 mb-3">Créer un compte</h2>
+        <h2 class="text-center p-3 mb-3">Créer un compte<?= isset($contact) ? displaySupTag($contact) : '' ?></h2>
+
 
         <?php
 
@@ -195,90 +190,91 @@ require_once "inc/header.inc.php";
 
         ?>
 
-        <form action="" method="post" class="p-3">
+        <div class="container">
+            <form action="" method="post" class="p-3">
 
-            <div class="row mb-3">
-                <div class="col-md-6 mb-5">
-                    <label for="lastName" class="form-label mb-3">Nom</label>
-                    <input type="text" class="form-control fs-5" id="lastName" name="lastName">
-                </div>
-                <div class="col-md-6 mb-5">
-                    <label for="firstName" class="form-label mb-3">Prénom</label>
-                    <input type="text" class="form-control fs-5" id="firstName" name="firstName">
-                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-5">
+                        <label for="lastName" class="form-label mb-3">Nom</label>
+                        <input type="text" class="form-control fs-5" id="lastName" name="lastName">
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <label for="firstName" class="form-label mb-3">Prénom</label>
+                        <input type="text" class="form-control fs-5" id="firstName" name="firstName">
+                    </div>
 
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-4 mb-5">
-                    <label for="pseudo" class="form-label mb-3">Pseudo</label>
-                    <input type="text" class="form-control fs-5" id="pseudo" name="pseudo">
-                </div>
-                <div class="col-md-4 mb-5">
-                    <label for="email" class="form-label mb-3">Email</label>
-                    <input type="text" class="form-control fs-5" id="email" name="email" placeholder="exemple.email@exemple.com">
-                </div>
-                <div class="col-md-4 mb-5">
-                    <label for="phone" class="form-label mb-3">Téléphone</label>
-                    <input type="text" class="form-control fs-5" id="phone" name="phone">
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-6 mb-5">
-                    <label for="mdp" class="form-label mb-3">Mot de passe</label>
-                    <input type="password" class="form-control fs-5" id="mdp" name="mdp" placeholder="Entrez votre mot de passe">
-                </div>
-                <div class="col-md-6 mb-5">
-                    <label for="confirmMdp" class="form-label mb-3">Confirmation mot de passe</label>
-                    <input type="password" class="form-control fs-5" id="confirmMdp" name="confirmMdp" placeholder="Confirmer votre mot de passe">
-                    <input type="checkbox" onclick="showPass()"><span class="text-danger">Afficher/masquer le mot de passe</span>
-                </div>
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-md-6 mb-5">
-                    <label class="form-label mb-3">Civilité</label>
-                    <select class="form-select fs-5" name="civility">
-                        <option value="c">choix</option>
-                        <option value="h">Homme</option>
-                        <option value="f">Femme</option>
-
-                    </select>
                 </div>
 
-            </div>
-
-            <div class="row mb-3">
-                <div class="col-12 mb-5">
-                    <label for="address" class="form-label mb-3">Adresse</label>
-                    <input type="text" class="form-control fs-5" id="address" name="address">
+                <div class="row mb-3">
+                    <div class="col-md-4 mb-5">
+                        <label for="pseudo" class="form-label mb-3">Pseudo</label>
+                        <input type="text" class="form-control fs-5" id="pseudo" name="pseudo">
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <label for="email" class="form-label mb-3">Email</label>
+                        <input type="text" class="form-control fs-5" id="email" name="email" placeholder="exemple.email@exemple.com">
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <label for="phone" class="form-label mb-3">Téléphone</label>
+                        <input type="text" class="form-control fs-5" id="phone" name="phone">
+                    </div>
                 </div>
-            </div>
 
-            <div class="row mb-3">
-                <div class="col-md-3">
-                    <label for="zipCode" class="form-label mb-3">Code postal</label>
-                    <input type="text" class="form-control fs-5" id="zipCode" name="zipCode">
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-5">
+                        <label for="mdp" class="form-label mb-3">Mot de passe</label>
+                        <input type="password" class="form-control fs-5" id="mdp" name="mdp" placeholder="Entrez votre mot de passe">
+                    </div>
+                    <div class="col-md-6 mb-5">
+                        <label for="confirmMdp" class="form-label mb-3">Confirmation mot de passe</label>
+                        <input type="password" class="form-control fs-5" id="confirmMdp" name="confirmMdp" placeholder="Confirmer votre mot de passe">
+                        <input type="checkbox" onclick="showPass()"><span class="text-danger">Afficher/masquer le mot de passe</span>
+                    </div>
                 </div>
-                <div class="col-md-5">
-                    <label for="city" class="form-label mb-3">Ville</label>
-                    <input type="text" class="form-control fs-5" id="city" name="city">
+
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-5">
+                        <label class="form-label mb-3">Civilité</label>
+                        <select class="form-select fs-5" name="civility">
+                            <option value="c">choix</option>
+                            <option value="h">Homme</option>
+                            <option value="f">Femme</option>
+
+                        </select>
+                    </div>
+
                 </div>
-                <div class="col-md-4">
-                    <label for="country" class="form-label mb-3">Pays</label>
-                    <input type="text" class="form-control fs-5" id="country" name="country">
+
+                <div class="row mb-3">
+                    <div class="col-12 mb-5">
+                        <label for="address" class="form-label mb-3">Adresse</label>
+                        <input type="text" class="form-control fs-5" id="address" name="address">
+                    </div>
                 </div>
-            </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="zipCode" class="form-label mb-3">Code postal</label>
+                        <input type="text" class="form-control fs-5" id="zipCode" name="zipCode">
+                    </div>
+                    <div class="col-md-5">
+                        <label for="city" class="form-label mb-3">Ville</label>
+                        <input type="text" class="form-control fs-5" id="city" name="city">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="country" class="form-label mb-3">Pays</label>
+                        <input type="text" class="form-control fs-5" id="country" name="country">
+                    </div>
+                </div>
 
 
-            <div class="row mt-5">
-                <button class="w-25 m-auto btn btn-danger btn-lg fs-5" type="submit">S'inscrire</button>
-                <p class="text-center mt-5">Vous avez déjà un compte ! <a href="authentification.php" class="text-danger">Connectez-vous ici</a></p>
-            </div>
+                <div class="row mt-5">
+                    <button class="w-25 m-auto btn btn-danger btn-lg fs-5" type="submit">S'inscrire</button>
+                    <p class="text-center mt-5">Vous avez déjà un compte ! <a href="authentification.php" class="text-danger">Connectez-vous ici</a></p>
+                </div>
 
-        </form>
-    </div>
+            </form></span>
+        </div>
 
 
 </main>

@@ -8,19 +8,49 @@ $title = "Accueil";
 require_once "inc/header.inc.php";
 $annonces = dernieresAnnonces();
 ?>
-
-
-
 <!-- Intro -->
 <div class="container text-center">
 	<br> <br>
-	<h2 class="thin">The best place to tell people why they are here</h2>
+	<h2 class="thin">Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
 	<p class="text-muted">
-		The difference between involvement and commitment is like an eggs-and-ham breakfast:<br>
-		the chicken was involved; the pig was committed.
+		Que vous cherchiez une résidence secondaire ou un investissement locatif, notre collection de maisons et d'appartements à Cuba répondra à vos attentes.
 	</p>
 </div>
 <!-- /Intro-->
+<section class="">
+	<div class="container-fluid text-center p-5 ">
+		<h1 class="display-3 titre">Le bon appart</h1>
+		<a href="explorer.php" class="display-5  btn btn-primary text-white text-decoration-none">
+
+			Consulter tous les annonces
+
+		</a>
+	</div>
+</section>
+<section class="index-img container m-5 text-center">
+	<div class="row">
+		<?php
+		foreach ($annonces as $annonce) {
+		?>
+			<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+				<div class="card ">
+					<img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title'] ?>" style="height: 200px; width: 100%; object-fit: cover;">
+					<div class="card-body">
+						<h5 class="card-title"><?= displayAdvertAnnonce($annonce); ?></h5>
+						<p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
+						<a href="<?= RACINE_SITE ?>showAnnonce.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Voir l'annonce</a>
+						<h5 class="card-title"><?= $annonce['price'] ?></h5>
+						<h6S class="card-title"><?= $annonce['type'] ?></h6>
+					</div>
+				</div>
+			</div>
+		<?php
+		}
+		?>
+	</div>
+</section>
+
+
 
 <!-- Highlights - jumbotron -->
 <div class="jumbotron top-space">
@@ -123,6 +153,9 @@ $annonces = dernieresAnnonces();
 		</div>
 	</div>
 </section>
+
+
+
 <!-- /social links -->
 
 

@@ -326,7 +326,17 @@ function displayAdvertAnnonce($annonce)
     }
 }
 
+// ====================petit panneau pour afficher de petit subtag==================///
 
+function displaySupTag($value = null)
+{
+    if (isset($value) && !empty($value)) {
+        return "<sup class='badge rounded-pill text-bg-danger ms-1 fs-16'>" . $value . "</sup>";
+    } else {
+        // La variable n'existe pas, est nulle ou est vide
+        return "";
+    }
+}
 // ==========================Afiche le 1( derniers annnces )
 function dernieresAnnonces(): array
 {
@@ -337,4 +347,49 @@ function dernieresAnnonces(): array
     $request = $pdo->query($sql);
     $result = $request->fetchAll();
     return $result;
+}
+// y=============== Cette fonction récupère les détails d'une annonce spécifique à partir de la base de données.
+function showAnonnce($id_advert)
+{
+    $pdo = connexionBdd();
+    $sql = $pdo->prepare("SELECT * FROM advert WHERE id_advert = :id_advert");
+    $sql->bindParam(':id_advert', $id_advert);
+    $sql->execute();
+    $annoce = $sql->fetch();
+    return $annoce;
+}
+
+
+
+
+
+
+// Cette fonction met à jour le statut de réservation d'une annonce spécifique dans la base de données.
+function reserveAdvert($id_advert, $reservation_message)
+{
+    // Obtenez l'objet PDO
+    $pdo = connexionBdd();
+
+    // Préparez la requête SQL pour mettre à jour le message de réservation et le champ 'is_reserved'
+    $sql = $pdo->prepare("UPDATE advert SET is_reserved = true, reservation_message = :reservation_message WHERE id_advert = :id_advert");
+
+    // Liez les paramètres
+    $sql->bindParam(':id_advert', $id_advert);
+    $sql->bindParam(':reservation_message', $reservation_message);
+
+    // Exécutez la requête
+    $sql->execute();
+}
+
+// Cette fonction met à jour le statut de réservation d'une annonce spécifique dans la base de données.
+
+function cancelAdvert($id_advert)
+{
+
+    $pdo = connexionBdd();
+    $sql = $pdo->prepare("UPDATE advert SET is_reserved = false, reservation_message = NULL WHERE id_advert = :id_advert");
+    $sql->bindParam(':id_advert', $id_advert);
+
+
+    $sql->execute();
 }

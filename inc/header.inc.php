@@ -23,10 +23,10 @@ logOut();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
+    <meta name="description" content="Découvrez notre sélection de maisons à vendre à Cuba. Que vous cherchiez une maison de ville, une villa de luxe ou une maison de campagne, nous avons ce qu'il vous faut. Parcourez nos annonces immobilières dès aujourd'hui et trouvez la maison de vos rêves à Cuba.">
+    <meta name="author" content="Roberto Quesada Rad">
 
-    <title>Progressus - Free business bootstrap template by GetTemplate</title>
+    <title><?= $title ?></title>
 
     <link rel="shortcut icon" href="assets/images/gt_favicon.png">
 
@@ -37,7 +37,7 @@ logOut();
     <!-- Custom styles for our template -->
     <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?= RACINE_SITE ?>assets/css/style.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>
@@ -48,15 +48,15 @@ logOut();
 <body class="home">
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top headroom ">
-        <div class="container">
+        <div class="">
             <div class="navbar-header">
                 <!-- Button for smallest screens -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand  " href="index.html"><img src="assets/images/CUBA(3).png" alt="Mon Logo" style="height: 100%;">LailahailaAllah</a>
+                <a class="navbar-brand  " href="index.php"><img src="assets/images/CUBA(3).png" alt="Mon Logo" style="height: 100%;"> Cubuy</a>
             </div>
             <div class=" navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-right">
-                    <li><a href="<?= RACINE_SITE ?>index.php">Accueil</a></li>
+
                     <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
 
                     <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
@@ -70,7 +70,7 @@ logOut();
                             <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php">Inscriptions</a></li>
                         </ul>
                     </li>
-                    <li class="espace-pro">
+                    <li class="espace-pro ">
                         <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button btn ">Espace Pro</a>
                         <?php if (empty($_SESSION['user'])) { ?>
                     <li class="nav-item dropdown">
@@ -79,7 +79,9 @@ logOut();
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                            <li><a class="dropdown-item" href="?contact_Pro<?= RACINE_SITE ?>register.php">Contact</a></li>
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php?contact_Pro">Contact Pro</a></li>
+
+
                         </ul>
                     </li>
                 <?php } else { ?>
@@ -97,9 +99,9 @@ logOut();
     <header id="head">
         <div class="container">
             <div class="row">
-                <h1 class="lead">AWESOME, CUSTOMIZABLE, FREE</h1>
-                <p class="tagline">PROGRESSUS: free business bootstrap template by <a href="http://www.gettemplate.com/?utm_source=progressus&amp;utm_medium=template&amp;utm_campaign=progressus">GetTemplate</a></p>
-                <p><a class="btn btn-default btn-lg" role="button">MORE INFO</a> <a class="btn btn-action btn-lg" role="button">DOWNLOAD NOW</a></p>
+                <h1 class="lead">DESTINATION, RAFFINEMENT, INSPIRATION</h1>
+                <p class="tagline">Votre portail pour les maisons de rêve à Cuba </p>
+                <p><a href="#" class="btn btn-default btn-lg" role="button">INFORMATIONS</a> <a href="<?= RACINE_SITE ?>register.php" class="btn btn-action btn-lg" role="button">INSCRIVEZ-VOUS MAINTENANT</a></p>
             </div>
         </div>
     </header>

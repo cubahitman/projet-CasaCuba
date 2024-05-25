@@ -3,7 +3,7 @@
 
 
 require_once "../inc/funtions.inc.php";
-
+$annonces = allAnnonces();
 
 // ==================
 $info = ''; // Initialisez $info avec une chaîne vide
@@ -67,74 +67,85 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
 // }
 
 
-$title = "enregistrement";
-require_once "../inc/header.inc.php";
+// $title = "enregistrement";
+
 ?>
 
-<main class="bg-register">
-
-
-
-    <!-- Image d'en-tête contactez-nous -->
-    <div class="affiche-inscription">
-        ///////////////////////////////////
-        <div class=" text-center text-white col-sm-12">
-            <h1 class="titre-3 display-3">Ajouter annonces</h1>
-            <div class="icon-hand"><i class="bi bi-hand-index-fill"></i></div>
-
-        </div>
-    </div>
-    <div class=" m-0"><?= $info; ?></div>
-    <!-- Formulaire de contact -->
-    <section class="ecrivez-nous p-5">
-        <form method="post" enctype="multipart/form-data" class="container mt-4">
-            <div class="form-group">
-                <label for="photo">Photo :</label>
-                <input type="file" id="photo" name="photo" class="form-control">
+<main class="bg-admin">
+    <div class="row">
+        <section class="index-img container m-5 text-center w-50 col" style="max-height: 800px; overflow-y: auto;">
+            <div class="row">
+                <?php
+                foreach ($annonces as $annonce) {
+                ?>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card">
+                            <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title'] ?>" style="height: 200px; width: 100%; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title"><?= displayAdvertAnnonce($annonce); ?></h5>
+                                <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
+                                <a href="<?= RACINE_SITE ?>showAnnonce.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Voir l'annonce</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php
+                }
+                ?>
             </div>
+        </section>
 
-            <div class="form-group">
-                <label for="title">Titre :</label>
-                <input type="text" id="title" name="title" class="form-control" required>
-            </div>
 
-            <div class="form-group">
-                <label for="description">Description :</label>
-                <textarea id="description" name="description" class="form-control" required></textarea>
-            </div>
 
-            <div class="form-group">
-                <label for="postal_code">Code Postal :</label>
-                <input type="text" id="postal_code" name="postal_code" class="form-control" required>
-            </div>
+        <!-- Formulaire  -->
+        <section class="ecrivez-nous p-5 col">
+            <form method="post" enctype="multipart/form-data" class="container mt-4">
+                <div class="form-group">
+                    <label for="photo">Photo :</label>
+                    <input type="file" id="photo" name="photo" class="form-control">
+                </div>
 
-            <div class="form-group">
-                <label for="city">Ville :</label>
-                <input type="text" id="city" name="city" class="form-control" required>
-            </div>
+                <div class="form-group">
+                    <label for="title">Titre :</label>
+                    <input type="text" id="title" name="title" class="form-control" required>
+                </div>
 
-            <div class="form-group">
-                <label for="type">Type :</label>
-                <select id="type" name="type" class="form-control" required>
-                    <option value="achat">Achat</option>
-                    <option value="location">Location</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label for="description">Description :</label>
+                    <textarea id="description" name="description" class="form-control" required></textarea>
+                </div>
 
-            <div class="form-group">
-                <label for="price">Prix :</label>
-                <input type="number" id="price" name="price" step="0.01" class="form-control" required>
-            </div>
-            <!-- 
+                <div class="form-group">
+                    <label for="postal_code">Code Postal :</label>
+                    <input type="text" id="postal_code" name="postal_code" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Ville :</label>
+                    <input type="text" id="city" name="city" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Type :</label>
+                    <select id="type" name="type" class="form-control" required>
+                        <option value="achat">Achat</option>
+                        <option value="location">Location</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Prix :</label>
+                    <input type="number" id="price" name="price" step="0.01" class="form-control" required>
+                </div>
+                <!-- 
             <div class="form-group">
                 <label for="reservation_message">Message de Réservation :</label>
                 <textarea id="reservation_message" name="reservation_message" class="form-control" required></textarea>
             </div> -->
 
-            <button type="submit" class="btn btn-primary mt-3">Soumettre</button>
-        </form>
+                <button type="submit" class="btn btn-primary mt-3">Soumettre</button>
+            </form>
 
-    </section>
+        </section></span>
 </main>
 <?php
 require_once "../inc/footer.inc.php";
