@@ -28,7 +28,7 @@ if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
 
 
 
-    <section class=" container marginAnnonce ">
+    <section class=" container  ">
         <div class="row d-flex justify-content-center align-items-center">
 
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
@@ -55,10 +55,11 @@ if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
                     <input type="submit" value="Réserver">
                     <?php
                     // Vérifiez si l'utilisateur est connecté avant d'afficher le bouton "Annuler"
-                    if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') {
+                    if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {
                         echo '<input type="hidden" name="action" value="cancel">';
                         echo '<input type="submit" value="Annuler">';
                     }
+
                     ?>
                     <!-- <input type="submit" value="Annuler"> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?></sup> -->
 
@@ -70,16 +71,16 @@ if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
 </main>
 </footer>
 
+<?php
+require_once "inc/footer.inc.php";
+
+
+?>
 
 
 
 
 
 </body>
-<?php
-require_once "inc/footer.inc.php";
-
-
-?>
 
 </html>
