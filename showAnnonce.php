@@ -55,11 +55,10 @@ if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
                     <input type="submit" value="Réserver">
                     <?php
                     // Vérifiez si l'utilisateur est connecté avant d'afficher le bouton "Annuler"
-                    if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {
+                    if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'ROLE_ADMIN') {
                         echo '<input type="hidden" name="action" value="cancel">';
                         echo '<input type="submit" value="Annuler">';
                     }
-
                     ?>
                     <!-- <input type="submit" value="Annuler"> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?></sup> -->
 
