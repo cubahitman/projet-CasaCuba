@@ -181,12 +181,12 @@ require_once "inc/header.inc.php";
 <main style="background:url(assets/img/5818.png) no-repeat; background-size: cover; background-attachment: fixed;" class="pt-5">
 
     <div class="w-75 m-auto p-5" style="background: rgba(00, 00, 00, 0.1);">
-        <h2 class="text-center p-3 mb-3">Créer un compte<?= isset($contact) ? displaySupTag($contact) : '' ?></h2>
+        <h2 class="text-center  form-label p-3 mb-3">Créer un compte<?= isset($pseudo) ? displaySupTag($info) . displaySupTag($pseudo) : '' ?></h2>
 
 
         <?php
 
-        echo $info;
+
 
         ?>
 

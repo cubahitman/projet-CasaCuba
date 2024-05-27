@@ -99,7 +99,7 @@ require_once "../inc/boostrap.inc.php";
                         <?= $_SESSION['user']['firstName'] ?>
                     </a>
 
-                    <div class="d-flex justify-content-between list-group-item list-group-item-action"><a href="#" class="text-dark d-block">Nom: <?= $_SESSION['user']['lastName'] ?><div class="d-flex"></a><i class="bi bi-trash3-fill text-danger d-block mx-5"></i><i class="bi bi-trash3-fill text-danger d-block"></i></div>
+                    <div class="d-flex justify-content-between list-group-item list-group-item-action"><a href="#" class="text-dark d-block">Nom: <?= $_SESSION['user']['lastName'] ?><div class="d-flex"></a></div>
                 </div>
                 <a href="#" class="list-group-item list-group-item-action">Telephonne: <?= $_SESSION['user']['phone'] ?></a>
                 <a href="#" class="list-group-item list-group-item-action">E-mail: <?= $_SESSION['user']['email'] ?></a>

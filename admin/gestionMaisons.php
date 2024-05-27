@@ -9,7 +9,7 @@ $annonces = allAnnonces();
 $info = ''; // Initialisez $info avec une chaîne vide
 
 
-if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" ) 
+if (!empty($_POST)) // l'envoi du Formulaire  
 {
     // debug($_POST);
 
@@ -29,6 +29,7 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
         $photo_info = $_FILES['photo'];
         // Vous pouvez maintenant manipuler le fichier téléchargé, par exemple, le déplacer dans un répertoire de stockage.
         // debug($_FILES);
+        // debug($photo_info);
     }
 
     if (!$verif) {
@@ -50,16 +51,13 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
         $type = isset($_POST['type']) ? $_POST['type'] : null;
         $price = isset($_POST['price']) ? $_POST['price'] : null;
 
-        // $reservation_message = isset($_POST['reservation_message']) ? $_POST['reservation_message'] : null;
 
-        // if ($_GET['action'] == "update") {
-        //     addAnnonce($photo, $title, $description,  $postal_code,  $city,  $type,  $price);
-        move_uploaded_file($_FILES['photo']['tmp_name'], 'assets/img/' . $photo);
+        move_uploaded_file($_FILES['photo']['tmp_name'], '<?= RACINE_SITE ?>/assets/img/' . $photo);
         // }
         addAnnonce($photo, $title, $description,  $postal_code,  $city,  $type,  $price);
     }
-    header('Location: index.php');
-    exit;
+    // header('Location: index.php');
+
 }
 // else {
 //   debug($_POST);
@@ -73,18 +71,21 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
 
 <main class="bg-admin">
     <div class="row">
-        <section class="index-img container m-5 text-center w-50 col" style="max-height: 800px; overflow-y: auto;">
-            <div class="row">
+        <section class="index-img  container p-3 text-center w-50 col-lg-4 col-md-6 col-sm-12 ">
+            <h2 class="mb-5">Notre brochure</h2>
+            <div class="row " style="max-height: 900px; overflow-y: auto;">
+
                 <?php
                 foreach ($annonces as $annonce) {
                 ?>
-                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="card">
+                    <div class="col-xxl-4 col-lg-6 col-md-12 mb-4">
+                        <div> </div>
+                        <div class="card hoverCart ">
                             <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title'] ?>" style="height: 200px; width: 100%; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title"><?= displayAdvertAnnonce($annonce); ?></h5>
                                 <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
-                                <a href="<?= RACINE_SITE ?>showAnnonce.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Voir l'annonce</a>
+                                <a href="<?= RACINE_SITE ?>showAnnonce.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Voir l'annonce</a><sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $annonce['id_advert'] ?></sup>
                             </div>
                         </div>
                     </div>
@@ -97,7 +98,8 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
 
 
         <!-- Formulaire  -->
-        <section class="ecrivez-nous p-5 col">
+        <section class="ecrivez-nous  p-3 col-lg-4 col-md-6 col-sm-12 mb-4">
+            <h2 class="text-center">Ajouter un annonce</h2>
             <form method="post" enctype="multipart/form-data" class="container mt-4">
                 <div class="form-group">
                     <label for="photo">Photo :</label>

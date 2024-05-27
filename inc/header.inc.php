@@ -35,6 +35,7 @@ logOut();
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
     <!-- Custom styles for our template -->
+
     <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="<?= RACINE_SITE ?>assets/css/style.css">
@@ -47,7 +48,7 @@ logOut();
 
 <body class="home">
     <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top headroom ">
+    <div class="navbar navbar-inverse navbar-fixed-top headroom bg-bleuNav">
         <div class="">
             <div class="navbar-header">
                 <!-- Button for smallest screens -->
@@ -101,7 +102,7 @@ logOut();
             <div class="row">
                 <h1 class="lead">DESTINATION, RAFFINEMENT, INSPIRATION</h1>
                 <p class="tagline">Votre portail pour les maisons de rêve à Cuba </p>
-                <p><a href="#" class="btn btn-default btn-lg" role="button">INFORMATIONS</a> <a href="<?= RACINE_SITE ?>register.php" class="btn btn-action btn-lg" role="button">INSCRIVEZ-VOUS MAINTENANT</a></p>
+                <p><a href="<?= RACINE_SITE ?>a_propos.php" class="btn btn-default btn-lg" role="button">INFORMATIONS</a> <a href="<?= RACINE_SITE ?>register.php" class="btn btn-action btn-lg" role="button">INSCRIVEZ-VOUS MAINTENANT</a></p>
             </div>
         </div>
     </header>

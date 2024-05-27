@@ -1,8 +1,25 @@
+/* ===============decorations pages admin et generals======================== */
+
 .bg-admin {
-    background-color: aqua;
+    background-color: #212529
 }
 
-.marginA {
-    margin: 100px;
-
+.bg-bleuNav {
+    background-color: #003554;
 }
+
+.bg-claireGriss {
+    background-color: #5e4e4ec5;
+}
+
+/* ========animations card============= */
+
+.hoverCart:hover {
+    transform: scale(1.1);
+}
+
+.textColor {
+    color: black;
+}
+
+/* ====================      ====================== */

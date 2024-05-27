@@ -55,9 +55,11 @@ $annonces = allAnnonces();
 
 
 
-
+</body>
 <?php
 require_once "inc/footer.inc.php";
 
 
 ?>
+
+</html>

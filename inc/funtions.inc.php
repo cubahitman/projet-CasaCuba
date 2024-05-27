@@ -393,3 +393,19 @@ function cancelAdvert($id_advert)
 
     $sql->execute();
 }
+
+
+//   ====================function  pour suprimer annonce================================//
+
+
+function deleteAdvert(int $id): void
+{
+    $pdo = connexionBdd();
+    $sql = "DELETE FROM advert WHERE id_advert = :id_advert";
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+
+        ':id_advert' => $id
+
+    ));
+}
