@@ -19,7 +19,7 @@ $annonces = dernieresAnnonces();
 <!-- /Intro-->
 <section class="">
 	<div class="container-fluid text-center p-5 ">
-		<h1 class="display-3 titre">Le bon appart</h1>
+		<h1 class="display-3 titre">Votre maison de rêve vous attend à Cuba</h1>
 		<a href="explorer.php" class="display-5  btn btn-primary text-white text-decoration-none">
 
 			Consulter tous les annonces

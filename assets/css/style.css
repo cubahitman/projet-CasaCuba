@@ -12,6 +12,16 @@
     background-color: #5e4e4ec5;
 }
 
+.bg-claire {
+    background-color: #7d9bad;
+}
+
+.fontTitre {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* trouver le font ideal */
+
+}
+
 /* ========animations card============= */
 
 .hoverCart:hover {

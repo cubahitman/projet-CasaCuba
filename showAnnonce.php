@@ -7,6 +7,7 @@ require_once "inc/header.inc.php";
 $id_advert = $_GET['annonce'];
 $annonce = showAnonnce($id_advert);
 $info = "";
+$reservation = "";
 // Maintenant, vous pouvez utiliser les détails de $annonce pour afficher l'annonce
 
 
@@ -26,15 +27,16 @@ if (isset($_POST['action']) && $_POST['action'] == 'cancel' && isset($_POST['id_
     echo "<h4 class='reserved'> Cette annonce a ete annulé</h4>";
     // Rediriger vers la même page pour rafraîchir l'état de l'annonce
     // header('Location: ' . $_SERVER['PHP_SELF'] . '?annonce=' . $_POST['id_advert']);
-} elseif
+}
+//  elseif
 
 
 // =====Conditions test pour savoir si la reservations a ete fait
-(isset($annonce['is_reserved']) && $annonce['is_reserved']) {
-    echo "<h4 class='text-center reserved'>================Cette annonce est réservée===========.</h4>";
-    $info = "<p class='reserved'>Cette annonce est réservée.</p>";
-    echo "<p>" . $annonce['reservation_message'] . "</p>";
-}
+// (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
+//     echo "<h4 class='text-center reserved'>================Cette annonce est réservée===========.</h4>";
+//     $info = "<p class='reserved'>Cette annonce est réservée.</p>";
+//     echo "<p>" . $annonce['reservation_message'] . "</p>";
+// }
 
 
 
@@ -46,7 +48,7 @@ if (isset($_POST['action'])) {
             break;
         case 'cancel':
             cancelAdvert($id_advert);
-            echo "<h4 class='reserved'> Cette annonce a ete annulé</h4>";
+            $reservation = "<h4 class='reserved'> Cette annonce a ete annulé</h4>";
             break;
         case 'delete':
             deleteAdvert($id_advert);
@@ -60,13 +62,13 @@ if (isset($_POST['action'])) {
 
 // require_once "inc/funtions.inc.php"
 ?>
-<main class="bg-admin">
+<main class="bg-claire">
 
 
 
     <section class=" container  ">
         <div class="row d-flex justify-content-center align-items-center">
-            <h1 class="text-center text-light">Ici<?= $info ?></h1>
+            <h1 class="text-center text-light">Ici<?= $info . $reservation ?></h1>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="card">
                     <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title']  ?>">
@@ -77,7 +79,8 @@ if (isset($_POST['action'])) {
                             echo "<h5 class='card-title'>" . $annonce['title'] . "</h5>";
                         } ?>
                         <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
-                        <a href="<?= RACINE_SITE ?>showAnnonce.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Voir l'annonce</a>
+                        <a href="<?= RACINE_SITE ?>explorer.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux annonces</a>
+                        <a href="<?= RACINE_SITE ?>gestionMaisons.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
                     </div>
                 </div>
             </div>

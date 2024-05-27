@@ -385,13 +385,15 @@ function reserveAdvert($id_advert, $reservation_message)
 
 function cancelAdvert($id_advert)
 {
-
     $pdo = connexionBdd();
     $sql = $pdo->prepare("UPDATE advert SET is_reserved = false, reservation_message = NULL WHERE id_advert = :id_advert");
     $sql->bindParam(':id_advert', $id_advert);
 
-
-    $sql->execute();
+    if ($sql->execute()) {
+        echo 'Annonce annulée avec succès.';
+    } else {
+        echo 'Erreur lors de l\'annulation de l\'annonce: ' . implode(', ', $sql->errorInfo());
+    }
 }
 
 
