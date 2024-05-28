@@ -1,7 +1,4 @@
 <?php
-
-
-
 require_once "../inc/funtions.inc.php";
 $annonces = allAnnonces();
 
@@ -9,69 +6,70 @@ $annonces = allAnnonces();
 $info = ''; // Initialisez $info avec une chaîne vide
 
 
-if (!empty($_POST)) // l'envoi du Formulaire  
-{
-    // debug($_POST);
+// if (!empty($_POST)) // l'envoi du Formulaire  
+// {
+//     // debug($_POST);
 
 
-    $verif = true;
+//     $verif = true;
 
-    foreach ($_POST as $value) {
+//     foreach ($_POST as $value) {
+//         // debug($_POST);
 
+//         if (empty($value)) {
 
-        if (empty($value)) {
+//             $verif = false;
+//         }
+//     }
 
-            $verif = false;
-        }
-    }
+//     if (isset($_FILES['photo'])) {
+//         $photo_info = $_FILES['photo'];
+//         // Vous pouvez maintenant manipuler le fichier téléchargé, par exemple, le déplacer dans un répertoire de stockage.
+//         // debug($_FILES);
+//         // debug($photo_info);
+//     }
 
-    if (isset($_FILES['photo'])) {
-        $photo_info = $_FILES['photo'];
-        // Vous pouvez maintenant manipuler le fichier téléchargé, par exemple, le déplacer dans un répertoire de stockage.
-        // debug($_FILES);
-        // debug($photo_info);
-    }
+//     if (!$verif) {
 
-    if (!$verif) {
+//         // debug($_POST);
 
-        // debug($_POST);
-
-        $info = alert("Veuillez renseigner tout les champs", "danger");
-    } else {
-
-
-        // debug($_POST);
-
-        // $photo = isset($_POST['photo']) ? $_POST['photo'] : null;
-        $photo = $_FILES['photo']['name'];
-        $title = isset($_POST['title']) ? $_POST['title'] : null;
-        $description = isset($_POST['description']) ? $_POST['description'] : null;
-        $postal_code  = isset($_POST['postal_code']) ? $_POST['postal_code'] : null;
-        $city  = isset($_POST['city']) ? $_POST['city'] : null;
-        $type = isset($_POST['type']) ? $_POST['type'] : null;
-        $price = isset($_POST['price']) ? $_POST['price'] : null;
+//         $info = alert("Veuillez renseigner tout les champs", "danger");
+//     } else {
 
 
-        move_uploaded_file($_FILES['photo']['tmp_name'],  RACINE_SITE . "assets/img/" . $photo);
-        // }
-        addAnnonce($photo, $title, $description,  $postal_code,  $city,  $type,  $price);
-    }
-    header('Location: index.php');
-}
+//         // debug($_POST);
+
+//         // $photo = isset($_POST['photo']) ? $_POST['photo'] : null;
+//         $photo = $_FILES['photo']['name'];
+//         $title = isset($_POST['title']) ? $_POST['title'] : null;
+//         $description = isset($_POST['description']) ? $_POST['description'] : null;
+//         $postal_code  = isset($_POST['postal_code']) ? $_POST['postal_code'] : null;
+//         $city  = isset($_POST['city']) ? $_POST['city'] : null;
+//         $type = isset($_POST['type']) ? $_POST['type'] : null;
+//         $price = isset($_POST['price']) ? $_POST['price'] : null;
+
+
+//         // move_uploaded_file($_FILES['photo']['tmp_name'],  RACINE_SITE . "assets/img/" . $photo);
+//         move_uploaded_file($_FILES['photo']['tmp_name'], '../assets/img/' . $photo);
+//         // }
+//         addAnnonce($photo, $title, $description,  $postal_code,  $city,  $type,  $price);
+//         header('location: ' . RACINE_SITE . 'contact.php');
+//     }
+// }
 // else {
 //   debug($_POST);
 //   echo 'Non SUBMIT';
 // }
 
 
-// $title = "enregistrement";
-
+$title = "gestionMaison";
+require_once "../inc/header.inc_copy.php";
 ?>
 
-<main class="bg-admin">
+<main class="bg-claire">
     <div class="row">
         <section class="index-img  container p-3 text-center w-50 col-lg-4 col-md-6 col-sm-12 ">
-            <h2 class="mb-5">Notre brochure</h2>
+            <h2 class="mb-5">gestionaire</h2>
             <div class="row " style="max-height: 900px; overflow-y: auto;">
 
                 <?php
@@ -99,7 +97,7 @@ if (!empty($_POST)) // l'envoi du Formulaire
         <!-- Formulaire  -->
         <section class="ecrivez-nous  p-3 col-lg-4 col-md-6 col-sm-12 mb-4">
             <h2 class="text-center">Ajouter un annonce</h2>
-            <form method="post" enctype="multipart/form-data" class="container mt-4">
+            <form action="" method="post" enctype="multipart/form-data" class="container mt-4">
                 <div class="form-group">
                     <label for="photo">Photo :</label>
                     <input type="file" id="photo" name="photo" class="form-control">

@@ -383,31 +383,31 @@ function reserveAdvert($id_advert, $reservation_message)
 
 // Cette fonction met à jour le statut de réservation d'une annonce spécifique dans la base de données.
 
-function cancelAdvert($id_advert)
-{
-    $pdo = connexionBdd();
-    $sql = $pdo->prepare("UPDATE advert SET is_reserved = false, reservation_message = NULL WHERE id_advert = :id_advert");
-    $sql->bindParam(':id_advert', $id_advert);
+// function cancelAdvert($id_advert)
+// {
+//     $pdo = connexionBdd();
+//     $sql = $pdo->prepare("UPDATE advert SET is_reserved = false, reservation_message = NULL WHERE id_advert = :id_advert");
+//     $sql->bindParam(':id_advert', $id_advert);
 
-    if ($sql->execute()) {
-        echo 'Annonce annulée avec succès.';
-    } else {
-        echo 'Erreur lors de l\'annulation de l\'annonce: ' . implode(', ', $sql->errorInfo());
-    }
-}
+//     if ($sql->execute()) {
+//         echo 'Annonce annulée avec succès.';
+//     } else {
+//         echo 'Erreur lors de l\'annulation de l\'annonce: ' . implode(', ', $sql->errorInfo());
+//     }
+// }
 
 
 //   ====================function  pour suprimer annonce================================//
 
 
-function deleteAdvert(int $id): void
-{
-    $pdo = connexionBdd();
-    $sql = "DELETE FROM advert WHERE id_advert = :id_advert";
-    $request = $pdo->prepare($sql);
-    $request->execute(array(
+// function deleteAdvert(int $id): void
+// {
+//     $pdo = connexionBdd();
+//     $sql = "DELETE FROM advert WHERE id_advert = :id_advert";
+//     $request = $pdo->prepare($sql);
+//     $request->execute(array(
 
-        ':id_advert' => $id
+//         ':id_advert' => $id
 
-    ));
-}
+//     ));
+// }

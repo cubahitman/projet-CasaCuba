@@ -19,15 +19,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 // Vérifiez si l'action est de 'cancel'
-if (isset($_POST['action']) && $_POST['action'] == 'cancel' && isset($_POST['id_advert'])) {
-    // Appeler la fonction cancelAdvert avec l'id_advert fourni
-    cancelAdvert($_POST['id_advert']);
+// if (isset($_POST['action']) && $_POST['action'] == 'cancel' && isset($_POST['id_advert'])) {
+//     // Appeler la fonction cancelAdvert avec l'id_advert fourni
+//     cancelAdvert($_POST['id_advert']);
 
-    // Rediriger ou traiter la réponse comme nécessaire
-    echo "<h4 class='reserved'> Cette annonce a ete annulé</h4>";
-    // Rediriger vers la même page pour rafraîchir l'état de l'annonce
-    // header('Location: ' . $_SERVER['PHP_SELF'] . '?annonce=' . $_POST['id_advert']);
-}
+// Rediriger ou traiter la réponse comme nécessaire
+// echo "<h4 class='reserved'> Cette annonce a ete annulé</h4>";
+// Rediriger vers la même page pour rafraîchir l'état de l'annonce
+// header('Location: ' . $_SERVER['PHP_SELF'] . '?annonce=' . $_POST['id_advert']);
+// }
 //  elseif
 
 
@@ -47,10 +47,10 @@ if (isset($_POST['action'])) {
             reserveAdvert($id_advert, $reservation_message);
             $info = "<h4 class='reserved'>========== Cette annonce a ete reservé</h4>";
             break;
-        case 'cancel':
-            cancelAdvert($id_advert);
-            $info = "<h4 class='reserved'>================ Cette annonce a ete annulé</h4>";
-            break;
+            // case 'cancel':
+            //     cancelAdvert($id_advert);
+            //     $info = "<h4 class='reserved'>================ Cette annonce a ete annulé</h4>";
+            //     break;
             // case 'delete':
             //     deleteAdvert($id_advert);
             //     // Redirigez l'utilisateur vers une autre page après la suppression
@@ -97,13 +97,13 @@ debug($_POST);
                     <input type="submit" name="action" value="Réserver">
                     <?php
                     // Vérifiez si l'utilisateur est connecté avant d'afficher le bouton "Annuler"
-                    if (isset($_SESSION['user'])) {
-                        echo '<input type="hidden" name="id_advert" value="' . $annonce['id_advert'] . '">';
-                        if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'ROLE_ADMIN') {
-                            echo '<input type="submit" name="action" value="Annuler">';
-                            // echo '<input type="submit" name="action" value="Supprimer">';
-                        }
-                    }
+                    // if (isset($_SESSION['user'])) {
+                    //     echo '<input type="hidden" name="id_advert" value="' . $annonce['id_advert'] . '">';
+                    //     if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'ROLE_ADMIN') {
+                    // echo '<input type="submit" name="action" value="Annuler">';
+                    // echo '<input type="submit" name="action" value="Supprimer">';
+                    //     }
+                    // }
                     ?>
                     <!-- chanher default par un -->
                     <input type="" value=""> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?? 'default' ?></sup>

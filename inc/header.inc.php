@@ -80,7 +80,7 @@ logOut();
                         </button>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php?contact_Pro">Contact Pro</a></li>
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php">Contact Pro</a></li>
 
 
                         </ul>

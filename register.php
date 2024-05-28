@@ -15,14 +15,14 @@ echo "<br><br><br><br><br>";
 
 
 $info = '';
-$contact = '';
+// $contact = '';
 
-if (isset($_GET['contact_Pro'])) {
+// if (isset($_GET['contact_Pro'])) {
 
 
 
-    $contact = alert(" message de professionnel", "danger");
-}
+//     $contact = alert(" message de professionnel", "danger");
+// }
 
 
 if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" ) 
@@ -181,7 +181,7 @@ require_once "inc/header.inc.php";
 <main style="background:url(assets/img/5818.png) no-repeat; background-size: cover; background-attachment: fixed;" class="pt-5">
 
     <div class="w-75 m-auto p-5" style="background: rgba(00, 00, 00, 0.1);">
-        <h2 class="text-center  form-label p-3 mb-3">Créer un compte<?= isset($pseudo) ? displaySupTag($info) . displaySupTag($pseudo) : '' ?></h2>
+        <h2 class="text-center  form-label p-3 mb-3">Créer un compte</h2>
 
 
         <?php
