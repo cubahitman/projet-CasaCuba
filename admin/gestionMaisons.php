@@ -52,12 +52,11 @@ if (!empty($_POST)) // l'envoi du Formulaire
         $price = isset($_POST['price']) ? $_POST['price'] : null;
 
 
-        move_uploaded_file($_FILES['photo']['tmp_name'], '<?= RACINE_SITE ?>/assets/img/' . $photo);
+        move_uploaded_file($_FILES['photo']['tmp_name'],  RACINE_SITE . "assets/img/" . $photo);
         // }
         addAnnonce($photo, $title, $description,  $postal_code,  $city,  $type,  $price);
     }
-    // header('Location: index.php');
-
+    header('Location: index.php');
 }
 // else {
 //   debug($_POST);

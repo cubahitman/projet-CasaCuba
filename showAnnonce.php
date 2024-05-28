@@ -13,7 +13,7 @@ $reservation = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_advert = $_GET['annonce'];
-    $reservation_message = $_POST['reservation_message'];
+    $reservation_message = trim($_POST['reservation_message']);
     reserveAdvert($id_advert, $reservation_message);
 }
 
@@ -45,19 +45,21 @@ if (isset($_POST['action'])) {
     switch ($_POST['action']) {
         case 'reserve':
             reserveAdvert($id_advert, $reservation_message);
+            $info = "<h4 class='reserved'>========== Cette annonce a ete reservé</h4>";
             break;
         case 'cancel':
             cancelAdvert($id_advert);
-            $reservation = "<h4 class='reserved'> Cette annonce a ete annulé</h4>";
+            $info = "<h4 class='reserved'>================ Cette annonce a ete annulé</h4>";
             break;
-        case 'delete':
-            deleteAdvert($id_advert);
-            // Redirigez l'utilisateur vers une autre page après la suppression
-            header('Location: admin/dashboard.php?gestionMaisons_php');
-            exit();
+            // case 'delete':
+            //     deleteAdvert($id_advert);
+            //     // Redirigez l'utilisateur vers une autre page après la suppression
+            //     header('Location: admin/gestionMaisons.php');
+            //     $info = "<h4 class='reserved'>================ Cette annonce a ete annulé</h4>";
+            //     exit();
     }
 }
-
+debug($_POST);
 
 
 // require_once "inc/funtions.inc.php"
@@ -80,7 +82,7 @@ if (isset($_POST['action'])) {
                         } ?>
                         <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
                         <a href="<?= RACINE_SITE ?>explorer.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux annonces</a>
-                        <a href="<?= RACINE_SITE ?>gestionMaisons.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
+                        <a href="<?= RACINE_SITE ?>admin/dashboard.php?gestionMaisons_php" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
                     </div>
                 </div>
             </div>
@@ -99,7 +101,7 @@ if (isset($_POST['action'])) {
                         echo '<input type="hidden" name="id_advert" value="' . $annonce['id_advert'] . '">';
                         if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'ROLE_ADMIN') {
                             echo '<input type="submit" name="action" value="Annuler">';
-                            echo '<input type="submit" name="action" value="Supprimer">';
+                            // echo '<input type="submit" name="action" value="Supprimer">';
                         }
                     }
                     ?>
