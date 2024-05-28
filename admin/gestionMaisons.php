@@ -6,60 +6,6 @@ $annonces = allAnnonces();
 $info = ''; // Initialisez $info avec une chaîne vide
 
 
-// if (!empty($_POST)) // l'envoi du Formulaire  
-// {
-//     // debug($_POST);
-
-
-//     $verif = true;
-
-//     foreach ($_POST as $value) {
-//         // debug($_POST);
-
-//         if (empty($value)) {
-
-//             $verif = false;
-//         }
-//     }
-
-//     if (isset($_FILES['photo'])) {
-//         $photo_info = $_FILES['photo'];
-//         // Vous pouvez maintenant manipuler le fichier téléchargé, par exemple, le déplacer dans un répertoire de stockage.
-//         // debug($_FILES);
-//         // debug($photo_info);
-//     }
-
-//     if (!$verif) {
-
-//         // debug($_POST);
-
-//         $info = alert("Veuillez renseigner tout les champs", "danger");
-//     } else {
-
-
-//         // debug($_POST);
-
-//         // $photo = isset($_POST['photo']) ? $_POST['photo'] : null;
-//         $photo = $_FILES['photo']['name'];
-//         $title = isset($_POST['title']) ? $_POST['title'] : null;
-//         $description = isset($_POST['description']) ? $_POST['description'] : null;
-//         $postal_code  = isset($_POST['postal_code']) ? $_POST['postal_code'] : null;
-//         $city  = isset($_POST['city']) ? $_POST['city'] : null;
-//         $type = isset($_POST['type']) ? $_POST['type'] : null;
-//         $price = isset($_POST['price']) ? $_POST['price'] : null;
-
-
-//         // move_uploaded_file($_FILES['photo']['tmp_name'],  RACINE_SITE . "assets/img/" . $photo);
-//         move_uploaded_file($_FILES['photo']['tmp_name'], '../assets/img/' . $photo);
-//         // }
-//         addAnnonce($photo, $title, $description,  $postal_code,  $city,  $type,  $price);
-//         header('location: ' . RACINE_SITE . 'contact.php');
-//     }
-// }
-// else {
-//   debug($_POST);
-//   echo 'Non SUBMIT';
-// }
 
 
 $title = "gestionMaison";

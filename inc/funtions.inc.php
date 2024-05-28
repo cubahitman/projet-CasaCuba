@@ -379,35 +379,97 @@ function reserveAdvert($id_advert, $reservation_message)
 
     // Exécutez la requête
     $sql->execute();
+    // Redirection vers la page de confirmation
+
+    // header('Location: confirmation.php');
+
+    // exit;
 }
 
-// Cette fonction met à jour le statut de réservation d'une annonce spécifique dans la base de données.
+// Cette fonction cansele la reservation.
 
-// function cancelAdvert($id_advert)
+function cancelAdvert($id_advert)
+{
+    try {
+        $pdo = connexionBdd();
+        $sql = $pdo->prepare("SELECT * FROM advert WHERE id_advert = :id_advert");
+        $sql->bindParam(':id_advert', $id_advert);
+        $sql->execute();
+        if ($sql->rowCount() > 0) {
+            $sql = $pdo->prepare("UPDATE advert SET is_reserved = false, reservation_message = NULL WHERE id_advert = :id_advert");
+            $sql->bindParam(':id_advert', $id_advert);
+            if ($sql->execute()) {
+                echo 'Annonce annulée avec succès.';
+            } else {
+                echo 'Erreur lors de l\'annulation de l\'annonce: ' . implode(', ', $sql->errorInfo());
+            }
+        } else {
+            echo 'Annonce non trouvée.';
+        }
+    } catch (PDOException $e) {
+        echo 'Erreur de connexion à la base de données: ' . $e->getMessage();
+    }
+}
+
+//   ====================function  pour suprimer annonce================================//
+
+function deleteAdvert(int $id): void
+{
+    try {
+        $pdo = connexionBdd();
+        $sql = $pdo->prepare("SELECT * FROM advert WHERE id_advert = :id_advert");
+        $sql->bindParam(':id_advert', $id);
+        $sql->execute();
+        if ($sql->rowCount() > 0) {
+            $sql = $pdo->prepare("DELETE FROM advert WHERE id_advert = :id_advert");
+            $sql->bindParam(':id_advert', $id);
+            $sql->execute();
+            echo 'Annonce supprimée avec succès.';
+        } else {
+            echo 'Annonce non trouvée.';
+        }
+    } catch (PDOException $e) {
+        echo 'Erreur de connexion à la base de données: ' . $e->getMessage();
+    }
+}
+
+//  creacion de table reservations
+// function createReservationsTable($pdo)
 // {
-//     $pdo = connexionBdd();
-//     $sql = $pdo->prepare("UPDATE advert SET is_reserved = false, reservation_message = NULL WHERE id_advert = :id_advert");
-//     $sql->bindParam(':id_advert', $id_advert);
 
-//     if ($sql->execute()) {
-//         echo 'Annonce annulée avec succès.';
-//     } else {
-//         echo 'Erreur lors de l\'annulation de l\'annonce: ' . implode(', ', $sql->errorInfo());
+//     $sql = "CREATE TABLE reservations (
+
+//       id_reservation INT PRIMARY KEY AUTO_INCREMENT,
+
+//       id_advert INT,
+
+//       id_user INT,
+
+//       message TEXT,
+
+//       date_reservation DATETIME,
+
+//       status ENUM('en attente', 'acceptée', 'refusée'),
+
+//       FOREIGN KEY (id_advert) REFERENCES advert(id_advert),
+
+//       FOREIGN KEY (id_user) REFERENCES users(id_user)
+
+//     )";
+
+
+//     try {
+
+//         $pdo->exec($sql);
+
+//         echo "Table reservations créée avec succès";
+//     } catch (PDOException $e) {
+
+//         echo "Erreur lors de la création de la table reservations : " . $e->getMessage();
 //     }
 // }
 
 
-//   ====================function  pour suprimer annonce================================//
+// $pdo = connexionBdd();
 
-
-// function deleteAdvert(int $id): void
-// {
-//     $pdo = connexionBdd();
-//     $sql = "DELETE FROM advert WHERE id_advert = :id_advert";
-//     $request = $pdo->prepare($sql);
-//     $request->execute(array(
-
-//         ':id_advert' => $id
-
-//     ));
-// }
+// createReservationsTable($pdo);

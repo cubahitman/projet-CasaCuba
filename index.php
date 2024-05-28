@@ -150,13 +150,6 @@ $annonces = dernieresAnnonces();
 </section>
 
 
-
-
-
-
-
-
-
 </body>
 <?php
 require_once "inc/footer.inc.php";
