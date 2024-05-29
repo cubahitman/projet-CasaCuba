@@ -15,7 +15,7 @@ $title = "Afichage general";
 require_once "inc/header.inc.php";
 $annonces = allAnnonces();
 ?>
-<main>
+<main class="bg-capitoliounuit ">
     <section class="">
 
         <div class="container fontTitre text-center p-5 ">
@@ -28,13 +28,13 @@ $annonces = allAnnonces();
 
         </div>
     </section>
-    <section class="index-img container m-5 text-center">
+    <section class=" container m-5 text-center  ">
         <div class="row">
             <?php
             foreach ($annonces as $annonce) {
             ?>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card ">
+                <div class="col-lg-4 col-md-6 col-sm-12 m-5 border ">
+                    <div class="card fontTitre  ">
                         <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top " alt="image de <?= $annonce['title'] ?>" style="height: 200px; width: 100%; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title"><?= displayAdvertAnnonce($annonce); ?></h5>

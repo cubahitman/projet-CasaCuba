@@ -49,7 +49,7 @@ logOut();
 <body class="home">
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top headroom bg-bleuNav">
-        <div class="">
+        <div class="nav-css">
             <div class="navbar-header">
                 <!-- Button for smallest screens -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>

@@ -14,7 +14,6 @@ $annonces = dernieresAnnonces();
 <!-- /Intro-->
 <section class="">
 	<div class="container-fluid text-center p-5 ">
-		<h1 class="display-3 titre">Votre maison de rêve vous attend à Cuba</h1>
 		<a href="explorer.php" class="display-5  btn btn-primary text-white text-decoration-none">
 
 			Consulter tous les annonces
@@ -22,7 +21,59 @@ $annonces = dernieresAnnonces();
 		</a>
 	</div>
 </section>
-<section class="index-img container m-5 text-center">
+
+<body>
+	<div class="container ">
+		<h2 class="thin">Temoignages</h2>
+
+
+		<section class="populardestinations">
+			<h2>Popular destinations in Cuba</h2>
+			<!-- Ajoutez ici les images des destinations -->
+			<div class="imgVilles">
+				<img src="./assets/img/alex-meier-c4Stt0rvQ8o-unsplash.jpg" alt="">
+				<img src="./assets/img/alex-meier-c4Stt0rvQ8o-unsplash.jpg" alt="">
+				<!-- <img src="./assets/img/voiturePlaya.jpg" alt="Imagen de ancien voiture  a Cuba face a la plage"> -->
+				<img src="./assets/img/damla-gur-Xk1b4E1YI5E-unsplash.jpg" alt="">
+				<img src="./assets/img/gayatri-malhotra-0AW2Q1MfOE8-unsplash.jpg" alt="">
+				<!-- <img src="./assets/img/capitolio.nuit.jpg" alt="El Capitolio de l'havana la nuit"> -->
+			</div>
+		</section>
+		<main>
+
+			<!-- Section "WHO WE ARE" -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<img src="assets/images/academy-brand-med.png" class="mt-5" alt="">
+						<h2 class="red mt-5 trait">WHO WE ARE
+
+
+						</h2>
+						<p class="mt-5">We are <span class="red ">MASSIVE Academy.</span> We aim to improve
+							education through both methods -effective project-based learning - and material - by
+							teaching
+							skills that are applicatble to improving your life today.</p>
+					</div>
+				</div>
+			</div>
+
+
+
+	</div>
+	</main>
+	<!-- <main>
+			<section class="maisons">
+				<h2>Top-rated houses in Cuba</h2>
+				Ajoutez ici les images des maisons -->
+	</section>
+	<!-- </main> -->
+	<footer>
+		<!-- Ajoutez ici le contenu du pied de page -->
+	</footer>
+	</div>
+</body>
+<!-- <section class="index-img container m-5 text-center">
 	<div class="row">
 		<?php
 		foreach ($annonces as $annonce) {
@@ -43,7 +94,7 @@ $annonces = dernieresAnnonces();
 		}
 		?>
 	</div>
-</section>
+</section> -->
 
 
 

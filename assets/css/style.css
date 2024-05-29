@@ -1,9 +1,137 @@
-.reserved {
+/* reset */
+/* * {
 
-    color: #ff0000;
-    /* rouge */
+    margin: 0;
+    padding: 0;
+} */
+
+/* Couleurs */
+:root {
+
+    --bleu: #007BFF;
+
+    --vert: #28B463;
+
+    --jaune: #FFC107;
+
+    --blanc: #FFFFFF;
+
+    --noir: #000000;
 
 }
+
+
+/* Typographie */
+
+
+
+
+
+
+/*       nav-bar      */
+
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+
+    /* font-size: 16px; */
+
+    /* line-height: 1.5; */
+
+    /* color: var(--noir); */
+
+
+
+}
+
+/* barre de navigation  */
+.nav-css {
+    display: flex;
+    justify-content: space-around !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    /* font-weight: bold; */
+
+    /* color: var(--bleu); */
+
+}
+
+
+.titres {
+
+    font-weight: bold;
+
+    color: var(--bleu);
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: var(--jaune);
+
+}
+
+
+
+a:hover {
+
+    color: var(--vert);
+
+}
+
+
+/* Boutons */
+
+
+.btn {
+
+    background-color: var(--bleu);
+
+    color: var(--blanc) !important;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
+
+
+.btn:hover {
+
+    background-color: var(--vert);
+
+}
+
+
+/* Autres éléments */
+
+
+
+/* ========================= */
+
+
+
+
+
+
+
+
+
 
 
 
@@ -24,17 +152,41 @@
     background-color: #5e4e4ec5;
 }
 
-.bg-claire {
+.bg-bleu_claire {
     background-color: #7d9bad;
 }
 
+.bg-claire {
+    background-color: #d9f7f7c9;
+}
+
 .fontTitre {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* trouver le font ideal */
+    font-family: 'Playfair Display', serif;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color: var(--noir);
+    padding: 30px;
 
 }
 
-/* ========animations card============= */
+
+
+/* ==================partie animations pour les card dde index et general */
+
+
+.bg-capitoliounuit {
+
+    /* background: url("../img/spencer-everett-DdVOCPTofFc-unsplash(1).jpg"); */
+
+    /* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+        url("/assets/img/capitolio.nuit.jpg"); */
+
+    background-color: #7d9bad;
+
+}
 
 .hoverCart:hover {
     transform: scale(1.1);
@@ -42,6 +194,21 @@
 
 .textColor {
     color: black;
+}
+
+
+/*  couleurs pour rouge pour les annonces reserved */
+
+.reserved {
+
+    color: #ff0000;
+    /* rouge */
+
+}
+
+.border {
+    border: 1px solid black;
+    border-radius: 3px;
 }
 
 /* ====================      ====================== */

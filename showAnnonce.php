@@ -68,7 +68,7 @@ if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
 
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
-        case 'eserve':
+        case 'reserve':
             reserveAdvert($id_advert, $reservation_message);
             header('Location: ' . $_SERVER['PHP_SELF'] . '?annonce=' . $id_advert);
             exit();
@@ -128,6 +128,7 @@ if (isset($_POST['action'])) {
                     // Vérifiez si l'utilisateur est connecté avant d'afficher les boutons "Annuler" et "Supprimer"
                     if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'ROLE_ADMIN') {
                     ?>
+
                 </form>
                 <form method="POST">
                     <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
@@ -139,6 +140,7 @@ if (isset($_POST['action'])) {
                     <input type="hidden" name="action" value="delete">
                     <input type="submit" value="Supprimer">
                 </form>
+
             <?php
                     }
 
