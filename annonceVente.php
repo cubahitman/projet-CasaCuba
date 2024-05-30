@@ -1,7 +1,7 @@
 <?php
 // $films = array();
 
-$title = "Explorer";
+$title = "Vente";
 require_once "inc/header.inc.php";
 ?>
 
@@ -13,7 +13,14 @@ require_once "inc/header.inc.php";
 
 $title = "Afichage general";
 require_once "inc/header.inc.php";
-$annonces = allAnnonces();
+
+
+//  annonces type vente
+
+$type = 'achat'; // Le type ici
+
+$annonces = annoncesByType([$type]);
+
 ?>
 <main class="bg-capitoliounuit ">
     <section class="">

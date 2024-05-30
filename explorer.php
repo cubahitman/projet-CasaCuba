@@ -19,7 +19,7 @@ $annonces = annoncesByType();
     <section class="">
 
         <div class="container fontTitre text-center border ">
-            <h1 class="display-3 ">Votre maison de rêve vous attend à Cuba</h1>
+            <h1 class="title-container ">Votre maison de rêve vous attend à Cuba</h1>
             <a href="index.php" class="display-5  btn btn-primary text-white text-decoration-none">
 
                 Page d'Accueil

@@ -9,11 +9,15 @@ require_once "inc/header.inc.php";
 
 
 
+$type = 'location'; // Le type ici
+
+$annonces = annoncesByType([$type]);
 
 
 $title = "Afichage general";
 require_once "inc/header.inc.php";
-// $annonces = annoncesLocation();
+// annonces location //
+$annonces = annoncesByType(['location']);
 ?>
 <main class="bg-capitoliounuit ">
     <section class="">

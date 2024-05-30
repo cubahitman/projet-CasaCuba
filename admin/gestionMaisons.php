@@ -1,6 +1,6 @@
 <?php
 require_once "../inc/funtions.inc.php";
-$annonces = allAnnonces();
+$annonces = annoncesByType();
 
 // ==================
 $info = ''; // Initialisez $info avec une chaîne vide

@@ -147,12 +147,12 @@ if (isset($_POST['action'])) {
             ?>
 
 
-            <!-- chanher default par un -->
+            <!-- changer default par un -->
             <input type="hidden" value=""> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?? 'default' ?></sup>
 
 
             <!-- afficher l'id  si l'ont veut -->
-            <div> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $annonce['id_advert'] ?></sup></div>
+            <div> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
 
 
             </div>

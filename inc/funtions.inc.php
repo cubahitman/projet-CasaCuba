@@ -304,15 +304,15 @@ function addAnnonce($photo, string $title, string $description, string $postal_c
 // =============================Functionmontrer les annonces=====================://
 
 
-function allAnnonces(): array
-{
+// function allAnnonces(): array
+// {
 
-    $pdo = connexionBdd();
-    $sql = "SELECT * FROM advert";
-    $request = $pdo->query($sql);
-    $result = $request->fetchAll();
-    return $result;
-}
+//     $pdo = connexionBdd();
+//     $sql = "SELECT * FROM advert";
+//     $request = $pdo->query($sql);
+//     $result = $request->fetchAll();
+//     return $result;
+// }
 
 // =============================montrer les annonces en location=====================://
 
