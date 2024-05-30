@@ -75,12 +75,12 @@ logOut();
                         <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button btn ">Espace Pro</a>
                         <?php if (empty($_SESSION['user'])) { ?>
                     <li class="nav-item dropdown">
-                        <button class="action-button btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="action-button btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Connexion
-                        </button>
+                        </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php">Contact Pro</a></li>
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>contact.php?contact_pro">Contact Pro</a></li>
 
 
                         </ul>

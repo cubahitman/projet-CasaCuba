@@ -1,7 +1,7 @@
 <?php
+require_once "inc/header.inc.php";
 
-
-require_once "inc/funtions.inc.php";
+// require_once "inc/funtions.inc.php";
 
 // Si l'utilisateur est déjà connecté, il pourras pas avoir accés à la page d'inscription
 if (!empty($_SESSION['user'])) {
