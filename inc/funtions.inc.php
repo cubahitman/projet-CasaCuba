@@ -418,6 +418,7 @@ function cancelAdvert($id_advert)
             $sql->bindParam(':id_advert', $id_advert);
             if ($sql->execute()) {
                 echo 'Annonce annulée avec succès.';
+                $info = 'Annonce annulée avec succès.';
             } else {
                 echo 'Erreur lors de l\'annulation de l\'annonce: ' . implode(', ', $sql->errorInfo());
             }
@@ -433,6 +434,7 @@ function cancelAdvert($id_advert)
 
 function deleteAdvert(int $id): void
 {
+
     try {
         $pdo = connexionBdd();
         $sql = $pdo->prepare("SELECT * FROM advert WHERE id_advert = :id_advert");

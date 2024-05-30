@@ -3,16 +3,12 @@
 
 $title = "Explorer";
 require_once "inc/header.inc.php";
-?>
-
-<?php
 
 
 
 
 
-$title = "Afichage general";
-require_once "inc/header.inc.php";
+
 $annonces = annoncesByType();
 ?>
 <main class="bg-capitoliounuit ">

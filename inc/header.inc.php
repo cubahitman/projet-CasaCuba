@@ -2,11 +2,9 @@
 require_once "funtions.inc.php";
 
 
-// déconnexion ($_SESSION)
-logOut();
+logOut(); // déconnexion ($_SESSION)
+ob_start(); // Active le tampon de sortie
 
-
-// $categories =  allCategories();
 ?>
 
 
@@ -46,7 +44,7 @@ logOut();
 	<![endif]-->
 </head>
 
-<body class="home">
+<body class="">
     <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top headroom bg-bleuNav">
         <div class="nav-css">

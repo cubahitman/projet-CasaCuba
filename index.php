@@ -4,10 +4,12 @@ require_once "inc/header.inc.php";
 $annonces = dernieresAnnonces();
 ?>
 <!-- Intro -->
-<div class="container text-center">
+
+
+<div class="container text-center populardestinations">
 	<br> <br>
-	<h2 class="thin">Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
-	<p class="text-muted">
+	<h2 class="">Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
+	<p class="populardestinations">
 		Que vous cherchiez une résidence secondaire ou un investissement locatif, notre collection de maisons et d'appartements à Cuba répondra à vos attentes.
 	</p>
 </div>
@@ -21,91 +23,65 @@ $annonces = dernieresAnnonces();
 		</a>
 	</div>
 </section>
-<div class="pen ">
-	<ul class='list'>
-		<li class='item'><img src='https://source.unsplash.com/A5rCN8626Ck'></li>
-		<li class='item'><img src='https://source.unsplash.com/JP23z_-dA74'></li>
-		<li class='item'><img src='https://source.unsplash.com/tKF04645K7I'></li>
-		<li class='item'><img src='https://source.unsplash.com/whAcmaw6cd4'></li>
-		<li class='item'><img src='https://source.unsplash.com/wbIw84HTI8w'></li>
-		<li class='item'><img src='https://source.unsplash.com/3iUkzH6yhjE'></li>
-		<li class='item'><img src='https://source.unsplash.com/8cQpL8kGqso'></li>
-	</ul>
-</div>
 
-<body>
+<main>
+
 	<div class="container ">
-		<h2 class="thin">Temoignages</h2>
+		<h2 class="populardestinations">Temoignages</h2>
 
 
 		<section class="populardestinations">
 			<h2>Popular destinations in Cuba</h2>
 			<!-- Ajoutez ici les images des destinations -->
-			<div class="imgVilles">
-				<img src="./assets/img/alex-meier-c4Stt0rvQ8o-unsplash.jpg" alt="">
-				<img src="./assets/img/alex-meier-c4Stt0rvQ8o-unsplash.jpg" alt="">
-				<!-- <img src="./assets/img/voiturePlaya.jpg" alt="Imagen de ancien voiture  a Cuba face a la plage"> -->
-				<img src="./assets/img/damla-gur-Xk1b4E1YI5E-unsplash.jpg" alt="">
-				<img src="./assets/img/gayatri-malhotra-0AW2Q1MfOE8-unsplash.jpg" alt="">
-				<!-- <img src="./assets/img/capitolio.nuit.jpg" alt="El Capitolio de l'havana la nuit"> -->
+			<div class="pen ">
+				<ul class='list'>
+					<li class='item' alt="image de solei derrier la mer"><img src='https://source.unsplash.com/JP23z_-dA74'></li>
+					<li class='item' alt="image"><img src='https://source.unsplash.com/FCCtL3oyRDY'></li>
+					<li class='item' alt="image"><img src='https://source.unsplash.com/_MljkIzvcHw'></li>
+					<li class='item' alt="image"><img src='https://source.unsplash.com/XfZPhwf_BtI'></li>
+					<li class='item' alt="image"><img src='https://source.unsplash.com/v0Aiibob-Q8'></li>
+					<li class='item' alt="image"><img src='https://source.unsplash.com/6NT7jy6OU9I'></li>
+					<li class='item' alt="image"><img src='https://source.unsplash.com/fwtXC2sP7Tg'></li>
+					<li class='item' alt="image"><img src='https://source.unsplash.com/JP23z_-dA74'></li>
+					<li class='item' alt="image fauteuil-a-bascule-en-bois-marron-sous-un-arbre-vert-a Cuba"><img src='https://source.unsplash.com/CXV0EVK8QSU'></li>
+					<li class='item' alt="image une-chaise-rouge-posee-au-sommet-dune-plage-au-bord-de-locean-a Cuba"><img src='https://source.unsplash.com/wM8R6CLynUk'></li>
+					<li class='item' alt="image personne-flottant-sur-un-plan-deau-a varadero"><img src='https://source.unsplash.com/GjiTNrl6xoo'></li>
+					<li class='item' alt="une-voiture-jaune-roulant-dans-une-rue-la-nuit"><img src='https://source.unsplash.com/T8PZvVQQ8t0'></li>
+					<li class='item'><img src='https://source.unsplash.com/d_Nd6W0dd4Q'></li>
+					<li class='item' alt="Maison avec diver coleurs"><img src='https://source.unsplash.com/fwtXC2sP7Tg'>alt=""</li>
+				</ul>
 			</div>
 		</section>
-		<main>
-
-			<!-- Section "WHO WE ARE" -->
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<img src="assets/images/academy-brand-med.png" class="mt-5" alt="">
-						<h2 class="red mt-5 trait">WHO WE ARE
 
 
-						</h2>
-						<p class="mt-5">We are <span class="red ">MASSIVE Academy.</span> We aim to improve
-							education through both methods -effective project-based learning - and material - by
-							teaching
-							skills that are applicatble to improving your life today.</p>
-					</div>
+		<!-- Section "WHO WE ARE" -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<img src="assets/images/academy-brand-med.png" class="mt-5" alt="">
+					<h2 class="red mt-5 trait">WHO WE ARE
+
+
+					</h2>
+					<p class="mt-5">We are <span class="red ">MASSIVE Academy.</span> We aim to improve
+						education through both methods -effective project-based learning - and material - by
+						teaching
+						skills that are applicatble to improving your life today.</p>
 				</div>
 			</div>
+		</div>
 
 
 
 	</div>
-	</main>
-	<!-- <main>
-			<section class="maisons">
-				<h2>Top-rated houses in Cuba</h2>
-				Ajoutez ici les images des maisons -->
-	</section>
-	<!-- </main> -->
-	<footer>
-		<!-- Ajoutez ici le contenu du pied de page -->
-	</footer>
-	</div>
+</main>
+
+<footer>
+	<!-- Ajoutez ici le contenu du pied de page -->
+</footer>
+</div>
 </body>
-<!-- <section class="index-img container m-5 text-center">
-	<div class="row">
-		<?php
-		foreach ($annonces as $annonce) {
-		?>
-			<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-				<div class="card ">
-					<img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title'] ?>" style="height: 200px; width: 100%; object-fit: cover;">
-					<div class="card-body">
-						<h5 class="card-title"><?= displayAdvertAnnonce($annonce); ?></h5>
-						<p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
-						<a href="<?= RACINE_SITE ?>showAnnonce.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Voir l'annonce</a>
-						<h5 class="card-title"><?= $annonce['price'] ?></h5>
-						<h6S class="card-title"><?= $annonce['type'] ?></h6>
-					</div>
-				</div>
-			</div>
-		<?php
-		}
-		?>
-	</div>
-</section> -->
+
 
 
 

@@ -144,7 +144,7 @@ require_once "../inc/boostrap.inc.php";
 
         <section class="container col-lg-6 my-5">
             <div>
-                <h1>Bienvenue <?= $_SESSION['user']['pseudo'] ?></h1>
+                <h3>Bienvenue <?= $_SESSION['user']['pseudo'] ?></h3>
 
 
 
@@ -165,10 +165,9 @@ require_once "../inc/boostrap.inc.php";
                 <?php
                 $user = showUser($_SESSION['user']['id_user']);
                 // debug($user);
-                echo "prenom " . $user['firstName'];
-                //foreach ($users as $user) {     
+
                 ?>
-                <div>PAGE DASHBOARD affiche id user<?= $user['id_user'] ?></div>
+                <!-- <div>PAGE DASHBOARD Admin id <?= $user['id_user'] ?></div> -->
 
 
                 <div class="text-center">
