@@ -13,7 +13,7 @@ require_once "inc/header.inc.php";
 
 $title = "Afichage general";
 require_once "inc/header.inc.php";
-$annonces = annoncesByType();
+// $annonces = annoncesLocation();
 ?>
 <main class="bg-capitoliounuit ">
     <section class="">

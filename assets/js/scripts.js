@@ -1,38 +1,89 @@
+$(document).ready(function () {
 
-////************carrusel de code pen */
+    var header = $(".headroom");
+
+    header.headroom({
+
+        "tolerance": 5,
+
+        "offset": 55,
+
+        "classes": {
+
+            "initial": "animated",
+
+            "pinned": "slideDown",
+
+            "unpinned": "slideUp"
+
+        }
+
+    });
+
+});
 
 
 
-const slider = document.querySelector('.slider');
-
-function activate(e) {
-    const items = document.querySelectorAll('.item');
-    e.target.matches('.next') && slider.append(items[0])
-    e.target.matches('.prev') && slider.prepend(items[items.length - 1]);
-
-}
-
-document.addEventListener('click', activate, false);
 
 
 
 
 
 
-// **********menu burguer***********/
 
-const burgerMenuButton = document.querySelector('.burger-menu-button')
-const burgerMenuButtonIcon = document.querySelector('.burger-menu-button i')
-const burgerMenu = document.querySelector('.burquer-menu')
-/**
- * funtion qui ouvre le menu burguer
- */
-burgerMenuButton.onclick = function () {
-    burgerMenu.classList.toggle('open')
-    const isOpen = burgerMenu.classList.contains('open')
-    burgerMenuButtonIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  code ancien perdue ///
+// ////************carrusel de code pen */
+
+
+
+// const slider = document.querySelector('.slider');
+
+// function activate(e) {
+//     const items = document.querySelectorAll('.item');
+//     e.target.matches('.next') && slider.append(items[0])
+//     e.target.matches('.prev') && slider.prepend(items[items.length - 1]);
+
+// }
+
+// document.addEventListener('click', activate, false);
+
+
+
+
+
+
+// // **********menu burguer***********/
+
+// const burgerMenuButton = document.querySelector('.burger-menu-button')
+// const burgerMenuButtonIcon = document.querySelector('.burger-menu-button i')
+// const burgerMenu = document.querySelector('.burquer-menu')
+// /**
+//  * funtion qui ouvre le menu burguer
+//  */
+// burgerMenuButton.onclick = function () {
+//     burgerMenu.classList.toggle('open')
+//     const isOpen = burgerMenu.classList.contains('open')
+//     burgerMenuButtonIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+
+// }
 
 
 

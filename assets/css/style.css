@@ -31,19 +31,19 @@
 /*       nav-bar      */
 
 
-body {
+/* body {
 
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; */
 
-    /* font-size: 16px; */
+/* font-size: 16px; */
 
-    /* line-height: 1.5; */
+/* line-height: 1.5; */
 
-    /* color: var(--noir); */
+/* color: var(--noir); */
 
 
 
-}
+/* } */
 
 /* barre de navigation  */
 .nav-css {
@@ -73,7 +73,7 @@ h6 {
 
 }
 
-
+/*  */
 a {
 
     text-decoration: none;
@@ -122,21 +122,6 @@ a:hover {
 
 
 
-/* ========================= */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===============decorations pages admin et generals======================== */
 
@@ -176,6 +161,16 @@ a:hover {
 
 /* ==================partie animations pour les card dde index et general */
 
+/*  */
+.card1 {
+    top: 649px;
+    left: 48px;
+    width: 318px;
+    height: 400px;
+    background-color: #f0f0f0;
+    border-radius: 12px;
+    margin: 10px;
+}
 
 .bg-capitoliounuit {
 

@@ -21,10 +21,10 @@ require_once "../inc/header.inc_copy.php";
                 <?php
                 foreach ($annonces as $annonce) {
                 ?>
-                    <div class="col-xxl-4 col-lg-6 col-md-12 mb-4">
-                        <div> </div>
-                        <div class="card hoverCart ">
-                            <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title'] ?>" style="height: 200px; width: 100%; object-fit: cover;">
+                    <div class="col-xxl-4 col-lg-6 col-md-12 mb-4 ">
+
+                        <div class="card  ">
+                            <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt=". $annonce['description'] <?= $annonce['title'] ?>" style="height: 200px; width: 100%; object-fit: cover;">
                             <div class="card-body">
                                 <h5 class="card-title"><?= displayAdvertAnnonce($annonce); ?></h5>
                                 <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>

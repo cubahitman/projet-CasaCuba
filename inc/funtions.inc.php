@@ -301,7 +301,7 @@ function addAnnonce($photo, string $title, string $description, string $postal_c
     ));
 }
 
-// =============================montrer les annonces=====================://
+// =============================Functionmontrer les annonces=====================://
 
 
 function allAnnonces(): array
@@ -314,6 +314,24 @@ function allAnnonces(): array
     return $result;
 }
 
+// =============================montrer les annonces en location=====================://
+
+function annoncesByType($types = [])
+{
+    $pdo = connexionBdd();
+    $sql = "SELECT * FROM advert";
+    if (!empty($types)) {
+        $sql .= " WHERE type IN (" . implode(',', array_fill(0, count($types), '?')) . ")";
+    }
+    $request = $pdo->prepare($sql);
+    if (!empty($types)) {
+        $request->execute($types);
+    } else {
+        $request->execute();
+    }
+    $result = $request->fetchAll();
+    return $result;
+}
 
 // ===============================petit paneau qui montre que ce reservee ============================//
 

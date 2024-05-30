@@ -1,6 +1,6 @@
  <!-- Header -->
- <header id="head">
-     <div class="container">
+ <header id="head ">
+     <div class="container ">
          <div class="row">
              <h1 class="lead">DESTINATION, RAFFINEMENT, INSPIRATION</h1>
              <p class="tagline">Votre portail pour les maisons de rêve à Cuba </p>

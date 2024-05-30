@@ -58,6 +58,8 @@ logOut();
             <div class=" navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-right">
 
+                    <li><a href="<?= RACINE_SITE ?>explorer.php">LOCATIONS</a></li>
+                    <li><a href="<?= RACINE_SITE ?>explorer.php">VENTES</a></li>
                     <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
 
                     <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
