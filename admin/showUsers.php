@@ -58,7 +58,7 @@ require_once "../inc/boostrap.inc.php";
                         <a href="dashboard.php?users_php&action=delete&id_user=<?= $user['id_user'] ?>"><i class="bi bi-trash3-fill text-danger"></i></a>
                     </td>
                     <td class="text-center">
-                        <a href="dashboard.php?form_modifier-user_php&action=modifier&id_user=<?= $user['id_user'] ?>"><i class="bi bi-pen-fill"></i></a>
+                        <a href="dashboard.php?form_modifier-user_php&action=modifierUser&id_user=<?= $user['id_user'] ?>"><i class="bi bi-pen-fill"></i></a>
                     </td>
                     <td class="text-center">
                         <a href="dashboard.php?users_php&action=update&id_user=<?= $user['id_user'] ?>" class="btn btn-secondary"><?= ($user['role']) == 'ROLE_ADMIN' ? 'Rôle user' : 'Rôle admin' ?>

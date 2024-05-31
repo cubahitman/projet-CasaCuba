@@ -5,7 +5,7 @@
 
 
 session_start();
-
+ob_start(); // Active le tampon de sortie
 // constante qui définit les dossiers dans lesquels se situe le site pour pouvoir déterminer des chemin absolus à partir de localhost (on ne prend pas locahost). Ainsi nous écrivons tous les chemins (exp : src, href) en absolus avec cette constante.
 define("RACINE_SITE", "/projet-CasaCuba/");
 
@@ -276,6 +276,29 @@ function updateRole(string $role, int $id): void
 
     ));
 }
+// ////////////////////  Fonction pour modifier un utilisateur//////////////
+function updateUser($lastName, $firstName, $pseudo, $email,  $phone, $civility, $address, $zipCode, $city, $country,)
+{
+    $pdo = connexionBdd();
+    $sql = $pdo->prepare("UPDATE user SET  lastName = :lastName, firstName = :firstName,pseudo = :pseudo, email = :email, mdp = :mdp, phone = :phone, civility = :civility, address = :address, zipCode = :zipCode, city = :city, country = :country WHERE id_user = :id_user LIMIT 1");
+    $sql->bindParam(':lastName', $lastName);
+    $sql->bindParam(':firstName', $firstName);
+
+    $sql->bindParam(':pseudo', $pseudo);
+    $sql->bindParam(':email', $email);
+
+    $sql->bindParam(':phone', $phone);
+
+    $sql->bindParam(':civility', $civility);
+
+    $sql->bindParam(':address', $address);
+    $sql->bindParam(':zipCode', $zipCode);
+    $sql->bindParam(':city', $city);
+    $sql->bindParam(':country', $country);
+    $sql->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+    $sql->execute();
+}
+
 // ==========Function ajouter annonce =============//
 
 
