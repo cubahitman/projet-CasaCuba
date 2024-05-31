@@ -14,8 +14,8 @@ $annonces = annoncesByType();
 <main class="bg-capitoliounuit ">
     <section class="">
 
-        <div class="container fontTitre text-center border ">
-            <h1 class="title-container ">Votre maison de rêve vous attend à Cuba</h1>
+        <div class="container encadrage  text-center ">
+            <h1 class=" font_encadrage ">Votre maison de rêve vous attend à Cuba</h1>
             <a href="index.php" class="display-5  btn btn-primary text-white text-decoration-none">
 
                 Page d'Accueil

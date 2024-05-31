@@ -210,6 +210,8 @@ require_once "../inc/boostrap.inc.php";
                 require_once "compte.php";
             } else if (isset($_GET['gestionMaisons_php'])) {
                 require_once "gestionMaisons.php";
+            } else if (isset($_GET['form_modifier-user_php'])) {
+                require_once "formmodifieruser.php";
             } else if (isset($_GET['users_php'])) {
                 require_once "showUsers.php";
             } else {

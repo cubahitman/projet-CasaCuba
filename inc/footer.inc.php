@@ -1,8 +1,8 @@
 <!-- /social links -->
 
 
-<footer id="footer" class="top-space">
-
+<footer id="footer" class="">
+    <!-- class="top-space" -->
     <div class="footer1">
         <div class="container">
             <div class="row">

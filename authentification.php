@@ -1,9 +1,11 @@
 <?php
 
 require_once "inc/funtions.inc.php";
-
-
-
+echo '<br>
+<br>
+<br>
+<br>
+<br>';
 
 $info = '';
 
@@ -65,10 +67,12 @@ $title = "Authentification";
 require_once "inc/header.inc.php";
 ?>
 
-<main style="background:url(assets/img/5818.png) no-repeat; background-size: cover; background-attachment: fixed;" class=" container pt-5 mt-5">
 
-    <div class="w-75 m-auto p-5" style="background: rgba(0, 0, 0, 0.1);">
-        <h2 class="text-center p-3 mb-5">Connexion</h2>
+
+<main class="  font_encadrage ">
+
+    <div class=" container fs-5  ">
+        <h2 class=" text-center ">Connexion</h2>
 
         <?php
 
@@ -76,27 +80,31 @@ require_once "inc/header.inc.php";
 
         ?>
 
-        <form action="" method="post" class="p-5">
-            <div class="row mb-3">
-                <div class="col-12 mb-5">
+        <form method="post" class="box">
+            <div class="row">
+                <div class="col-6 mb-5">
                     <label for="pseudo" class="form-label mb-3">Pseudo</label>
-                    <input type="text" class="form-control fs-5" id="pseudo" name="pseudo">
+                    <input type="text" class="form-control fs-5 w-100 fs-5" id="pseudo" name="pseudo">
                 </div>
-                <div class="col-12 mb-5">
+                <div class="col-6 mb-5">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control fs-5" id="email" name="email" placeholder="exemple.email@exemple.com">
+                    <input type="email" class="form-control fs-5 w-100 fs-5" id="email" name="email" placeholder="exemple.email@exemple.com">
                 </div>
-                <div class="col-12 mb-5">
-                    <label for="mdp" class="form-label mb-3">Mot de passe</label>
+            </div>
+            <div class="row">
+                <div class="col-6 mb-5">
+                    <label for="mdp" class="form-label fs-5 mb-3">Mot de passe</label>
                     <input type="password" class="form-control fs-5 mb-3" id="mdp" name="mdp">
                     <input type="checkbox" onclick="showPass()"> <span class="text-danger">Afficher/masquer le mot de passe</span>
                 </div>
-
-                <button class="w-25 m-auto btn btn-danger btn-lg fs-5" type="submit">Se connecter</button>
-                <p class="mt-5 text-center">Vous n'avez pas encore de compte ! <a href="register.php" class=" text-danger">créer un compte ici</a></p>
+            </div>
+            <div class="row">
+                <div class="col-12 ">
+                    <button class="btn btn-danger btn-lg  w-100" type="submit">Se connecter</button>
+                    <p class="mt-5">Vous n'avez pas encore de compte ! <a href="register.php" class=" text-danger">créer un compte ici</a></p>
+                </div>
             </div>
         </form>
-
 
     </div>
 

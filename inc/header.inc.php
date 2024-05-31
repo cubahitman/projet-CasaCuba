@@ -13,7 +13,6 @@ ob_start(); // Active le tampon de sortie
 
 
 
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -36,7 +35,7 @@ ob_start(); // Active le tampon de sortie
 
     <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="<?= RACINE_SITE ?>assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
 	<script src="assets/js/html5shiv.js"></script>

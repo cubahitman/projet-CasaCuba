@@ -9,7 +9,7 @@ if (!empty($_SESSION['user'])) {
     header("location:" . RACINE_SITE . "profil.php");
 }
 
-echo "<br><br><br><br><br>";
+
 
 
 
@@ -178,10 +178,10 @@ require_once "inc/header.inc.php";
 
 ?>
 
-<main style="background:url(assets/img/5818.png) no-repeat; background-size: cover; background-attachment: fixed;" class="pt-5">
+<main class=" box ">
 
-    <div class="w-75 m-auto p-5" style="background: rgba(00, 00, 00, 0.1);">
-        <h2 class="text-center  form-label p-3 mb-3">Créer un compte</h2>
+    <div class="font_encadrage">
+        <h1 class="text-center ">Créer un compte</h1>
 
 
         <?php
@@ -233,7 +233,7 @@ require_once "inc/header.inc.php";
                 </div>
 
                 <div class="row mb-3">
-                    <div class="col-md-6 mb-5">
+                    <div class="col-md-10 mb-5">
                         <label class="form-label mb-3">Civilité</label>
                         <select class="form-select fs-5" name="civility">
                             <option value="c">choix</option>
@@ -246,7 +246,7 @@ require_once "inc/header.inc.php";
                 </div>
 
                 <div class="row mb-3">
-                    <div class="col-12 mb-5">
+                    <div class="col-md-8 mb-5">
                         <label for="address" class="form-label mb-3">Adresse</label>
                         <input type="text" class="form-control fs-5" id="address" name="address">
                     </div>
@@ -268,8 +268,8 @@ require_once "inc/header.inc.php";
                 </div>
 
 
-                <div class="row mt-5">
-                    <button class="w-25 m-auto btn btn-danger btn-lg fs-5" type="submit">S'inscrire</button>
+                <div class=" my-5">
+                    <button class="w-25 m-auto btn " type="submit">S'inscrire</button>
                     <p class="text-center mt-5">Vous avez déjà un compte ! <a href="authentification.php" class="text-danger">Connectez-vous ici</a></p>
                 </div>
 

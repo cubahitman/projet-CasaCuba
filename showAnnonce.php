@@ -66,7 +66,7 @@ if (isset($_POST['action'])) {
         case 'delete':
             deleteAdvert($id_advert);
 
-            header('Location: confirmation.php');
+            header('Location: admin/dashboard.php?gestionMaisons_php');
             exit();
             break;
     }
@@ -104,43 +104,50 @@ ob_end_flush();
 
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 form-group">
                 <div class="btn-group nav-css">
-                    <form method="POST">
-                        <label for="reservation_message">Message de Réservation :</label>
-                        <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'eadonly' : '' ?>>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        // Formulaire de réservation
+                    ?>
+                        <form method="POST">
+                            <label for="reservation_message">Message de Réservation :</label>
+                            <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'eadonly' : '' ?>>
     <?= isset($annonce['reservation_message']) ? $annonce['reservation_message'] : '' ?>
 </textarea>
 
-                        <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
-                        <input type="submit" name="action" value="Réserver">
+                            <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+                            <input type="submit" name="action" value="Réserver">
                         <?php
-
-                        // Vérifiez si l'utilisateur est connecté avant d'afficher les boutons "Annuler" et "Supprimer"
-                        // Vérifiez si l'utilisateur est connecté avant d'afficher les boutons "Annuler" et "Supprimer"
-                        if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'ROLE_ADMIN') {
+                    } else {
+                        // Message pour inviter l'utilisateur à se connecter ou s'inscrire
+                        echo "<p class='box  font_encadrage'>Pour réserver, veuillez vous <a href='" . RACINE_SITE . "authentification.php'>connecter</a> ou <a href='" . RACINE_SITE . "inscription.php'>inscrire</a>.</p>";
+                    }
+                    // Vérifiez si l'utilisateur est connecté avant d'afficher les boutons "Annuler" et "Supprimer"
+                    // Vérifiez si l'utilisateur est connecté avant d'afficher les boutons "Annuler" et "Supprimer"
+                    if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'ROLE_ADMIN') {
                         ?>
 
-                    </form>
+                        </form>
 
 
-                    <form method="POST">
+                        <form method="POST">
 
-                        <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+                            <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
-                        <input type="hidden" name="action" value="cancel">
+                            <input type="hidden" name="action" value="cancel">
 
-                        <input type="submit" value="Annuler">
+                            <input type="submit" value="Annuler">
 
-                    </form>
+                        </form>
 
-                    <form method="POST">
+                        <form method="POST">
 
-                        <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+                            <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
-                        <input type="hidden" name="action" value="delete">
+                            <input type="hidden" name="action" value="delete">
 
-                        <input type="submit" value="Supprimer">
+                            <input type="submit" value="Supprimer">
 
-                    </form>
+                        </form>
 
                 </div>
                 <!-- changer default par un -->
@@ -150,7 +157,7 @@ ob_end_flush();
                 <!-- afficher l'id  si l'ont veut -->
                 <div> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
             <?php
-                        }
+                    }
 
             ?>
 

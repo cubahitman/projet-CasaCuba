@@ -16,7 +16,7 @@ $annonces = dernieresAnnonces();
 <!-- /Intro-->
 <section class="">
 	<div class="container-fluid text-center p-5 ">
-		<a href="explorer.php" class="display-5  btn btn-primary text-white text-decoration-none">
+		<a href="explorer.php" class="btn btn-action btn-lg">
 
 			Consulter tous les annonces
 
