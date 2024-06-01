@@ -168,7 +168,13 @@ ob_end_flush();
 
                             <!-- Formulaire de réservation pour l'admin -->
 
-                            <form method="POST" action="reservation_traitement.php">
+
+                            <!-- <form method="POST" action="reservation_traitement.php?annonce=<?= $annonce['id_advert'] ?>&user=<?= $_SESSION['user']['id'] ?>"> -->
+
+                            <form method="POST" action="reservation_traitement.php?annonce=<?= $annonce['id_advert'] ?>">
+                                <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id'] ?>">
+                                <!-- Le reste du formulaire -->
+
 
                                 <label for="reservation_message">Message de Réservation :</label>
 
