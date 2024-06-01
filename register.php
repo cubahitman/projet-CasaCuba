@@ -178,9 +178,9 @@ require_once "inc/header.inc.php";
 
 ?>
 
-<main class=" box ">
+<main class="  ">
 
-    <div class="font_encadrage ">
+    <div class=" ">
         <h1 class="text-center ">Créer un compte</h1>
         <?php
 
@@ -194,7 +194,7 @@ require_once "inc/header.inc.php";
 
 
 
-    <div class="container">
+    <div class="container bg-capitoliounui">
         <form action="" method="post" class="p-3">
 
             <div class="row mb-3">
@@ -271,13 +271,13 @@ require_once "inc/header.inc.php";
                 </div>
             </div>
 
-
-            <div class=" my-5">
-                <button class="w-25 m-auto btn " type="submit">S'inscrire</button>
+            /
+            <div class="">
+                <button class="btn btn-lg m-3 " type="submit">S'inscrire</button>
                 <p class="text-center mt-5">Vous avez déjà un compte ! <a href="authentification.php" class="text-danger">Connectez-vous ici</a></p>
             </div>
 
-        </form></span>
+        </form>
     </div>
 
 

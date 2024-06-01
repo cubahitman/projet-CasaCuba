@@ -11,14 +11,14 @@ require_once "inc/header.inc.php";
 
 $annonces = annoncesByType();
 ?>
-<div class="container text-center populardestinations">
+<div class="container text-center ">
     <br> <br>
     <h2 class="">Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
-    <p class="populardestinations">
+    <p class="">
         Que vous cherchiez une résidence secondaire ou un investissement locatif, notre collection de maisons et d'appartements à Cuba répondra à vos attentes.
     </p>
 </div>
-<main class=" body    ">
+<main class=" back   ">
 
     <section class=" ">
 
@@ -53,7 +53,7 @@ $annonces = annoncesByType();
             foreach ($annonces as $annonce) {
             ?>
                 <div class="col-lg-4 col-md-6 col-sm-12 ">
-                    <div class="card1 fontTitre  ">
+                    <div class="card1   ">
                         <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top " alt="image de <?= $annonce['title'] ?>" style="height: 200px; width: 100%; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title"><?= displayAdvertAnnonce($annonce); ?></h5>

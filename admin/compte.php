@@ -13,7 +13,7 @@ if (empty($_SESSION['user'])) {
 }
 
 $title = "Profil";
-require_once "../inc/header.inc_copy.php";
+require_once "../inc/navHeader.inc.php";
 
 
 

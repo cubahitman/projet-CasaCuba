@@ -22,10 +22,10 @@ $type = 'achat'; // Le type ici
 $annonces = annoncesByType([$type]);
 
 ?>
-<div class="container text-center populardestinations">
+<div class="container text-center ">
     <br> <br>
     <h2 class="">Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
-    <p class="populardestinations">
+    <p class="">
         Que vous cherchiez une résidence secondaire ou un investissement locatif, notre collection de maisons et d'appartements à Cuba répondra à vos attentes.
     </p>
     <a href="index.php" class="display-5  btn btn-primary text-white text-decoration-none">

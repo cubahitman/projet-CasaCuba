@@ -36,7 +36,7 @@ if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
 
     echo "<h4 class='text-center reserved'>================Cette annonce est réservée===========.</h4>";
 
-    $info = "<p class='reserved'>Cette annonce est réservée.</p>";
+    $info = "<p class='text-danger'>Cette annonce est réservée.</p>";
 
     echo "<p class='text-center'>" . $annonce['reservation_message'] . "</p>";
 } else {
@@ -79,7 +79,7 @@ ob_end_flush();
 
 // require_once "inc/funtions.inc.php"
 ?>
-<main class="bg-claire">
+<main class="">
 
 
 
@@ -119,7 +119,7 @@ ob_end_flush();
                         <?php
                     } else {
                         // Message pour inviter l'utilisateur à se connecter ou s'inscrire
-                        echo "<p class='box  font_encadrage'>Pour réserver, veuillez vous <a href='" . RACINE_SITE . "authentification.php'>connecter</a> ou <a href='" . RACINE_SITE . "inscription.php'>inscrire</a>.</p>";
+                        echo "<p class=' '>Pour réserver, veuillez vous <a href='" . RACINE_SITE . "authentification.php'>connecter</a> ou <a href='" . RACINE_SITE . "inscription.php'>inscrire</a>.</p>";
                     }
                     // Vérifiez si l'utilisateur est connecté avant d'afficher les boutons "Annuler" et "Supprimer"
                     // Vérifiez si l'utilisateur est connecté avant d'afficher les boutons "Annuler" et "Supprimer"
@@ -145,13 +145,13 @@ ob_end_flush();
 
                             <input type="hidden" name="action" value="delete">
 
-                            <input type="submit" value="Supprimer">
+                            <input type="submit" value="Supprimer"><sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?? 'default' ?></sup>
+
 
                         </form>
-
                 </div>
                 <!-- changer default par un -->
-                <input type="hidden" value=""> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?? 'default' ?></sup>
+                <!-- <input type="hidden" value=""> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?? 'default' ?></sup> -->
 
 
                 <!-- afficher l'id  si l'ont veut -->

@@ -44,8 +44,8 @@ require_once "../inc/boostrap.inc.php";
 ?>
 
 <main>
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-lg-2">
+    <div class="row back1">
+        <div class="col-sm-6 col-md-4 col-lg-2 ">
 
             <div class="d-flex flex-column text-bg-dark p-3 sidebarre">
                 <hr>
@@ -69,68 +69,26 @@ require_once "../inc/boostrap.inc.php";
             </div>
         </div>
 
-        <?php
-        if (isset($_GET['dashboard_php'])) :
-        ?>
-
-            <div class="w-50 col-lg-2 m-auto">
-                <h2>Bonjour <?php echo $_SESSION['user']['firstName'] ?></h2>
-
-                <p>Bienvenue sur le backoffice</p>
-                <img src="<?= RACINE_SITE ?>assets/img/affiche.jpg" alt="Affiche des films sur le backoffice" width="500" height="800">
-            </div>
-
-        <?php
-
-        endif;
-
-        ?>
-
-        <section class="container col-lg-6 my-5">
-            <div>
-                <h3>Bienvenue <?= $_SESSION['user']['pseudo'] ?></h3>
 
 
 
-
-
-
-                <div class="list-group container">
-                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                        <?= $_SESSION['user']['firstName'] ?>
-                    </a>
-
-                    <div class="d-flex justify-content-between list-group-item list-group-item-action"><a href="#" class="text-dark d-block">Nom: <?= $_SESSION['user']['lastName'] ?><div class="d-flex"></a></div>
-                </div>
-                <a href="#" class="list-group-item list-group-item-action">Telephonne: <?= $_SESSION['user']['phone'] ?></a>
-                <a href="#" class="list-group-item list-group-item-action">E-mail: <?= $_SESSION['user']['email'] ?></a>
-                <a class="list-group-item list-group-item-action ">Adresse: <?= $_SESSION['user']['address'] ?> <?= $_SESSION['user']['zipCode'] ?></a>
-                <!-- <a class="list-group-item list-group-item-action ">Adresse: <?= $user['firstName'] ?> </a> -->
-                <?php
-                $user = showUser($_SESSION['user']['id_user']);
-                // debug($user);
-
-                ?>
-                <!-- <div>PAGE DASHBOARD Admin id <?= $user['id_user'] ?></div> -->
-
-
-                <div class="text-center">
-                    <!-- <a href="dashboard.php?users_php&action=delete&id_user=<?= $user['id_user'] ?>"><i class="bi bi-trash3-fill text-danger"></i></a> -->
-                </div>
-                <!-- <td class="text-center"> //////////////////
-                        <a href="dashboard.php?users_php&action=update&id_user=<? //= $user['id_user'] 
-                                                                                ?>" class="btn btn-danger"><? //= ($user['role']) == 'ROLE_ADMIN' ? 'Rôle user' : 'Rôle admin' 
-                                                                                                            ?>
-                    </td> -->
-                <?php
-                // debug($users);
-                //}
-                ?>
-            </div>
-
-        </section>
     </div>
+    <?php
+    if (isset($_GET['dashboard_php'])) :
+    ?>
 
+        <div class="w-50 col-lg-2 m-auto">
+            <h2>Bonjour <?php echo $_SESSION['user']['firstName'] ?></h2>
+
+            <p>Bienvenue sur le backoffice</p>
+
+        </div>
+        <!-- <img src="<?= RACINE_SITE ?>assets/images/mac.jpg" alt="Affiche des  backoffice" width="300"> -->
+    <?php
+
+    endif;
+
+    ?>
     <div class="col-sm-12">
         <?php
 

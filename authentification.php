@@ -55,43 +55,42 @@ require_once "inc/header.inc.php";
         <h2 class="text-center">Connexion</h2>
     </div>
 
-
-    <form method="post" class="box">
-        <div class="row">
-            <div class="col-6 mb-3">
-                <label for="pseudo" class="form-label">Pseudo</label>
-                <input type="text" class="form-control w-100" id="pseudo" name="pseudo">
+    <div class="container bg-capitoliounui">
+        <form method="post" class="">
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="pseudo" class="form-label">Pseudo</label>
+                    <input type="text" class="form-control w-100" id="pseudo" name="pseudo">
+                </div>
+                <div class="col-6 mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control w-100" id="email" name="email" placeholder="exemple.email@exemple.com">
+                </div>
             </div>
-            <div class="col-6 mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control w-100" id="email" name="email" placeholder="exemple.email@exemple.com">
+            <div class="row">
+                <div class="col-6 mb-3">
+                    <label for="mdp" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="mdp" name="mdp">
+                    <input type="checkbox" onclick="showPass()"> <span class="text-danger">Afficher/masquer le mot de passe</span>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-6 mb-3">
-                <label for="mdp" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" id="mdp" name="mdp">
-                <input type="checkbox" onclick="showPass()"> <span class="text-danger">Afficher/masquer le mot de passe</span>
+            <div class="row">
+                <div class="col-12">
+                    <button class="btn btn-danger btn-lg w-100" type="submit">Se connecter</button>
+                    <p class="mt-5">Vous n'avez pas encore de compte ! <a href="register.php" class=" text-danger">créer un compte ici</a></p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <button class="btn btn-danger btn-lg w-100" type="submit">Se connecter</button>
-                <p class="mt-5">Vous n'avez pas encore de compte ! <a href="register.php" class=" text-danger">créer un compte ici</a></p>
-            </div>
-        </div>
-        <?php
+            <?php
 
-        echo $info;
+            echo $info;
 
-        ?>
-
-
-
-
-        <?php
-        require_once "inc/footer.inc.php";
-
-
-        ?>
+            ?>
+    </div>
 </main>
+
+
+<?php
+require_once "inc/footer.inc.php";
+
+
+?>

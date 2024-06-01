@@ -89,7 +89,7 @@ $title = "modifier-user";
 require_once "../inc/header.inc_copy.php";
 ob_start(); // Active le tampon de sortie
 ?>
-<div class="font_encadrage">
+<div class="">
     <h1 class="text-center box">Modifier user</h1>
 
     <?php

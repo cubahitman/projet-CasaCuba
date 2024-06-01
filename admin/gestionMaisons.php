@@ -67,10 +67,10 @@ ob_end_flush();
 
 
 $title = "gestionMaison";
-require_once "../inc/header.inc_copy.php";
+require_once "../inc/navHeader.inc.php";
 ?>
 
-<main class="bg-claire">
+<main class="">
     <div class="row">
         <section class="index-img  container p-3 text-center w-50 col-lg-4 col-md-6 col-sm-12 ">
             <h2 class="mb-5">gestionaire</h2>

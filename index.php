@@ -6,10 +6,10 @@ $annonces = dernieresAnnonces();
 <!-- Intro -->
 
 
-<div class="container text-center populardestinations">
+<div class="container text-center ">
 	<br> <br>
 	<h2 class="">Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
-	<p class="populardestinations">
+	<p class="">
 		Que vous cherchiez une résidence secondaire ou un investissement locatif, notre collection de maisons et d'appartements à Cuba répondra à vos attentes.
 	</p>
 </div>
@@ -24,13 +24,13 @@ $annonces = dernieresAnnonces();
 	</div>
 </section>
 
-<main class="body  top-space">
+<main class="back  top-space">
 
 	<div class="container  ">
-		<h2 class="populardestinations">Temoignages</h2>
+		<h2 class="">Temoignages</h2>
 
 
-		<section class="populardestinations">
+		<section class="">
 			<h2>Popular destinations in Cuba</h2>
 			<!-- Ajoutez ici les images des destinations -->
 			<div class="pen ">
