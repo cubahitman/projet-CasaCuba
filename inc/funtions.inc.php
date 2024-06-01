@@ -278,26 +278,28 @@ function updateRole(string $role, int $id): void
     ));
 }
 // ////////////////////  Fonction pour modifier un utilisateur//////////////
-function updateUser($lastName, $firstName, $pseudo, $email,  $phone, $civility, $address, $zipCode, $city, $country,)
+function updateUser($id_user, $firstName, $lastName, $pseudo, $email, $phone, $civility, $address, $zipCode, $city, $country)
 {
     $pdo = connexionBdd();
-    $sql = $pdo->prepare("UPDATE user SET  lastName = :lastName, firstName = :firstName,pseudo = :pseudo, email = :email, mdp = :mdp, phone = :phone, civility = :civility, address = :address, zipCode = :zipCode, city = :city, country = :country WHERE id_user = :id_user LIMIT 1");
-    $sql->bindParam(':lastName', $lastName);
+    $sql = $pdo->prepare("UPDATE users SET firstName = :firstName, lastName = :lastName, pseudo = :pseudo, email = :email, phone = :phone, civility = :civility, address = :address, zipCode = :zipCode, city = :city, country = :country WHERE id_user = :id_user LIMIT 1");
     $sql->bindParam(':firstName', $firstName);
-
+    $sql->bindParam(':lastName', $lastName);
     $sql->bindParam(':pseudo', $pseudo);
     $sql->bindParam(':email', $email);
-
     $sql->bindParam(':phone', $phone);
-
     $sql->bindParam(':civility', $civility);
-
     $sql->bindParam(':address', $address);
     $sql->bindParam(':zipCode', $zipCode);
     $sql->bindParam(':city', $city);
     $sql->bindParam(':country', $country);
-    $sql->bindParam(':id_user', $id_user, PDO::PARAM_INT);
-    $sql->execute();
+    $sql->bindParam(':id_user', $id_user);
+    if ($sql->execute()) {
+
+        echo '<h3 class="text-center">Mise à jour réussie</h3>';
+    } else {
+        $errorInfo = $sql->errorInfo();
+        echo "Erreur lors de la mise à jour : " . $errorInfo[2];
+    }
 }
 
 // ==========Function ajouter annonce =============//
