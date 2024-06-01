@@ -50,7 +50,7 @@ ob_start(); // Active le tampon de sortie
         <div class="navbar-header">
             <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-            <a class="navbar-brand  " href="index.php"><img src="assets/images/CUBA(3).png" alt="Mon Logo" style="height: 100%;"> Cubuy</a>
+            <a class="navbar-brand  " href="index.php"><img src="assets/images/CUBA(3).png" alt="Mon Logo" style="height: 100%;"> Cubabuy</a>
         </div>
         <div class=" navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
@@ -71,7 +71,7 @@ ob_start(); // Active le tampon de sortie
                     </ul>
                 </li>
                 <li class="espace-pro ">
-                    <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button btn ">Espace Pro</a>
+                    <a href="<?= RACINE_SITE ?>admin/dashboard.php" class=" btn ">Espace Pro</a>
                     <?php if (empty($_SESSION['user'])) { ?>
                 <li class="nav-item dropdown">
                     <a class="action-button btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -85,7 +85,7 @@ ob_start(); // Active le tampon de sortie
                     </ul>
                 </li>
             <?php } else { ?>
-                <li><a href=" ?action=deconnexion" class="action-button btn ">Deconnexion</a></li>
+                <li><a href=" ?action=deconnexion" class=" btn ">Deconnexion</a></li>
             <?php } ?>
             </li>
             <li><a href="panier.php">

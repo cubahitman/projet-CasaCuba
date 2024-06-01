@@ -1,6 +1,10 @@
+
+//    Template animation img   //
+
+
 $(document).ready(function () {
 
-    var header = $(".headroom");
+    let header = $(".headroom");
 
     header.headroom({
 
@@ -21,6 +25,24 @@ $(document).ready(function () {
     });
 
 });
+
+
+// navebarre responsive //
+// La fonction est déclenchée lorsque le bouton du menu burger est cliqué (burgerMenuButton.onclick). Elle fait deux choses :
+
+//     Toggle la classe open : la méthode classList.toggle('open') ajoute ou retire la classe open de l'élément burgerMenu. Si la classe est déjà présente, elle est retirée, et inversement. Cela permet de définir l'état du menu burger (ouvert ou fermé).
+//     Mise à jour de l'icône du bouton : la condition isOpen vérifie si la classe open est présente sur l'élément burgerMenu. Si c'est le cas, l'icône du bouton est mise à jour pour afficher une croix (fa-solid fa-xmark), sinon, elle affiche les trois barres (fa-solid fa-bars).
+
+const burgerMenuButton = document.querySelector('.burger-menu-button')
+const burgerMenuButtonIcon = document.querySelector('.burger-menu-button i')
+const burgerMenu = document.querySelector('.burquer-menu')
+
+burgerMenuButton.onclick = function () {
+    burgerMenu.classList.toggle('open')
+    const isOpen = burgerMenu.classList.contains('open')
+    burgerMenuButtonIcon.classList = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+}
+
 
 
 

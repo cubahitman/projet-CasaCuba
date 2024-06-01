@@ -88,7 +88,7 @@ require_once "funtions.inc.php";
                     </ul>
                 </li>
             <?php } else { ?>
-                <li><a href=" ?action=deconnexion" class="action-button btn ">Deconnexion</a></li>
+                <li><a href=" ?action=deconnexion" class=" btn ">Deconnexion</a></li>
             <?php } ?>
             </li>
             <li><a href="panier.php">

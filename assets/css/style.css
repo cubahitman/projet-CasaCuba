@@ -94,7 +94,6 @@ a:hover {
 
 /* Boutons */
 
-
 .btn {
 
     background-color: var(--bleu);
@@ -110,6 +109,8 @@ a:hover {
     cursor: pointer;
 
 }
+
+
 
 
 .btn:hover {
@@ -261,5 +262,173 @@ a:hover {
             aspect-ratio: 1;
             object-fit: cover;
         }
+    }
+}
+
+/* =====================navbarre responsive avec querry========================= */
+
+
+
+
+.nav-resp {
+    height: 100vh;
+    background-image: url('https://source.unsplash.com/-4nBsYBShPKA');
+    background-size: cover;
+    background-position: center;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: aquamarine;
+}
+
+.header-navresp {
+    position: relative;
+    padding: 0 2rem;
+    background-color: rgba(0, 0, 0, 0.238);
+}
+
+.navbar-resp {
+    width: 100%;
+    max-width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/* .navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+} */
+
+.navbar-resp .links {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar-resp .burger-menu-button {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.action-button {
+    background-color: #63C7B2;
+    color: #120d31;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    color: white;
+    border: 1px solid #fff;
+}
+
+
+
+/* --------BURGER MENU-------------- */
+
+.burquer-menu {
+    display: none;
+    height: 0;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.burquer-menu.open {
+    height: 350px;
+}
+
+.burquer-menu li {
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divider {
+    height: 1px;
+    background-color: #fff;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+
+.burquer-menu .action-button {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-burger-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+
+/* ---------RESPONSIVE------------- */
+
+
+@media (max-width: 990px) {
+    header {
+        background: none;
+    }
+
+    .navbar-resp .links,
+    .navbar-resp .action-button {
+        display: none;
+    }
+
+    .navbar-resp .burger-menu-button {
+        display: block;
+    }
+
+    .burquer-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 576px) {
+
+
+    .burquer-menu {
+        left: 2rem;
+        width: unset;
     }
 }

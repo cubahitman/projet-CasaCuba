@@ -186,28 +186,29 @@ ob_end_flush();
                             </form>
                 </div>
 
-                <form method="POST">
+                <div class="nav-css top-space ">
 
-                    <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+                    <form method="POST">
 
-                    <input type="hidden" name="action" value="cancel">
+                        <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
-                    <input type="submit" value="Annuler">
+                        <input type="hidden" name="action" value="cancel">
 
-                </form>
+                        <input type="submit" value="Annuler" class="btn btn-secondary">
 
+                    </form>
 
+                    <form method="POST">
 
+                        <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
-                <form method="POST">
+                        <input type="hidden" name="action" value="delete">
 
-                    <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+                        <input type="submit" value="Supprimer" class="btn btn-danger">
 
-                    <input type="hidden" name="action" value="delete">
+                    </form>
 
-                    <input type="submit" value="Supprimer"><sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?? 'default' ?></sup>
-
-                </form>
+                </div>
 
 
             <?php
