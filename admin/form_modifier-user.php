@@ -2,61 +2,88 @@
 require_once "../inc/funtions.inc.php";
 $id_user = $_GET['id_user'];
 $user = showUser($id_user);
-debug($user);
+// debug($user);
 // ==================
 $info = ''; // Initialisez $info avec une chaîne vide
 if (isset($_POST)) {
-    debug($_POST);
-    $lastName = $_POST['lastName'];
+    // debug($_POST);
+    if (isset($_POST['lastName'])) {
+        $lastName = $_POST['lastName'];
+    } else {
+        $lastName = '';
+    }
 
-    $firstName = $_POST['firstName'];
+    if (isset($_POST['firstName'])) {
+        $firstName = $_POST['firstName'];
+    } else {
+        $firstName = '';
+    }
 
-    $pseudo = $_POST['pseudo'];
+    if (isset($_POST['pseudo'])) {
+        $pseudo = $_POST['pseudo'];
+    } else {
+        $pseudo = '';
+    }
 
-    $email = $_POST['email'];
+    if (isset($_POST['email'])) {
+        $email = $_POST['email'];
+    } else {
+        $email = '';
+    }
 
-    $phone = $_POST['phone'];
+    if (isset($_POST['phone'])) {
+        $phone = $_POST['phone'];
+    } else {
+        $phone = '';
+    }
 
-    $civility = $_POST['civility'];
+    if (isset($_POST['civility'])) {
+        $civility = $_POST['civility'];
+    } else {
+        $civility = '';
+    }
 
-    $address = $_POST['address'];
+    if (isset($_POST['address'])) {
+        $address = $_POST['address'];
+    } else {
+        $address = '';
+    }
 
-    $zipCode = $_POST['zipCode'];
+    if (isset($_POST['zipCode'])) {
+        $zipCode = $_POST['zipCode'];
+    } else {
+        $zipCode = '';
+    }
 
-    $city = $_POST['city'];
+    if (isset($_POST['city'])) {
+        $city = $_POST['city'];
+    } else {
+        $city = '';
+    }
 
-    $country = $_POST['country'];
-
+    if (isset($_POST['country'])) {
+        $country = $_POST['country'];
+    } else {
+        $country = '';
+    }
 
     // Mise à jour de l'utilisateur
-
-    updateUser(
-
-        $_POST['id_user'],
-
-        $firstName,
-
-        $lastName,
-
-        $pseudo,
-
-        $email,
-
-        $phone,
-
-        $civility,
-
-        $address,
-
-        $zipCode,
-
-        $city,
-
-        $country
-
-    );
+    if (isset($_POST['id_user'], $_POST['firstName'], $_POST['lastName'], $_POST['pseudo'], $_POST['email'], $_POST['phone'], $_POST['civility'], $_POST['address'], $_POST['zipCode'], $_POST['city'], $_POST['country'])) {
+        updateUser(
+            $_POST['id_user'],
+            $firstName,
+            $lastName,
+            $pseudo,
+            $email,
+            $phone,
+            $civility,
+            $address,
+            $zipCode,
+            $city,
+            $country
+        );
+    }
 }
-
 
 $title = "modifier-user";
 require_once "../inc/header.inc_copy.php";
