@@ -11,30 +11,17 @@ $reservation = "";
 // Maintenant, vous pouvez utiliser les détails de $annonce pour afficher l'annonce
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $id_advert = $_GET['annonce'];
-    $reservation_message = isset($_POST['reservation_message']) ? trim($_POST['reservation_message']) : '';
-    reserveAdvert($id_advert, $reservation_message);
-}
 
 
-// Vérifiez si l'action est de 'cancel'
-// if (isset($_POST['action']) && $_POST['action'] == 'cancel' && isset($_POST['id_advert'])) {
-//     // Appeler la fonction cancelAdvert avec l'id_advert fourni
-//     cancelAdvert($_POST['id_advert']);
 
-// Rediriger ou traiter la réponse comme nécessaire
-// echo "<h4 class='reserved'> Cette annonce a ete annulé</h4>";
-// Rediriger vers la même page pour rafraîchir l'état de l'annonce
-// header('Location: ' . $_SERVER['PHP_SELF'] . '?annonce=' . $_POST['id_advert']);
-// }
-//  elseif
+
+
 
 
 //=====Conditions test pour savoir si la reservations a ete fait
 if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
 
-    echo "<h4 class='text-center reserved'>================Cette annonce est réservée===========.</h4>";
+    echo "<h4 class='text-center '>================Cette annonce est réservée===========.</h4>";
 
     $info = "<p class='text-danger'>Cette annonce est réservée.</p>";
 
@@ -50,27 +37,89 @@ if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
 
 header('Content-Type: text/html; charset=UTF-8');
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $id_advert = $_GET['annonce'];
+
+    $reservation_message = isset($_POST['reservation_message']) ? trim($_POST['reservation_message']) : '';
+
+
+    if (!empty($reservation_message)) {
+
+        if (isset($_POST['action']) && $_POST['action'] == 'reserve') {
+
+            if (isset($_SESSION['user'])) { // Ajout de cette condition
+
+                reserveAdvert($id_advert, $reservation_message);
+
+                header('Location: confirmation.php?annonce=' . $id_advert);
+
+                exit();
+            } else {
+
+                echo "<p class='text-danger'>Erreur : vous devez vous connecter pour réserver cette annonce.</p>";
+            }
+        }
+    } else {
+
+        echo "<p class='text-danger'>Veuillez remplir le champ de message de réservation.</p>";
+    }
+}
+
 
 if (isset($_POST['action'])) {
+
     switch ($_POST['action']) {
-        case 'reserve':
-            reserveAdvert($id_advert, $reservation_message);
-            header('Location: confirmation.php?annonce=' . $id_advert);
-            exit();
-            break;
+
         case 'cancel':
+
             cancelAdvert($id_advert);
+
             header('Location: confirmation.php?annonce=' . $id_advert);
+
             exit();
+
             break;
+
         case 'delete':
+
             deleteAdvert($id_advert);
 
+
             header('Location: admin/dashboard.php?gestionMaisons_php');
+
             exit();
+
             break;
     }
 }
+//  premiere verification 
+
+// if (isset($_POST['action'])) {
+//     switch ($_POST['action']) {
+//         case 'reserve':
+//             reserveAdvert($id_advert, $reservation_message);
+//             debug($id_advert);
+//             debug($reservation);
+//             var_dump($id_advert);
+
+//             var_dump($reservation_message);
+//             header('Location: confirmation.php?annonce=' . $id_advert);
+//             exit();
+//             break;
+//         case 'cancel':
+//             cancelAdvert($id_advert);
+//             header('Location: confirmation.php?annonce=' . $id_advert);
+//             exit();
+//             break;
+//         case 'delete':
+//             deleteAdvert($id_advert);
+
+//             header('Location: admin/dashboard.php?gestionMaisons_php');
+//             exit();
+//             break;
+//     }
+// }
 // Désactive le tampon de sortie et envoie la sortie mise en mémoire tampon
 
 ob_end_flush();
@@ -83,11 +132,12 @@ ob_end_flush();
 
 
 
-    <section class=" container  ">
+    <section class=" container ">
         <div class="row d-flex justify-content-center align-items-center">
-            <h1 class="text-center text-light"><?= alert($info, "success") . $reservation ?></h1>
+            <h1 class="text-center text-light">Ici<?= $info . $reservation ?></h1>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="card">
+                    <div> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
                     <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title']  ?>">
                     <div class="card-body">
                         <?php if ($annonce['is_reserved']) {
@@ -96,76 +146,120 @@ ob_end_flush();
                             echo "<h5 class='card-title'>" . $annonce['title'] . "</h5>";
                         } ?>
                         <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
-                        <a href="<?= RACINE_SITE ?>explorer.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux annonces</a>
-                        <a href="<?= RACINE_SITE ?>admin/dashboard.php?gestionMaisons_php" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
+                        <div class="btn no-hover bg-blanc">
+                            <a href="<?= RACINE_SITE ?>explorer.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux annonces</a>
+                            <a href="<?= RACINE_SITE ?>admin/dashboard.php?gestionMaisons_php" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 form-group">
-                <div class="btn-group nav-css">
+                <div class="btn1 css-nav ">
                     <?php
                     if (isset($_SESSION['user'])) {
-                        // Formulaire de réservation
+
+                        if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {
+
+                            // Afficher les boutons "Annuler" et "Supprimer" pour l'admin
+
                     ?>
-                        <form method="POST">
-                            <label for="reservation_message">Message de Réservation :</label>
-                            <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'eadonly' : '' ?>>
-    <?= isset($annonce['reservation_message']) ? $annonce['reservation_message'] : '' ?>
-</textarea>
-
-                            <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
-                            <input type="submit" name="action" value="Réserver">
-                        <?php
-                    } else {
-                        // Message pour inviter l'utilisateur à se connecter ou s'inscrire
-                        echo "<p class=' '>Pour réserver, veuillez vous <a href='" . RACINE_SITE . "authentification.php'>connecter</a> ou <a href='" . RACINE_SITE . "inscription.php'>inscrire</a>.</p>";
-                    }
-                    // Vérifiez si l'utilisateur est connecté avant d'afficher les boutons "Annuler" et "Supprimer"
-                    // Vérifiez si l'utilisateur est connecté avant d'afficher les boutons "Annuler" et "Supprimer"
-                    if (isset($_SESSION['user']) && $_SESSION['user']['role'] == 'ROLE_ADMIN') {
-                        ?>
-
-                        </form>
 
 
-                        <form method="POST">
+                            <!-- Formulaire de réservation pour l'admin -->
 
-                            <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+                            <form method="POST" action="reservation_traitement.php">
 
-                            <input type="hidden" name="action" value="cancel">
+                                <label for="reservation_message">Message de Réservation :</label>
 
-                            <input type="submit" value="Annuler">
+                                <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'readonly' : '' ?>>
 
-                        </form>
-
-                        <form method="POST">
-
-                            <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
-
-                            <input type="hidden" name="action" value="delete">
-
-                            <input type="submit" value="Supprimer"><sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?? 'default' ?></sup>
+                      <?= isset($annonce['reservation_message']) ? $annonce['reservation_message'] : '' ?>
+                    
+                      </textarea>
 
 
-                        </form>
+                                <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+
+                                <input type="submit" name="action" value="Réserver">
+
+                            </form>
                 </div>
-                <!-- changer default par un -->
-                <!-- <input type="hidden" value=""> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?? 'default' ?></sup> -->
+
+                <form method="POST">
+
+                    <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+
+                    <input type="hidden" name="action" value="cancel">
+
+                    <input type="submit" value="Annuler">
+
+                </form>
 
 
-                <!-- afficher l'id  si l'ont veut -->
-                <div> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
+
+
+                <form method="POST">
+
+                    <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+
+                    <input type="hidden" name="action" value="delete">
+
+                    <input type="submit" value="Supprimer"><sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['role'] ?? 'default' ?></sup>
+
+                </form>
+
+
             <?php
-                    }
+
+                        } else {
+
+                            // Formulaire de réservation pour les utilisateurs normaux
 
             ?>
 
+                <form method="POST" action="reservation_traitement.php">
+
+                    <label for="reservation_message">Message de Réservation :</label>
+
+                    <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'readonly' : '' ?>>
+
+                     <?= isset($annonce['reservation_message']) ? $annonce['reservation_message'] : '' ?>
+                    
+                     </textarea>
 
 
+                    <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+
+                    <input type="submit" name="action" value="Réserver">
+
+                </form>
 
 
+        <?php
+
+                        }
+                    } else {
+
+                        // Message pour inviter l'utilisateur à se connecter ou s'inscrire
+
+                        echo "<p class=' '>Pour réserver, veuillez vous <a href='" . RACINE_SITE . "authentification.php'>connecter</a> ou <a href='" . RACINE_SITE . "inscription.php'>inscrire</a>.</p>";
+                    }
+        ?>
             </div>
+
+            <!-- changer default par un -->
+            <!-- <input type="hidden" value=""> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"></sup> -->
+
+
+            <!-- afficher l'id  si l'ont veut -->
+
+
+
+
+
+
+        </div>
 
         </div>
     </section>

@@ -118,6 +118,10 @@ a:hover {
 
 }
 
+.no-hover:hover {
+    background-color: inherit;
+    /* ou une autre valeur qui ne change pas l'apparence du bouton */
+}
 
 /* Autres éléments */
 
@@ -148,6 +152,10 @@ a:hover {
 
     background-color: #7d9bad;
 
+}
+
+.bg-blanc {
+    background-color: rgb(255, 255, 255);
 }
 
 

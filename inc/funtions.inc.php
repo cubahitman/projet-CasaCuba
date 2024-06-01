@@ -392,7 +392,7 @@ function dernieresAnnonces(): array
     $result = $request->fetchAll();
     return $result;
 }
-// y=============== Cette fonction récupère les détails d'une annonce spécifique à partir de la base de données.
+// y=============== Cette fonction récupère les détails d'une annonce spécifique par son Id à partir de la base de données.
 function showAnonnce($id_advert)
 {
     $pdo = connexionBdd();
