@@ -61,6 +61,14 @@ line-height: 1.5;
 
 }
 
+.body {
+    background-attachment: fixed;
+    /* height: 100vh; */
+    background-image: url('https://source.unsplash.com/-c4Stt0rvQ8o');
+    background-size: cover;
+    background-position: center;
+
+}
 
 
 .titres {
@@ -141,6 +149,10 @@ a:hover {
 
 .bg-claire {
     background-color: #d9f7f7c9;
+}
+
+.bg-rouge {
+    background-color: rgb(229, 5, 5);
 }
 
 .encadrage {
@@ -307,6 +319,7 @@ a:hover {
     /* height: 100svh; */
     display: grid;
     place-items: center;
+
 }
 
 .list {
@@ -318,6 +331,7 @@ a:hover {
 
     &:hover .item:not(:hover)::after {
         background-color: rgba(0, 0, 0, 0.6);
+
     }
 
     & .item {

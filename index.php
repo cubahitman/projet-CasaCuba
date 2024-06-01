@@ -24,9 +24,9 @@ $annonces = dernieresAnnonces();
 	</div>
 </section>
 
-<main>
+<main class="body  top-space">
 
-	<div class="container ">
+	<div class="container  ">
 		<h2 class="populardestinations">Temoignages</h2>
 
 
@@ -54,22 +54,7 @@ $annonces = dernieresAnnonces();
 		</section>
 
 
-		<!-- Section "WHO WE ARE" -->
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<img src="assets/images/academy-brand-med.png" class="mt-5" alt="">
-					<h2 class="red mt-5 trait">WHO WE ARE
 
-
-					</h2>
-					<p class="mt-5">We are <span class="red ">MASSIVE Academy.</span> We aim to improve
-						education through both methods -effective project-based learning - and material - by
-						teaching
-						skills that are applicatble to improving your life today.</p>
-				</div>
-			</div>
-		</div>
 
 
 
@@ -86,12 +71,12 @@ $annonces = dernieresAnnonces();
 
 
 <!-- Highlights - jumbotron -->
-<div class="jumbotron top-space">
+<div class="jumbotron">
 	<div class="container">
 
 		<h3 class="text-center thin">Reasons to use this template</h3>
 
-		<div class="row">
+		<div class="row  ">
 			<div class="col-md-3 col-sm-6 highlight">
 				<div class="h-caption">
 					<h4><i class="fa fa-cogs fa-5"></i>Bootstrap-powered</h4>
@@ -131,9 +116,9 @@ $annonces = dernieresAnnonces();
 <!-- /Highlights -->
 
 <!-- container -->
-<div class="container">
+<div class="container ">
 
-	<h2 class="text-center top-space">Frequently Asked Questions</h2>
+	<h2 class="text-center ">Frequently Asked Questions</h2>
 	<br>
 
 	<div class="row">
@@ -164,7 +149,7 @@ $annonces = dernieresAnnonces();
 		</div>
 	</div> <!-- /row -->
 
-	<div class="jumbotron top-space">
+	<div class="jumbotron ">
 		<h4>Dicta, nostrum nemo soluta sapiente sit dolor quae voluptas quidem doloribus recusandae facere magni ullam suscipit sunt atque rerum eaque iusto facilis esse nam veniam incidunt officia perspiciatis at voluptatibus. Libero, aliquid illum possimus numquam fuga.</h4>
 		<p class="text-right"><a class="btn btn-primary btn-large">Learn more »</a></p>
 	</div>

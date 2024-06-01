@@ -88,12 +88,8 @@ require_once "inc/header.inc.php";
 
 
 
-<?php
-require_once "inc/footer.inc.php";
 
 
-?>
-</footer>
 
 
 
@@ -112,7 +108,7 @@ require_once "inc/footer.inc.php";
 
 
 
-</main>
+
 
 <?php
 require_once "inc/footer.inc.php";
