@@ -392,7 +392,7 @@ function dernieresAnnonces(): array
     $result = $request->fetchAll();
     return $result;
 }
-// y=============== Cette fonction récupère les détails d'une annonce spécifique par son Id à partir de la base de données.
+// y=============== Cette fonction récupère les détails d'une annonce spécifique à partir de la base de données.
 function showAnonnce($id_advert)
 {
     $pdo = connexionBdd();
@@ -518,4 +518,19 @@ function deleteAdvert(int $id): void
 
 // $pdo = connexionBdd();
 
-// createReservationsTable($pdo);
+
+
+// =======================Functions entrer les reservations ==============//
+
+function entreReservation(int $id_utilisateur, int $id_annonce, string $date_arrivee, string $date_depart, int $nombre_personnes) {
+    $pdo = connexionBdd();
+    $sql = "INSERT INTO reservations (id_utilisateur, id_annonce, date_arrivee, date_depart, nombre_personnes)
+    VALUES (:id_utilisateur, :id_annonce, :date_arrivee, :date_depart, :nombre_personnes)";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':id_annonce', $id_annonce);
+    $stmt->bindParam(':id_utilisateur', $id_utilisateur);
+    $stmt->bindParam(':date_arrivee', $date_arrivee);
+    $stmt->bindParam(':date_depart', $date_depart);
+    $stmt->bindParam(':nombre_personnes', $nombre_personnes);
+    $stmt->execute();
+}

@@ -180,16 +180,27 @@ a:hover {
     transform: scale(1.1);
 }
 
-/* =PANIER */
-/* .panier {
-    z-index: 100;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 100vh !important;
+.superposer {
 
-} */
+    position: absolute;
 
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(255, 255, 255, 0.5);
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    z-index: 1;
+
+}
 
 
 /* ==================== CODE PEN     ====================== */
@@ -275,6 +286,7 @@ a:hover {
     background-image: url('https://source.unsplash.com/-4nBsYBShPKA');
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
 li {

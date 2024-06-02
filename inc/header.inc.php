@@ -74,7 +74,7 @@ ob_start(); // Active le tampon de sortie
                     <a href="<?= RACINE_SITE ?>admin/dashboard.php" class=" btn ">Espace Pro</a>
                     <?php if (empty($_SESSION['user'])) { ?>
                 <li class="nav-item dropdown">
-                    <a class="action-button btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Connexion
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">

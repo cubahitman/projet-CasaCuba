@@ -133,7 +133,7 @@ ob_end_flush();
 
 
     <section class=" container ">
-        <div class="row d-flex justify-content-center align-items-center">
+        <div class="row d-flex justify-content-center m-auto">
             <h1 class="text-center text-light">Ici<?= $info . $reservation ?></h1>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="card">
@@ -159,7 +159,7 @@ ob_end_flush();
                     <?php
                     if (isset($_SESSION['user'])) {
 
-                        if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {
+                       
 
                             // Afficher les boutons "Annuler" et "Supprimer" pour l'admin
 
@@ -174,7 +174,7 @@ ob_end_flush();
                             <form method="POST" action="reservation_traitement.php?annonce=<?= $annonce['id_advert'] ?>">
                                 <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id'] ?>">
                                 <!-- Le reste du formulaire -->
-
+                                <?php             if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
 
                                 <label for="reservation_message">Message de Réservation :</label>
 
@@ -238,7 +238,7 @@ ob_end_flush();
 
                     <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
-                    <input type="submit" name="action" value="Réserver">
+                    <input type="submit" name="action" value="Réserver"><h2>Bonjour <?php echo $_SESSION['user']['firstName'] ?></h2>
 
                 </form>
 
