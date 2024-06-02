@@ -171,7 +171,7 @@ ob_end_flush();
 
                             <!-- <form method="POST" action="reservation_traitement.php?annonce=<?= $annonce['id_advert'] ?>&user=<?= $_SESSION['user']['id'] ?>"> -->
 
-                            <form method="POST" action="reservation_traitement.php?annonce=<?= $annonce['id_advert'] ?>">
+                            <form method="POST" action="reservation_traitement.php?annonce=<?= $id_advert ?>">
                                 <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id'] ?>">
                                 <!-- Le reste du formulaire -->
                                 <?php             if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>

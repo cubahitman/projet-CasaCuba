@@ -22,6 +22,7 @@ require_once "inc/__navbar.php";
 
 
 $id_advert = $_GET['annonce'];
+
 $id_utilisateur = $_POST['user_id'];
 $annonce = showAnonnce($id_advert);
 debug($id_advert);
