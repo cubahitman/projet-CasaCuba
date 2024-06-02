@@ -522,15 +522,26 @@ function deleteAdvert(int $id): void
 
 // =======================Functions entrer les reservations ==============//
 
-function entreReservation(int $id_utilisateur, int $id_annonce, string $date_arrivee, string $date_depart, int $nombre_personnes) {
+function entreReservation($id_utilisateur, $id_annonce, $date_arrivee, $date_depart, $nombre_personnes) {
+
     $pdo = connexionBdd();
+
     $sql = "INSERT INTO reservations (id_utilisateur, id_annonce, date_arrivee, date_depart, nombre_personnes)
+
     VALUES (:id_utilisateur, :id_annonce, :date_arrivee, :date_depart, :nombre_personnes)";
+
     $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':id_annonce', $id_annonce);
-    $stmt->bindParam(':id_utilisateur', $id_utilisateur);
-    $stmt->bindParam(':date_arrivee', $date_arrivee);
-    $stmt->bindParam(':date_depart', $date_depart);
-    $stmt->bindParam(':nombre_personnes', $nombre_personnes);
+
+    $stmt->bindValue(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
+
+    $stmt->bindValue(':id_annonce', $id_annonce, PDO::PARAM_INT);
+
+    $stmt->bindValue(':date_arrivee', $date_arrivee, PDO::PARAM_STR);
+
+    $stmt->bindValue(':date_depart', $date_depart, PDO::PARAM_STR);
+
+    $stmt->bindValue(':nombre_personnes', $nombre_personnes, PDO::PARAM_INT);
+
     $stmt->execute();
+
 }

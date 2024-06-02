@@ -11,53 +11,68 @@ require_once "inc/__navbar.php";
 //     header('Location: authentification.php');
 //       exit;
 //     }
-  // Vérification si l'ID de l'annonce est présent
-  
+// Vérification si l'ID de l'annonce est présent
+
 //   if (!isset($_GET['id_annonce']) || empty($_GET['id_annonce'])) {
 //       header('Location: annonces.php');
 //       exit;
 //     }
 
 
+if (isset($_GET['annonce'])) {
 
+    $id_advert = $_GET['annonce'];
+} else {
+
+    $id_advert = null; // ou une valeur par défaut
+    header('location: index.php');
+}
+
+
+if (isset($_POST['user_id'])) {
+
+    $id_utilisateur = $_POST['user_id'];
+} else {
+
+    $id_utilisateur = null; // ou une valeur par défaut
+
+}
 
 $id_advert = $_GET['annonce'];
-$id_utilisateur = $_POST['user_id'];
+$id_utilisateur = $_SESSION['user']['id_user'];
 $annonce = showAnonnce($id_advert);
-debug($id_advert);
+// debug($id_advert);
 debug($id_utilisateur);
-
+// debug($annonce);
 
 if (isset($_POST['reserver'])) {
 
-    // Récupération des données du formulaire
-  
-    $id_annonce = $_POST['id_annonce'];
-  
-    $id_utilisateur = $_POST['id_utilisateur'];
-  
-    $date_arrivee = $_POST['date_arrivee'];
-  
-    $date_depart = $_POST['date_depart'];
-  
-    $nombre_personnes = $_POST['nombre_personnes'];
-  
-  
-    // Appel de la fonction pour entrer la réservation
-  
-    entreReservation($pdo, $id_annonce, $id_utilisateur, $date_arrivee, $date_depart, $nombre_personnes);
-  
-  
-    // Redirection vers une page de confirmation
-  
-    header('Location: confirmation.php');
-  
-    exit;
-  
-  }
 
-  
-  ?>   
+    $id_annonce = $_POST['id_annonce'];
+
+    $id_utilisateur = $_SESSION['user']['id_user'];
+
+    $date_arrivee = $_POST['date_arrivee'];
+
+    $date_depart = $_POST['date_depart'];
+
+    $nombre_personnes = $_POST['nombre_personnes'];
+
+
+    // Appel de la fonction pour entrer la réservation
+
+    entreReservation($pdo, $id_annonce, $id_utilisateur, $date_arrivee, $date_depart, $nombre_personnes);
+
+
+    // Redirection vers une page de confirmation
+
+    header('Location: confirmation.php');
+
+    exit;
+}
+
+
+?>
 
 
 
@@ -119,26 +134,26 @@ if (isset($_POST['reserver'])) {
 
 
         </form>
-       
-       
+
+
 
     </div>
-    
-    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 m-auto ">
-                <div class="card1 ">
-                    <div> <sup class="badge rounded-pill text-bg-danger ms-1 "><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
-                    <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title']  ?>">
-                    <div class="card-body">
-                        <?php if ($annonce['is_reserved']) {
-                            echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
-                        } else {
-                            echo "<h5 class='card-title'>" . $annonce['title'] . "</h5>";
-                        } ?>
-                        <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
 
-                    </div>
-                </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 m-auto ">
+        <div class="card1  ">
+            <div> <sup class="badge rounded-pill text-bg-danger ms-1 "><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
+            <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title']  ?>">
+            <div class="card-body">
+                <?php if ($annonce['is_reserved']) {
+                    echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
+                } else {
+                    echo "<h5 class='card-title'>" . $annonce['title'] . "</h5>";
+                } ?>
+                <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
+
             </div>
+        </div>
+    </div>
 </main>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
