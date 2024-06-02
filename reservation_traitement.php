@@ -19,59 +19,65 @@ require_once "inc/__navbar.php";
 //     }
 
 
-if (isset($_GET['annonce'])) {
-
-    $id_advert = $_GET['annonce'];
-} else {
-
-    $id_advert = null; // ou une valeur par défaut
-    header('location: index.php');
-}
 
 
-if (isset($_POST['user_id'])) {
-
-    $id_utilisateur = $_POST['user_id'];
-} else {
-
-    $id_utilisateur = null; // ou une valeur par défaut
-
-}
 
 $id_advert = $_GET['annonce'];
 $id_utilisateur = $_SESSION['user']['id_user'];
 $annonce = showAnonnce($id_advert);
-// debug($id_advert);
+debug($id_advert);
 debug($id_utilisateur);
-// debug($annonce);
-
-if (isset($_POST['reserver'])) {
+debug($annonce);
 
 
-    $id_annonce = $_POST['id_annonce'];
+if (isset($_GET['annonce'])) {
 
-    $id_utilisateur = $_SESSION['user']['id_user'];
-
-    $date_arrivee = $_POST['date_arrivee'];
-
-    $date_depart = $_POST['date_depart'];
-
-    $nombre_personnes = $_POST['nombre_personnes'];
+    $id_advert = $_GET['annonce'];
+} 
 
 
-    // Appel de la fonction pour entrer la réservation
+// if (isset($_POST['reserver'])) {
 
-    entreReservation($pdo, $id_annonce, $id_utilisateur, $date_arrivee, $date_depart, $nombre_personnes);
+if (!empty($_POST)) {
+    if (isset($_POST['form_name']) && $_POST['form_name'] == 'reservation_form') {
+
+        // code pour traiter la réservation
 
 
-    // Redirection vers une page de confirmation
+        $id_annonce = $_POST['id_annonce'];
 
-    header('Location: confirmation.php');
+        $id_utilisateur = $_SESSION['user']['id_user'];
 
-    exit;
+        $date_arrivee = $_POST['date_arrivee'];
+
+        $date_depart = $_POST['date_depart'];
+
+        $nombre_personnes = $_POST['nombre_personnes'];
+
+        error_reporting(E_ALL);
+        // Appel de la fonction pour entrer la réservation
+        try {
+            entreReservation($id_annonce, $id_utilisateur, $date_arrivee, $date_depart, $nombre_personnes);
+        } catch (PDOException $e) {
+
+
+            echo 'Erreur PDO : ' . $e->getMessage();
+
+            $errorInfo = $pdo->errorInfo();
+
+            print_r($errorInfo);
+            error_log("Erreur lors de la réservation : " . $e->getMessage() . "\n", 3, "erreur.log");
+
+            echo "Erreur lors de la réservation";
+        }
+
+        // Redirection vers une page de confirmation
+
+        header('Location: confirmation.php');
+
+        exit;
+    }
 }
-
-
 ?>
 
 
@@ -88,7 +94,7 @@ if (isset($_POST['reserver'])) {
         <h1 class="text-center">Réserver une annonce</h1>
         <h2>Bonjour <?php echo $_SESSION['user']['firstName'] ?></h2>
 
-        <form method="POST" action="">
+        <form method="POST" action="reservation_traitement.php">
 
 
             <input type="hidden" name="id_annonce" value="<?= $annonce['id_advert'] ?>">
@@ -129,8 +135,10 @@ if (isset($_POST['reserver'])) {
 
             </div>
 
+            <input type="hidden" name="form_name" value="reservation_form">
 
-            <button type="submit" name="action" class="btn btn-primary btn-block">Réserver</button>
+            <button type="submit" name="action" class="btn btn-primary btn-block" value="confirmer">Réserver</button>
+
 
 
         </form>

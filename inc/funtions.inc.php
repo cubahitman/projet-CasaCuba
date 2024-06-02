@@ -522,26 +522,21 @@ function deleteAdvert(int $id): void
 
 // =======================Functions entrer les reservations ==============//
 
-function entreReservation($id_utilisateur, $id_annonce, $date_arrivee, $date_depart, $nombre_personnes) {
-
+function entreReservation($id_annonce, $id_utilisateur, $date_arrivee, $date_depart, $nombre_personnes) {
     $pdo = connexionBdd();
-
-    $sql = "INSERT INTO reservations (id_utilisateur, id_annonce, date_arrivee, date_depart, nombre_personnes)
-
-    VALUES (:id_utilisateur, :id_annonce, :date_arrivee, :date_depart, :nombre_personnes)";
-
-    $stmt = $pdo->prepare($sql);
-
-    $stmt->bindValue(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
-
-    $stmt->bindValue(':id_annonce', $id_annonce, PDO::PARAM_INT);
-
-    $stmt->bindValue(':date_arrivee', $date_arrivee, PDO::PARAM_STR);
-
-    $stmt->bindValue(':date_depart', $date_depart, PDO::PARAM_STR);
-
-    $stmt->bindValue(':nombre_personnes', $nombre_personnes, PDO::PARAM_INT);
-
-    $stmt->execute();
-
+    $sql = $pdo->prepare("INSERT INTO reservations (id_annonce, id_utilisateur, date_arrivee, date_depart, nombre_personnes) VALUES (:id_annonce, :id_utilisateur, :date_arrivee, :date_depart, :nombre_personnes)");
+    $sql->bindParam(':id_annonce', $id_annonce);
+    $sql->bindParam(':id_utilisateur', $id_utilisateur);
+    $sql->bindParam(':date_arrivee', $date_arrivee);
+    $sql->bindParam(':date_depart', $date_depart);
+    $sql->bindParam(':nombre_personnes', $nombre_personnes);
+    try {
+        $sql->execute();
+        header('Location: index.php');
+        exit;
+    } catch (PDOException $e) {
+        // Logger l'erreur dans un fichier ou une base de données
+        error_log($e->getMessage());
+        echo "Erreur lors de la réservation";
+    }
 }

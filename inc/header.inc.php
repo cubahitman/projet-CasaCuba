@@ -62,14 +62,36 @@ ob_start(); // Active le tampon de sortie
                 <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profil <?php if (isset($_SESSION['user'])) { ?>
-                            <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
-                        <?php    } ?> <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                        <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php">Inscriptions</a></li>
-                    </ul>
-                </li>
+
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profil 
+
+        <?php if (isset($_SESSION['user'])) {?>
+
+            <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName']?></sup>
+
+        <?php }?> 
+
+        <b class="caret"></b>
+
+    </a>
+
+    <ul class="dropdown-menu">
+
+        <?php if (isset($_SESSION['user'])) {?>
+
+            <li><a class="dropdown-item" href="<?= RACINE_SITE?>profil.php">Mon compte</a></li>
+
+        <?php } else {?>
+
+            <li><a class="dropdown-item" href="<?= RACINE_SITE?>connexion.php">Connexion</a></li>
+
+            <li><a class="dropdown-item" href="<?= RACINE_SITE?>register.php">Inscriptions</a></li>
+
+        <?php }?>
+
+    </ul>
+
+</li>
                 <li class="espace-pro ">
                     <a href="<?= RACINE_SITE ?>admin/dashboard.php" class=" btn ">Espace Pro</a>
                     <?php if (empty($_SESSION['user'])) { ?>
