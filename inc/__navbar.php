@@ -1,6 +1,7 @@
 <?php
 
 require_once "inc/__header.php";
+logOut();
 ?>
 
 <body>
@@ -21,7 +22,8 @@ require_once "inc/__header.php";
                 </ul>
                 <div class="buttons">
                     <a href="#" class="action-button pro">Espace Pro</a>
-                    <a href="#" class="action-button">Se connecter</a>
+                    
+                    <a href="?action=deconnexion" class="action-button">Deconnexion</a>
                 </div>
                 <div class="burger-menu-button">
                     <i class="fa-solid fa-bars"></i>
@@ -51,7 +53,7 @@ require_once "inc/__header.php";
                         <?php if (empty($_SESSION['user'])) { ?>
                     <li class="nav-item dropdown">
                         <a class="action-button btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Connexion
+                            Connexion 
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>

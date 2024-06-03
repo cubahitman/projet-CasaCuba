@@ -159,22 +159,15 @@ ob_end_flush();
                     <?php
                     if (isset($_SESSION['user'])) {
 
-                       
-
-                            // Afficher les boutons "Annuler" et "Supprimer" pour l'admin
+                        // Afficher les boutons "Annuler" et "Supprimer" pour l'admin
 
                     ?>
 
 
-                            <!-- Formulaire de réservation pour l'admin -->
-
-
-                            <!-- <form method="POST" action="reservation_traitement.php?annonce=<?= $annonce['id_advert'] ?>&user=<?= $_SESSION['user']['id'] ?>"> -->
-
-                            <form method="POST" action="reservation_traitement.php?annonce=<?= $annonce['id_advert'] ?>">
-                                <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id_user'] ?>">
-                                <!-- Le reste du formulaire -->
-                                <?php             if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
+<form method="POST" action="<?= ($annonce['type'] == 'location') ? 'reservation_traitement.php' : 'panier.php' ?>?annonce=<?= $annonce['id_advert'] ?>">
+                            <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id_user'] ?>">
+                            <!-- Le reste du formulaire -->
+                            <?php if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
 
                                 <label for="reservation_message">Message de Réservation :</label>
 
@@ -189,7 +182,7 @@ ob_end_flush();
 
                                 <input type="submit" name="action" value="Réserver">
 
-                            </form>
+                        </form>
                 </div>
 
                 <div class="nav-css top-space ">
@@ -219,9 +212,9 @@ ob_end_flush();
 
             <?php
 
-                        } else {
+                            } else {
 
-                            // Formulaire de réservation pour les utilisateurs normaux
+                                // Formulaire de réservation pour les utilisateurs normaux
 
             ?>
 
@@ -238,20 +231,21 @@ ob_end_flush();
 
                     <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
-                    <input type="submit" name="action" value="Réserver"><h2>Bonjour <?php echo $_SESSION['user']['firstName'] ?></h2>
+                    <input type="submit" name="action" value="Réserver">
+                    <h2>Bonjour <?php echo $_SESSION['user']['firstName'] ?></h2>
 
                 </form>
 
 
         <?php
 
+                            }
+                        } else {
+
+                            // Message pour inviter l'utilisateur à se connecter ou s'inscrire
+
+                            echo "<p class=' '>Pour réserver, veuillez vous <a href='" . RACINE_SITE . "authentification.php'>connecter</a> ou <a href='" . RACINE_SITE . "inscription.php'>inscrire</a>.</p>";
                         }
-                    } else {
-
-                        // Message pour inviter l'utilisateur à se connecter ou s'inscrire
-
-                        echo "<p class=' '>Pour réserver, veuillez vous <a href='" . RACINE_SITE . "authentification.php'>connecter</a> ou <a href='" . RACINE_SITE . "inscription.php'>inscrire</a>.</p>";
-                    }
         ?>
             </div>
 

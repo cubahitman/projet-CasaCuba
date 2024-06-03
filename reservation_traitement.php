@@ -88,7 +88,7 @@ if (!empty($_POST)) {
 
 <main>
 
-    <div class="container superposerR">
+    <div class="container superposerR ">
 
 
         <h1 class="text-center">Réserver une annonce</h1>
@@ -139,17 +139,9 @@ if (!empty($_POST)) {
 
             <button type="submit" name="action" class="btn btn-primary btn-block" value="confirmer">Réserver</button>
 
-
-
-        </form>
-
-
-
-    </div>
-
-    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 superposerG ">
+            <div class=" ">
         <div class="card1  ">
-            <div> <sup class=" rounded-pill   "><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
+            
             <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title']  ?>">
             <div class="">
                 <?php if ($annonce['is_reserved']) {
@@ -162,6 +154,14 @@ if (!empty($_POST)) {
             </div>
         </div>
     </div>
+
+        </form>
+
+
+
+    </div>
+
+   
 </main>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

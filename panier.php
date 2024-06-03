@@ -18,7 +18,7 @@ $annonces = annoncesByType();
 
         <div class="  text-center   ">
 
-            <a href="index.php" class="display-5  btn btn-primary text-white text-decoration-none">
+            <a href="index.php" class="display-5 top-space btn btn-primary text-white text-decoration-none">
 
                 Page d'Accueil
 
