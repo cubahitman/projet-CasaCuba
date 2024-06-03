@@ -83,7 +83,7 @@ ob_start(); // Active le tampon de sortie
 
         <?php } else {?>
 
-            <li><a class="dropdown-item" href="<?= RACINE_SITE?>connexion.php">Connexion</a></li>
+            <li><a class="dropdown-item" href="<?= RACINE_SITE?>authentification.php">Connexion</a></li>
 
             <li><a class="dropdown-item" href="<?= RACINE_SITE?>register.php">Inscriptions</a></li>
 

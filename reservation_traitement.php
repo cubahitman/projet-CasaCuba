@@ -25,9 +25,9 @@ require_once "inc/__navbar.php";
 $id_advert = $_GET['annonce'];
 $id_utilisateur = $_SESSION['user']['id_user'];
 $annonce = showAnonnce($id_advert);
-debug($id_advert);
-debug($id_utilisateur);
-debug($annonce);
+// debug($id_advert);
+// debug($id_utilisateur);
+// debug($annonce);
 
 
 if (isset($_GET['annonce'])) {
@@ -88,7 +88,7 @@ if (!empty($_POST)) {
 
 <main>
 
-    <div class="container superposer">
+    <div class="container superposerR">
 
 
         <h1 class="text-center">Réserver une annonce</h1>
@@ -147,11 +147,11 @@ if (!empty($_POST)) {
 
     </div>
 
-    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 m-auto ">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4 superposerG ">
         <div class="card1  ">
-            <div> <sup class="badge rounded-pill text-bg-danger ms-1 "><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
+            <div> <sup class=" rounded-pill   "><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
             <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title']  ?>">
-            <div class="card-body">
+            <div class="">
                 <?php if ($annonce['is_reserved']) {
                     echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
                 } else {

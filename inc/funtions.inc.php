@@ -479,6 +479,45 @@ function deleteAdvert(int $id): void
     }
 }
 
+
+
+// =======================Functions entrer les reservations ==============//
+
+function entreReservation($id_annonce, $id_utilisateur, $date_arrivee, $date_depart, $nombre_personnes) {
+    $pdo = connexionBdd();
+    $sql = $pdo->prepare("INSERT INTO reservations (id_annonce, id_utilisateur, date_arrivee, date_depart, nombre_personnes) VALUES (:id_annonce, :id_utilisateur, :date_arrivee, :date_depart, :nombre_personnes)");
+    $sql->bindParam(':id_annonce', $id_annonce);
+    $sql->bindParam(':id_utilisateur', $id_utilisateur);
+    $sql->bindParam(':date_arrivee', $date_arrivee);
+    $sql->bindParam(':date_depart', $date_depart);
+    $sql->bindParam(':nombre_personnes', $nombre_personnes);
+    try {
+        $sql->execute();
+        header('Location: index.php');
+        exit;
+    } catch (PDOException $e) {
+        // Logger l'erreur dans un fichier ou une base de données
+        error_log($e->getMessage());
+        echo "Erreur lors de la réservation";
+    }
+}
+//  ==================================Funtions afiche reservations  =====================/
+
+function showReservations($id_utilisateur )
+{
+    $pdo = connexionBdd();
+    $sql = $pdo->prepare("SELECT * FROM reservations WHERE id_utilisateur  = :id_utilisateur ");
+    $sql->bindParam(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
+    $sql->execute();
+    $reservation = $sql->fetchAll();
+    return $reservation;
+}
+
+
+
+
+
+
 //  creacion de table reservations
 // function createReservationsTable($pdo)
 // {
@@ -518,25 +557,3 @@ function deleteAdvert(int $id): void
 
 // $pdo = connexionBdd();
 
-
-
-// =======================Functions entrer les reservations ==============//
-
-function entreReservation($id_annonce, $id_utilisateur, $date_arrivee, $date_depart, $nombre_personnes) {
-    $pdo = connexionBdd();
-    $sql = $pdo->prepare("INSERT INTO reservations (id_annonce, id_utilisateur, date_arrivee, date_depart, nombre_personnes) VALUES (:id_annonce, :id_utilisateur, :date_arrivee, :date_depart, :nombre_personnes)");
-    $sql->bindParam(':id_annonce', $id_annonce);
-    $sql->bindParam(':id_utilisateur', $id_utilisateur);
-    $sql->bindParam(':date_arrivee', $date_arrivee);
-    $sql->bindParam(':date_depart', $date_depart);
-    $sql->bindParam(':nombre_personnes', $nombre_personnes);
-    try {
-        $sql->execute();
-        header('Location: index.php');
-        exit;
-    } catch (PDOException $e) {
-        // Logger l'erreur dans un fichier ou une base de données
-        error_log($e->getMessage());
-        echo "Erreur lors de la réservation";
-    }
-}
