@@ -65,19 +65,41 @@ require_once "funtions.inc.php";
                 <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profil <?php if (isset($_SESSION['user'])) { ?>
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profil
+
+                        <?php if (isset($_SESSION['user'])) { ?>
+
                             <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
-                        <?php    } ?> <b class="caret"></b></a>
+
+                        <?php } ?>
+
+                        <b class="caret"></b>
+
+                    </a>
+
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>
-                        <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php">Inscriptions</a></li>
+
+                        <?php if (isset($_SESSION['user'])) { ?>
+
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Mon compte</a></li>
+
+                        <?php } else { ?>
+
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>authentification.php">Connexion</a></li>
+
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php">Inscriptions</a></li>
+
+                        <?php } ?>
+
                     </ul>
+
                 </li>
                 <li class="espace-pro ">
-                    <a href="<?= RACINE_SITE ?>admin/dashboard.php" class="action-button btn ">Espace Pro</a>
+                    <a href="<?= RACINE_SITE ?>admin/dashboard.php" class=" btn ">Espace Pro</a>
                     <?php if (empty($_SESSION['user'])) { ?>
                 <li class="nav-item dropdown">
-                    <a class="action-button btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class=" btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Connexion
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">

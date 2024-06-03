@@ -16,7 +16,7 @@ $title = "Profil";
 require_once "inc/header.inc.php";
 ?>
 
-<main class="container">
+<main class="container top-space1 space">
     <div class="list-group m-5">
         <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
             <?= $_SESSION['user']['firstName'] ?>

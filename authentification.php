@@ -50,7 +50,7 @@ require_once "inc/header.inc.php";
 
 ?>
 
-<main>
+<main class=" top-space1">
     <div>
         <h2 class="text-center">Connexion</h2>
     </div>
@@ -86,9 +86,13 @@ require_once "inc/header.inc.php";
 
             ?>
     </div>
+    <section class="container-full top-space1">
+        <div id="map"></div>
+    </section>
+
+
+
 </main>
-
-
 <?php
 require_once "inc/footer.inc.php";
 

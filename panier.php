@@ -1,8 +1,12 @@
 <?php
 // $films = array();
 
+
+
+
+
 $title = "Panier";
-require_once "inc/header.inc.php";
+require_once "inc/header.inc_copy.php";
 
 
 
@@ -12,17 +16,13 @@ require_once "inc/header.inc.php";
 $annonces = annoncesByType();
 ?>
 
-<main class=" back   ">
+<main class=" bg-Business   ">
 
     <section class=" ">
 
         <div class="  text-center   ">
 
-            <a href="index.php" class="display-5 top-space btn btn-primary text-white text-decoration-none">
-
-                Page d'Accueil
-
-            </a>
+            
             <!-- Section "WHO WE ARE" -->
             <div class="container">
                 <div class="row">
@@ -41,7 +41,7 @@ $annonces = annoncesByType();
             </div>
         </div>
     </section>
-    <section class=" container m-5 text-center">
+    <!-- <section class=" container m-5 text-center">
         <div class="row">
             <?php
             foreach ($annonces as $annonce) {
@@ -60,7 +60,7 @@ $annonces = annoncesByType();
             }
             ?>
         </div>
-    </section>
+    </section> -->
 </main>
 
 

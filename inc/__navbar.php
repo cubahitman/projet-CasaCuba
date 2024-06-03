@@ -19,10 +19,16 @@ logOut();
                     <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
 
                     <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
+                    <li><a href="<?= RACINE_SITE ?>profil.php">Profil</a><sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup></li>
+                    </a>
+
+
+
+
                 </ul>
                 <div class="buttons">
                     <a href="#" class="action-button pro">Espace Pro</a>
-                    
+
                     <a href="?action=deconnexion" class="action-button">Deconnexion</a>
                 </div>
                 <div class="burger-menu-button">
@@ -53,7 +59,7 @@ logOut();
                         <?php if (empty($_SESSION['user'])) { ?>
                     <li class="nav-item dropdown">
                         <a class="action-button btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Connexion 
+                            Connexion
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Connexion</a></li>

@@ -178,7 +178,7 @@ require_once "inc/header.inc.php";
 
 ?>
 
-<main class="  ">
+<main class=" top-space1 ">
 
     <div class=" ">
         <h1 class="text-center ">Créer un compte</h1>

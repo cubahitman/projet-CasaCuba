@@ -5,11 +5,11 @@ $title = "Contact";
 require_once "inc/header.inc.php";
 ?>
 
-
+<main class="  ">
 
 
 <!-- container -->
-<div class="container">
+<div class="container top-space1">
 
     <ol class="breadcrumb">
         <li><a href="index.php">Home</a></li>
@@ -80,13 +80,13 @@ require_once "inc/header.inc.php";
     </div>
 </div> <!-- /container -->
 
-<section class="container-full top-space">
+<section class="container-full top-space1">
     <div id="map"></div>
 </section>
 
 
 
-
+</main>
 
 
 

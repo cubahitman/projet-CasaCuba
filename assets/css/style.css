@@ -51,8 +51,34 @@
     cursor: pointer;
 
 }
+.head1{
+	background: #e9e9f1 ;
+	background-size: cover;
+	min-height: 1120px;
+	
+	padding-top: 140px;
+	color: var(--rouge);
+	font-family: "Open sans", Helvetica, Arial;
+	font-weight: 300;
+    
+}
+.space{
+    height: 70vh;
+}
+.top-space1{
+    margin-top: 110px;
+}
 
-/* ===========fond ecrams================ */
+/* ===========fond ecrams background================ */
+
+/* avec back Business */
+.bg-Business{
+    background-attachment: fixed;
+    background-image: url('https://source.unsplash.com/-HJckKnwCXxQ');
+    background-size: cover;
+    background-position: center;
+} 
+
 /* avec cabane a la plage */
 .back {
     background-attachment: fixed;
@@ -131,6 +157,8 @@ a:hover {
 
 /* ===============decorations pages admin et generals======================== */
 
+
+
 .bg-admin {
     background-color: #212529
 }
@@ -138,6 +166,8 @@ a:hover {
 .bg-bleuNav {
     background-color: #003554;
 }
+
+
 
 
 
