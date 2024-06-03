@@ -46,13 +46,13 @@ ob_start(); // Active le tampon de sortie
 
 <!-- Fixed navbar -->
 <div class="navbar navbar-inverse navbar-fixed-top headroom bg-bleuNav">
-    <div class="nav-css">
-        <div class="navbar-header">
+    <div class="nav-css ">
+        <div class="navbar-header ">
             <!-- Button for smallest screens -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
             <a class="navbar-brand  " href="index.php"><img src="assets/images/CUBA(3).png" alt="Mon Logo" style="height: 100%;"> Cubabuy</a>
         </div>
-        <div class=" navbar-collapse collapse">
+        <div class="a navbar-collapse collapse">
             <ul class="nav navbar-nav pull-right">
 
                 <li><a href="<?= RACINE_SITE ?>annoceLocation.php">LOCATIONS</a></li>

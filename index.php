@@ -14,7 +14,7 @@ $annonces = dernieresAnnonces();
 	</p>
 </div>
 <!-- /Intro-->
-<section class="">
+<!-- <section class="">
 	<div class="container-fluid text-center p-5 ">
 		<a href="explorer.php" class="btn btn-action btn-lg">
 
@@ -22,23 +22,61 @@ $annonces = dernieresAnnonces();
 
 		</a>
 	</div>
-</section>
-<section>
-	<div>
-	<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+</section> -->
+<main class="bg-capitoliounuit top-space ">
+	<section class="">
+
+
+	</section>
+	<section class="  body text-center  ">
+		<div class="row">
+
+			<div class="col-lg-4 col-md-6 col-sm-12 ">
+				<div class="card1   ">
+					<img src="assets/img/femmeBalance.png" class="card-img " alt="Femme dans un balançoire à la plage " style="height: 100%; width: 100%; object-fit: cover;">
+					
+					<div class="card-img-overlay d-flex justify-content-center align-items-center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+
+
+    <button type="button" class="btn btn-primary">Go somewhere</button>
+
+
   </div>
+					
+				</div>
+			</div>
+			
+		</div>
+	</section>
+</main>
 </div>
+
+<div class="card back" style="width: 18rem; ">
+	<img src="..." class="card-img-top" alt="...">
+	<div class="card-body">
+		<h5 class="card-title">Card title</h5>
+		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		<a href="#" class="btn btn-primary">Go somewhere</a>
 	</div>
-</section>
-<main class="back  top-space">
+</div>
+</div>
+<div class="back  top-space">
 
 	<div class="container  ">
 		<h2 class="">Temoignages</h2>
+		<section>
+			<div>
+				<div class="card text-bg-dark">
+					<img src="assets/img/couple.avif" class="card-img" alt="...">
+					<div class="card-img-overlay">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<p class="card-text"><small>Last updated 3 mins ago</small></p>
+					</div>
+				</div>
+			</div>
 
+		</section>
 
 		<section class="">
 			<h2>Popular destinations in Cuba</h2>
@@ -69,7 +107,7 @@ $annonces = dernieresAnnonces();
 
 
 	</div>
-</main>
+</div>
 
 <footer>
 	<!-- Ajoutez ici le contenu du pied de page -->
