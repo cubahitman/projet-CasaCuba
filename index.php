@@ -23,46 +23,31 @@ $annonces = dernieresAnnonces();
 		</a>
 	</div>
 </section> -->
-<main class="bg-capitoliounuit top-space ">
-	<section class="">
+<main class=" top-space ">
 
+<section class="body text-center">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="card1">
+        <img src="assets/img/femmeBalance.png" class="card-img" alt="Femme dans un balançoire à la plage" style="height: 100%; width: 100%; object-fit: cover;">
 
-	</section>
-	<section class="  body text-center  ">
-		<div class="row">
+        <div class="card-img-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%;">
 
-			<div class="col-lg-4 col-md-6 col-sm-12 ">
-				<div class="card1   ">
-					<img src="assets/img/femmeBalance.png" class="card-img " alt="Femme dans un balançoire à la plage " style="height: 100%; width: 100%; object-fit: cover;">
-					
-					<div class="card-img-overlay d-flex justify-content-center align-items-center" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+          <button type="button" class=" button  ms-3 mb-3">Go somewhere</button>
 
+        </div>
 
-    <button type="button" class="btn btn-primary">Go somewhere</button>
-
-
+      </div>
+    </div>
   </div>
-					
-				</div>
-			</div>
-			
-		</div>
-	</section>
+</section>
 </main>
-</div>
 
-<div class="card back" style="width: 18rem; ">
-	<img src="..." class="card-img-top" alt="...">
-	<div class="card-body">
-		<h5 class="card-title">Card title</h5>
-		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		<a href="#" class="btn btn-primary">Go somewhere</a>
-	</div>
-</div>
-</div>
+
+
 <div class="back  top-space">
 
-	<div class="container  ">
+	<div class="  ">
 		<h2 class="">Temoignages</h2>
 		<section>
 			<div>

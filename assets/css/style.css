@@ -152,7 +152,24 @@ a:hover {
     background-color: inherit;
     /* ou une autre valeur qui ne change pas l'apparence du bouton */
 }
-
+.button {
+    cursor: pointer;
+    top: 838px;
+    left: 1076px;
+    width: 140px;
+    height: 32px;
+    padding: 0px 8px;
+    border: 0;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: #151515;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Poppins";
+    line-height: 24px;
+    outline: none;
+  }
+  
 /* Autres éléments */
 
 
