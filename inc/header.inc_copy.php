@@ -3,7 +3,7 @@ require_once "funtions.inc.php";
 
 
 // déconnexion ($_SESSION)
-// logOut();
+logOut();
 
 
 // $categories =  allCategories();

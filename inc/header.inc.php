@@ -32,7 +32,7 @@ ob_start(); // Active le tampon de sortie
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
     <!-- Custom styles for our template -->
-
+    <!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="assets/css/bootstrap-theme.css" media="screen">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">

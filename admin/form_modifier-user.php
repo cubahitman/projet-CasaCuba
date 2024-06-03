@@ -86,7 +86,7 @@ if (isset($_POST)) {
 }
 
 $title = "modifier-user";
-require_once "../inc/header.inc_copy.php";
+
 ob_start(); // Active le tampon de sortie
 ?>
 <div class="">
@@ -160,7 +160,7 @@ ob_start(); // Active le tampon de sortie
                 </div>
             </div>
             <div class=" my-5">
-                <button class="w-25 m-auto btn " type="submit">Modifier</button>
+                <button href="dashboard.php" class="w-25 m-auto btn " type="submit">Modifier</button>
 
                 <a href="dashboard.php?users_php" class="display-5 mx-5 btn btn-primary text-white text-decoration-none">
                     Revenir a la dashboard

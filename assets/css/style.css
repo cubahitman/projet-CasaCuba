@@ -214,7 +214,7 @@ a:hover {
 
     position: absolute;
 
-    top: 55%;
+    top: 57%;
 
     left: 50%;
 
@@ -363,7 +363,7 @@ a:hover {
 .navbar-resp {
     width: 100%;
     max-width: 1200px;
-    height: 60px;
+    height: 100px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -466,7 +466,7 @@ a:hover {
 
 
 
-/* ---------RESPONSIVE------------- */
+/* ---------RESPONSIVE NAV------------- */
 
 
 @media (max-width: 990px) {
@@ -496,3 +496,4 @@ a:hover {
         width: unset;
     }
 }
+

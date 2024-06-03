@@ -28,11 +28,11 @@ $annonces = annoncesByType([$type]);
     <p class="">
         Que vous cherchiez une résidence secondaire ou un investissement locatif, notre collection de maisons et d'appartements à Cuba répondra à vos attentes.
     </p>
-    <a href="index.php" class="display-5  btn btn-primary text-white text-decoration-none">
+    <!-- <a href="index.php" class="display-5  btn btn-primary text-white text-decoration-none">
 
         Page d'Accueil
 
-    </a>
+    </a> -->
 </div>
 <main class="bg-capitoliounuit top-space ">
     <section class="">
