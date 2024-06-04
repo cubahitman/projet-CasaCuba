@@ -28,62 +28,60 @@ $annonces = dernieresAnnonces();
 	<div class="">
 		<section class="margin-content">
 			<div class="  ">
-				<h2 class="">Popular destinations in Cuba</h2>
+			<h2 class="" style="margin-left: 10px;">Popular destinations in Cuba</h2>
+
 				<div class="row no-margin gutters">
 
 					<div class="col-lg-3 col-md-6 col-sm-12  ">
+						<!-- <a href="explorer.php?ville=Havana" > -->
 						<img src="assets/img/femmeBalance.png" class="img-fluid" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
+						<div class="card-img-overlay text-left" style="position: absolute; top: 85%; left: 7%; width: 70%;">
+							<button type="button" class="button" style="padding: 0.5rem 1rem;">Varadero</button>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 col-sm-12  ">
+						<img src="assets/img/havane.png" class="img-fluid" alt="Homme qui joue de la guitare" style="margin-bottom: 20px;">
+						<div class="card-img-overlay text-left" style="position: absolute; top: 40%; left: 7%; width: 70%;">
+
+							<button type="button" class="button" style="padding: 0.5rem 1rem;">Havane</button>
+
+
+						</div>
+						<img src="assets/img/santiago.jpeg" class="img-fluid" alt="Rue de la vieille Havane avec des voitures anciennes qui roulent">
+						<div class="card-img-overlay text-left" style="position: absolute; top: 85%; left: 7%; width: 80%;">
+
+
+							<button type="button" class="button" style="padding: 0.5rem 1rem;">Santiago</button>
+
+
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12  ">
+						<!-- <a href="explorer.php?ville=Havana" > -->
+						<img src="assets/img/vinallesLink.jpeg" class="img-fluid" alt="Homme qui fait de la marche en montagne avec un beau paysage derrière">
+						<div class="card-img-overlay text-left" style="position: absolute; top: 85%; left: 7%; width: 70%;">
+							<button type="button" class="button" style="padding: 0.5rem 1rem;">Vignales</button>
+						</div>
+					</div>
+
+					<div class="col-lg-3 col-md-6 col-sm-12  ">
+						<img src="assets/img/trinidadLink.jpeg" class="img-fluid" alt="Beau paysage montagneux à Trinidad"style="margin-bottom: 20px;">
+						<div class="card-img-overlay text-left" style="position: absolute; top: 40%; left: 7%; width: 70%;">
+
+							<button type="button" class="button" style="padding: 0.5rem 1rem;">Trinidad</button>
+
+
+						</div>
+						<img src="assets/img/cienfuegosLink.jpeg" class="img-fluid" alt="Image aérienne de la plage à Cienfuegos">
 						<div class="card-img-overlay text-left" style="position: absolute; top: 85%; left: 7%; width: 70%;">
 
 
-          <button type="button" class="button" style="padding: 0.5rem 1rem;">Varadero</button>
+							<button type="button" class="button" style="padding: 0.5rem 1rem;">Varadero</button>
 
 
-        </div>
-					</div>
-					<div class="col-lg-3 col-md-6 col-sm-12  ">
-						<img src="assets/img/havane.png" class="img-fluid" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
-
-						<div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								<a href="#" class="btn btn-primary">Go somewhere</a>
-							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6 col-sm-12  ">
-						<div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								<a href="#" class="btn btn-primary">Go somewhere</a>
-							</div>
-						</div>
-					
-						<div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								<a href="#" class="btn btn-primary">Go somewhere</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-md-6 col-sm-12 ">
-						<div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								<a href="#" class="btn btn-primary">Go somewhere</a>
-							</div>
-						</div>
-					</div>
-
 
 				</div>
 
