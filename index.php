@@ -28,7 +28,7 @@ $annonces = dernieresAnnonces();
 	<div class="">
 		<section class="margin-content">
 			<div class="  ">
-			<h2 class="" style="margin-left: 10px;">Popular destinations in Cuba</h2>
+				<h2 class="" style="margin-left: 10px;">Popular destinations in Cuba</h2>
 
 				<div class="row no-margin gutters">
 
@@ -66,8 +66,8 @@ $annonces = dernieresAnnonces();
 					</div>
 
 					<div class="col-lg-3 col-md-6 col-sm-12  ">
-						<img src="assets/img/trinidadLink.jpeg" class="img-fluid" alt="Beau paysage montagneux à Trinidad"style="margin-bottom: 20px;">
-						<div class="card-img-overlay text-left" style="position: absolute; top: 40%; left: 7%; width: 70%;">
+						<img src="assets/img/trinidadLink.jpeg" class="img-fluid" alt="Beau paysage montagneux à Trinidad" style="margin-bottom: 20px;">
+						<div class="card-img-overlay text-left" style="position: absolute; top: 25%; left: 7%; width: 70%;">
 
 							<button type="button" class="button" style="padding: 0.5rem 1rem;">Trinidad</button>
 
@@ -87,6 +87,40 @@ $annonces = dernieresAnnonces();
 
 			</div>
 		</section>
+		<section class="margin-content">
+			<div class="  ">
+				<h2 class="" style="margin-left: 10px;">Meilleurs offres: destinations in Cuba</h2>
+
+				<div class="row gx-3 no-gutters">
+					<?php
+					foreach ($annonces as $annonce) {
+					?>
+						<div class="col-lg-2 col-md-4 col-sm-6">
+							<div class="card3 no-margin" style="width: 100%; max-width: 350px;">
+								<img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="<?= $annonce['description'] ?>">
+								<div class="card-img-overlay" style="position: absolute; top: 3%; left: 7%; width: 33%;">
+									<button type="button" class="button" style="padding: 0.5rem 3rem;">9.8</button>
+								</div>
+								<div class="card-body">
+									<h5 class="card-title"><?= $annonce['title'] ?></h5>
+									<p class="card-text"><?= $annonce['city'] ?></p>
+									<b>À partir de <?= $annonce['price'] ?></b>
+								</div>
+							</div>
+						</div>
+					<?php
+					}
+					?>
+
+
+
+
+
+
+
+				</div>
+		</section>
+
 
 
 

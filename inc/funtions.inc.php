@@ -383,11 +383,11 @@ function displaySupTag($value = null)
 }
 // ==========================Afiche le 1( derniers annnces )
 function dernieresAnnonces(): array
-{
 
+{
     $pdo = connexionBdd();
-    $sql = "SELECT * FROM advert ORDER BY id_advert DESC
-    LIMIT 15";
+    $sql = "SELECT * FROM advert ORDER BY price ASC
+    LIMIT 5";
     $request = $pdo->query($sql);
     $result = $request->fetchAll();
     return $result;

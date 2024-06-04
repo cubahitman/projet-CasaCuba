@@ -19,22 +19,22 @@ require_once "inc/header.inc.php";
 // annonces location //
 $annonces = annoncesByType(['location']);
 ?>
-<div class="container text-center ">
-    <br> <br>
+<div class="container-fluid text-center border no-margin">
+    <!-- <br> <br> -->
     <h2 class="">Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
     <p class="">
         Que vous cherchiez une résidence secondaire ou un investissement locatif, notre collection de maisons et d'appartements à Cuba répondra à vos attentes.
     </p>
-    <a href="index.php" class="display-5  btn btn-primary text-white text-decoration-none">
+    <!-- <a href="index.php" class="display-5  btn btn-primary text-white text-decoration-none">
 
         Page d'Accueil
 
-    </a>
+    </a> -->
 </div>
 <main class="bg-capitoliounuit  ">
 
 
-    <section class=" container m-5 text-center top-space ">
+    <section class=" container m-5 text-center  ">
         <div class="row">
             <?php
             foreach ($annonces as $annonce) {
