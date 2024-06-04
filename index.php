@@ -4,6 +4,7 @@ require_once "inc/header.inc.php";
 $annonces = dernieresAnnonces();
 ?>
 <!-- Intro -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous">
 
 
 <div class="container text-center ">
@@ -24,19 +25,62 @@ $annonces = dernieresAnnonces();
 	</div>
 </section> -->
 <main class="top-space ">
-	<div class="margin-content ">
-		<section>
-			<div class="row no-margin">
+	<div class="">
+		<section class="margin-content">
+			<div class="  ">
 				<h2 class="">Popular destinations in Cuba</h2>
-				<div class="col-lg-4 col-md-6 col-sm-12 no-margin px-0">
-					<img src="assets/img/femmeBalance.png" class="no-margin" alt="Femme dans un balançoire à la plage">
+				<div class="row no-margin gutters">
+					
+					<div class="col-lg-2 col-md-6 col-sm-12 no-margin px-0 mx-0">
+						<img src="assets/img/femmeBalance.png" class="img-fluid" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-12 no-margin px-0 mx-0">
+						<img src="assets/img/havane.png" class="img-fluid" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
+					
+						<div class="card" style="width: 18rem;">
+							<img src="..." class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-12 no-margin px-0 mx-0">
+						<div class="card" style="width: 18rem;">
+							<img src="..." class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-12 no-margin px-0 mx-0">
+						<div class="card" style="width: 18rem;">
+							<img src="..." class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+				
+					<div class="col-lg-2 col-md-6 col-sm-12 no-margin px-0 mx-0">
+						<div class="card" style="width: 18rem;">
+							<img src="..." class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+					
+
 				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12 no-margin px-0">
-					<img src="assets/img/havane.png" class="no-margin" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
-				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12 no-margin px-0">
-					<img src="assets/img/femmeBalance.png" class="no-margin" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
-				</div>
+
 			</div>
 		</section>
 
@@ -96,7 +140,7 @@ $annonces = dernieresAnnonces();
 	</div>
 </main>
 <footer>
-	<!-- Ajoutez ici le contenu du pied de page -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </footer>
 
 </body>
