@@ -30,12 +30,31 @@ $annonces = dernieresAnnonces();
 			<div class="  ">
 				<h2 class="">Popular destinations in Cuba</h2>
 				<div class="row no-margin gutters">
-					
-					<div class="col-lg-2 col-md-6 col-sm-12 no-margin px-0 mx-0">
+
+					<div class="col-lg-3 col-md-6 col-sm-12  ">
 						<img src="assets/img/femmeBalance.png" class="img-fluid" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
 					</div>
-					<div class="col-lg-2 col-md-6 col-sm-12 no-margin px-0 mx-0">
+					<div class="col-lg-3 col-md-6 col-sm-12  ">
 						<img src="assets/img/havane.png" class="img-fluid" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
+
+						<div class="card" style="width: 18rem;">
+							<img src="..." class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-12  ">
+						<div class="card" style="width: 18rem;">
+							<img src="..." class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Card title</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
+						</div>
 					
 						<div class="card" style="width: 18rem;">
 							<img src="..." class="card-img-top" alt="...">
@@ -46,7 +65,8 @@ $annonces = dernieresAnnonces();
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-2 col-md-6 col-sm-12 no-margin px-0 mx-0">
+
+					<div class="col-lg-3 col-md-6 col-sm-12 ">
 						<div class="card" style="width: 18rem;">
 							<img src="..." class="card-img-top" alt="...">
 							<div class="card-body">
@@ -56,28 +76,7 @@ $annonces = dernieresAnnonces();
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-2 col-md-6 col-sm-12 no-margin px-0 mx-0">
-						<div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								<a href="#" class="btn btn-primary">Go somewhere</a>
-							</div>
-						</div>
-					</div>
-				
-					<div class="col-lg-2 col-md-6 col-sm-12 no-margin px-0 mx-0">
-						<div class="card" style="width: 18rem;">
-							<img src="..." class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Card title</h5>
-								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-								<a href="#" class="btn btn-primary">Go somewhere</a>
-							</div>
-						</div>
-					</div>
-					
+
 
 				</div>
 
