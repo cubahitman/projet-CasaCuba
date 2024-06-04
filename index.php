@@ -33,6 +33,13 @@ $annonces = dernieresAnnonces();
 
 					<div class="col-lg-3 col-md-6 col-sm-12  ">
 						<img src="assets/img/femmeBalance.png" class="img-fluid" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
+						<div class="card-img-overlay text-left" style="position: absolute; top: 85%; left: 7%; width: 70%;">
+
+
+          <button type="button" class="button" style="padding: 0.5rem 1rem;">Varadero</button>
+
+
+        </div>
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-12  ">
 						<img src="assets/img/havane.png" class="img-fluid" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
