@@ -154,13 +154,10 @@ a:hover {
 }
 .button {
     cursor: pointer;
-    top: 838px;
-    left: 1076px;
-    width: 140px;
-    height: 32px;
-    padding: 0px 8px;
+    width: 19%;
+    height: 25px;
+    padding: 0px 10px;
     border: 0;
-    box-sizing: border-box;
     border-radius: 12px;
     background-color: #151515;
     color: #ffffff;
@@ -168,10 +165,15 @@ a:hover {
     font-family: "Poppins";
     line-height: 24px;
     outline: none;
+    z-index: 3;
   }
   
 /* Autres éléments */
+.margin-content{
+    margin-right: 50px;
 
+    margin-left: 50px;
+}
 
 
 
@@ -240,6 +242,13 @@ a:hover {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
 
 }
+.no-margin {
+
+    margin: 0 !important;
+  
+    padding: 0 !important;
+  
+  }
 
 
 

@@ -23,81 +23,82 @@ $annonces = dernieresAnnonces();
 		</a>
 	</div>
 </section> -->
-<main class=" top-space ">
-
-<section class="body text-center">
-  <div class="row">
-    <div class="col-lg-4 col-md-6 col-sm-12">
-      <div class="card1">
-        <img src="assets/img/femmeBalance.png" class="card-img" alt="Femme dans un balançoire à la plage" style="height: 100%; width: 100%; object-fit: cover;">
-
-        <div class="card-img-overlay" style="position: absolute; bottom: 0; left: 0; width: 100%;">
-
-          <button type="button" class=" button  ms-3 mb-3">Go somewhere</button>
-
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-</main>
-
-
-
-<div class="back  top-space">
-
-	<div class="  ">
-		<h2 class="">Temoignages</h2>
+<main class="top-space ">
+	<div class="margin-content ">
 		<section>
-			<div>
-				<div class="card text-bg-dark">
-					<img src="assets/img/couple.avif" class="card-img" alt="...">
-					<div class="card-img-overlay">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-						<p class="card-text"><small>Last updated 3 mins ago</small></p>
-					</div>
+			<div class="row no-margin">
+				<h2 class="">Popular destinations in Cuba</h2>
+				<div class="col-lg-4 col-md-6 col-sm-12 no-margin px-0">
+					<img src="assets/img/femmeBalance.png" class="no-margin" alt="Femme dans un balançoire à la plage">
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 no-margin px-0">
+					<img src="assets/img/havane.png" class="no-margin" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 no-margin px-0">
+					<img src="assets/img/femmeBalance.png" class="no-margin" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
 				</div>
 			</div>
-
 		</section>
-
-		<section class="">
-			<h2>Popular destinations in Cuba</h2>
-			<!-- Ajoutez ici les images des destinations -->
-			<div class="pen ">
-				<ul class='list'>
-					<li class='item' alt="image de solei derrier la mer"><img src='https://source.unsplash.com/JP23z_-dA74'></li>
-					<li class='item' alt="image"><img src='https://source.unsplash.com/FCCtL3oyRDY'></li>
-					<li class='item' alt="image"><img src='https://source.unsplash.com/_MljkIzvcHw'></li>
-					<li class='item' alt="image"><img src='https://source.unsplash.com/XfZPhwf_BtI'></li>
-					<li class='item' alt="image"><img src='https://source.unsplash.com/v0Aiibob-Q8'></li>
-					<li class='item' alt="image"><img src='https://source.unsplash.com/6NT7jy6OU9I'></li>
-					<li class='item' alt="image"><img src='https://source.unsplash.com/fwtXC2sP7Tg'></li>
-					<li class='item' alt="image"><img src='https://source.unsplash.com/JP23z_-dA74'></li>
-					<li class='item' alt="image fauteuil-a-bascule-en-bois-marron-sous-un-arbre-vert-a Cuba"><img src='https://source.unsplash.com/CXV0EVK8QSU'></li>
-					<li class='item' alt="image une-chaise-rouge-posee-au-sommet-dune-plage-au-bord-de-locean-a Cuba"><img src='https://source.unsplash.com/wM8R6CLynUk'></li>
-					<li class='item' alt="image personne-flottant-sur-un-plan-deau-a varadero"><img src='https://source.unsplash.com/GjiTNrl6xoo'></li>
-					<li class='item' alt="une-voiture-jaune-roulant-dans-une-rue-la-nuit"><img src='https://source.unsplash.com/T8PZvVQQ8t0'></li>
-					<li class='item'><img src='https://source.unsplash.com/d_Nd6W0dd4Q'></li>
-					<li class='item' alt="Maison avec diver coleurs"><img src='https://source.unsplash.com/fwtXC2sP7Tg'>alt=""</li>
-				</ul>
-			</div>
-		</section>
-
-
-
 
 
 
 	</div>
-</div>
 
+	<div class="back  top-space">
+		<div class="margin-content">
+
+			<section>
+				<h2 class="">Temoignages</h2>
+
+				<div>
+					<div class="card text-bg-dark">
+						<img src="assets/img/couple.avif" class="card-img" alt="...">
+						<div class="card-img-overlay">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							<p class="card-text"><small>Last updated 3 mins ago</small></p>
+						</div>
+					</div>
+				</div>
+
+			</section>
+
+			<section class="">
+				<h2>Popular destinations in Cuba</h2>
+				<!-- Ajoutez ici les images des destinations -->
+				<div class="pen ">
+					<ul class='list'>
+						<li class='item' alt="image de solei derrier la mer"><img src='https://source.unsplash.com/JP23z_-dA74'></li>
+						<li class='item' alt="image"><img src='https://source.unsplash.com/FCCtL3oyRDY'></li>
+						<li class='item' alt="image"><img src='https://source.unsplash.com/_MljkIzvcHw'></li>
+						<li class='item' alt="image"><img src='https://source.unsplash.com/XfZPhwf_BtI'></li>
+						<li class='item' alt="image"><img src='https://source.unsplash.com/v0Aiibob-Q8'></li>
+						<li class='item' alt="image"><img src='https://source.unsplash.com/6NT7jy6OU9I'></li>
+						<li class='item' alt="image"><img src='https://source.unsplash.com/fwtXC2sP7Tg'></li>
+						<li class='item' alt="image"><img src='https://source.unsplash.com/JP23z_-dA74'></li>
+						<li class='item' alt="image fauteuil-a-bascule-en-bois-marron-sous-un-arbre-vert-a Cuba"><img src='https://source.unsplash.com/CXV0EVK8QSU'></li>
+						<li class='item' alt="image une-chaise-rouge-posee-au-sommet-dune-plage-au-bord-de-locean-a Cuba"><img src='https://source.unsplash.com/wM8R6CLynUk'></li>
+						<li class='item' alt="image personne-flottant-sur-un-plan-deau-a varadero"><img src='https://source.unsplash.com/GjiTNrl6xoo'></li>
+						<li class='item' alt="une-voiture-jaune-roulant-dans-une-rue-la-nuit"><img src='https://source.unsplash.com/T8PZvVQQ8t0'></li>
+						<li class='item'><img src='https://source.unsplash.com/d_Nd6W0dd4Q'></li>
+						<li class='item' alt="Maison avec diver coleurs"><img src='https://source.unsplash.com/fwtXC2sP7Tg'>alt=""</li>
+					</ul>
+				</div>
+			</section>
+
+
+
+
+
+
+
+		</div>
+	</div>
+</main>
 <footer>
 	<!-- Ajoutez ici le contenu du pied de page -->
 </footer>
-</div>
+
 </body>
 
 
@@ -149,7 +150,7 @@ $annonces = dernieresAnnonces();
 <!-- /Highlights -->
 
 <!-- container -->
-<div class="container ">
+<div class=" margin-content">
 
 	<h2 class="text-center ">Frequently Asked Questions</h2>
 	<br>
