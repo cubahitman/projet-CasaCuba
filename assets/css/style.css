@@ -121,7 +121,11 @@ a:hover {
     color: var(--vert);
 
 }
+.sub-superscript {
 
+    vertical-align: -1em;
+  
+  }
 
 /* Boutons */
 

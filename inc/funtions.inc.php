@@ -363,10 +363,11 @@ function annoncesByType($types = [])
 
 function displayAdvertAnnonce($annonce, $user_id = null)
 {
-    if ($annonce['is_reserved'] && ($user_id!== null && $annonce['reserved_by'] == $user_id)) {
+    if ($annonce['is_reserved'] && ($user_id!== null && $_SESSION['user'] == $user_id)) {
         return "<h5 class='card-title'>". $annonce['title']. " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
     } else {
-        return "<h5 class='card-title'>". $annonce['title']. "</h5>";
+        return "<h5 class='card-title'>". $annonce['title']. " <small  display: inline-block; text-align: left;'><sub class='bg-danger text-white rounded px-1'>Pas Réservé</sub></small></h5>";
+       
     }
 }
 
