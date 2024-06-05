@@ -13,8 +13,8 @@ $reservation = "";
 
 
 
-// debug($annonce);
-// debug($reserv[0]['id_utilisateur']);
+// debug($annonce['id_advert']);
+// debug($reserv[0]['id_annonce']);
 // debug($_SESSION);
 
 
@@ -124,12 +124,12 @@ ob_end_flush();
 
 
 
-                        if ($annonce['is_reserved']) {
+                        if ($annonce['id_advert'] == $reserv[0]['id_annonce']  ) {
 
-                            echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
+                            echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé par vous le </sub></h5>";// ". $reserv[0]['date_reservation']. ".
                         } else {
 
-                            echo "<h5 class='card-title'>" . $annonce['title'] . "<sub class='bg-success text-white rounded px-1'>Réservé nonnn</sub></h5>";
+                            echo "<h5 class='card-title'>" . $annonce['title'] . "<sub class='bg-success text-white rounded px-1'></sub></h5>";
                         }
 
 
@@ -157,7 +157,7 @@ ob_end_flush();
 
                                 <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
-                                <input type="submit" name="action" value="Réserver"  class="btn ">
+                                <input type="submit" name="action" value="Réserver" class="btn ">
 
                         </form>
                         <form method="POST">
@@ -166,7 +166,7 @@ ob_end_flush();
 
                             <input type="hidden" name="action" value="delete">
 
-                            <input type="submit" value="Supprimer" class="btn "><?=displaySupTag($_SESSION['user']['role'])?>
+                            <input type="submit" value="Supprimer" class="btn "><?= displaySupTag($_SESSION['user']['role']) ?>
 
                         </form>
 
@@ -187,24 +187,13 @@ ob_end_flush();
 
                 </div>
 
-
-            <?php
-
+              <?php
                             } else {
-
                                 // Formulaire de réservation pour les utilisateurs normaux
-
-            ?>
+               ?>
 
                 <form method="POST" action="reservation_traitement.php">
 
-                    <label for="reservation_message">Message de Réservation :</label>
-
-                    <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'readonly' : '' ?>>
-
-                     <?= isset($annonce['reservation_message']) ? $annonce['reservation_message'] : '' ?>
-                    
-                     </textarea>
 
 
                     <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
@@ -215,7 +204,7 @@ ob_end_flush();
                 </form>
 
 
-        <?php
+                 <?php
 
                             }
                         } else {
@@ -224,7 +213,7 @@ ob_end_flush();
 
                             echo "<p class=' '>Pour réserver, veuillez vous <a href='" . RACINE_SITE . "authentification.php'>connecter</a> ou <a href='" . RACINE_SITE . "inscription.php'>inscrire</a>.</p>";
                         }
-        ?>
+                  ?>
             </div>
 
             <!-- changer default par un -->
