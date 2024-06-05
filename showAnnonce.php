@@ -5,12 +5,17 @@ $title = "Reservations";
 require_once "inc/header.inc.php";
 
 $id_advert = $_GET['annonce'];
+
 $annonce = showAnonnce($id_advert);
+$reserv=showReservations($_SESSION['user']['id_user'] );
 $info = "";
 $reservation = "";
+
 // Maintenant, vous pouvez utiliser les détails de $annonce pour afficher l'annonce
 
-
+// debug($annonce);
+// debug($uuu);
+// debug($_SESSION);
 
 
 
@@ -126,7 +131,7 @@ ob_end_flush();
 // debug($_POST);
 
 
-// require_once "inc/funtions.inc.php"
+
 ?>
 <main class="">
 
@@ -134,17 +139,28 @@ ob_end_flush();
 
     <section class=" container ">
         <div class="row d-flex justify-content-center m-auto">
-            <h1 class="text-center text-light">Ici<?= $info . $reservation ?></h1>
+            <h1 class="text-center text-light">Ici<?= $info ?></h1>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="card">
                     <div> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
                     <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title']  ?>">
                     <div class="card-body">
-                        <?php if ($annonce['is_reserved']) {
+                        <?php
+
+
+                       
+
+
+                        if ($annonce['is_reserved']) {
+
                             echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
                         } else {
-                            echo "<h5 class='card-title'>" . $annonce['title'] . "</h5>";
-                        } ?>
+
+                            echo "<h5 class='card-title'>" . $annonce['title'] . "<sub class='bg-success text-white rounded px-1'>Réservé nonnn</sub></h5>";
+                        }
+
+
+                        ?>
                         <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
                         <div class="btn no-hover bg-blanc">
                             <a href="<?= RACINE_SITE ?>explorer.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux annonces</a>
@@ -164,7 +180,7 @@ ob_end_flush();
                     ?>
 
 
-<form method="POST" action="<?= ($annonce['type'] == 'location') ? 'reservation_traitement.php' : 'panier.php' ?>?annonce=<?= $annonce['id_advert'] ?>">
+                        <form method="POST" action="<?= ($annonce['type'] == 'location') ? 'reservation_traitement.php' : 'panier.php' ?>?annonce=<?= $annonce['id_advert'] ?>">
                             <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id_user'] ?>">
                             <!-- Le reste du formulaire -->
                             <?php if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
