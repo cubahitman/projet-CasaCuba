@@ -24,17 +24,17 @@ $reservation = "";
 
 
 //=====Conditions test pour savoir si la reservations a ete fait
-if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
+// if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
 
-    echo "<h4 class='text-center '>================Cette annonce est réservée===========.</h4>";
+//     echo "<h4 class='text-center '>================Cette annonce est réservée===========.</h4>";
 
-    $info = "<p class='text-danger'>Cette annonce est réservée.</p>";
+//     $info = "<p class='text-danger'>Cette annonce est réservée.</p>";
 
-    echo "<p class='text-center'>" . $annonce['reservation_message'] . "</p>";
-} else {
+//     echo "<p class='text-center'>" . $annonce['reservation_message'] . "</p>";
+// } else {
 
-    echo "<p class='text-center'>Entrez un message pour la réservation : Ex (Je réserve)</p>";
-}
+//     echo "<p class='text-center'>Entrez un message pour la réservation : Ex (Je réserve)</p>";
+// }
 
 
 
@@ -42,34 +42,7 @@ if (isset($annonce['is_reserved']) && $annonce['is_reserved']) {
 
 header('Content-Type: text/html; charset=UTF-8');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $id_advert = $_GET['annonce'];
-
-    $reservation_message = isset($_POST['reservation_message']) ? trim($_POST['reservation_message']) : '';
-
-
-    if (!empty($reservation_message)) {
-
-        if (isset($_POST['action']) && $_POST['action'] == 'reserve') {
-
-            if (isset($_SESSION['user'])) { // Ajout de cette condition
-
-                reserveAdvert($id_advert, $reservation_message);
-
-                header('Location: confirmation.php?annonce=' . $id_advert);
-
-                exit();
-            } else {
-
-                echo "<p class='text-danger'>Erreur : vous devez vous connecter pour réserver cette annonce.</p>";
-            }
-        }
-    } else {
-
-        echo "<p class='text-danger'>Veuillez remplir le champ de message de réservation.</p>";
-    }
-}
 
 
 if (isset($_POST['action'])) {
@@ -184,14 +157,24 @@ ob_end_flush();
 
                                 <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
-                                <input type="submit" name="action" value="Réserver">
+                                <input type="submit" name="action" value="Réserver"  class="btn ">
 
                         </form>
+                        <form method="POST">
+
+                            <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+
+                            <input type="hidden" name="action" value="delete">
+
+                            <input type="submit" value="Supprimer" class="btn "><?=displaySupTag($_SESSION['user']['role'])?>
+
+                        </form>
+
                 </div>
 
                 <div class="nav-css top-space ">
 
-                    <form method="POST">
+                    <!-- <form method="POST">
 
                         <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
@@ -199,17 +182,8 @@ ob_end_flush();
 
                         <input type="submit" value="Annuler" class="btn btn-secondary">
 
-                    </form>
+                    </form> -->
 
-                    <form method="POST">
-
-                        <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
-
-                        <input type="hidden" name="action" value="delete">
-
-                        <input type="submit" value="Supprimer" class="btn btn-danger">
-
-                    </form>
 
                 </div>
 
