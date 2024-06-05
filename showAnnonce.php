@@ -7,14 +7,14 @@ require_once "inc/header.inc.php";
 $id_advert = $_GET['annonce'];
 
 $annonce = showAnonnce($id_advert);
-$reserv=showReservations($_SESSION['user']['id_user'] );
+$reserv = showReservations($_SESSION['user']['id_user']);
 $info = "";
 $reservation = "";
 
-// Maintenant, vous pouvez utiliser les détails de $annonce pour afficher l'annonce
+
 
 // debug($annonce);
-debug($reserv[0]['id_utilisateur']);
+// debug($reserv[0]['id_utilisateur']);
 // debug($_SESSION);
 
 
@@ -148,7 +148,7 @@ ob_end_flush();
                         <?php
 
 
-                       
+
 
 
                         if ($annonce['is_reserved']) {
@@ -171,28 +171,16 @@ ob_end_flush();
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 form-group">
-                <div class="btn1 css-nav ">
+                <div class=" nav-css top-space  ">
                     <?php
                     if (isset($_SESSION['user'])) {
-
-                        // Afficher les boutons "Annuler" et "Supprimer" pour l'admin
-
                     ?>
 
-
                         <form method="POST" action="<?= ($annonce['type'] == 'location') ? 'reservation_traitement.php' : 'panier.php' ?>?annonce=<?= $annonce['id_advert'] ?>">
+
                             <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id_user'] ?>">
                             <!-- Le reste du formulaire -->
                             <?php if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
-
-                                <label for="reservation_message">Message de Réservation :</label>
-
-                                <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'readonly' : '' ?>>
-
-                      <?= isset($annonce['reservation_message']) ? $annonce['reservation_message'] : '' ?>
-                    
-                      </textarea>
-
 
                                 <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
