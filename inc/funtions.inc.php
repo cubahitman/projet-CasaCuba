@@ -90,7 +90,7 @@ function connexionBdd()
 
     // avec la variable DSN (Data Source Name) et les constantes
 
-    // $dsn = "mysql:host=localhost;dbname=cinema;charset=utf8";
+    // $dsn = "mysql:host=localhost;dbname=house;charset=utf8";
 
     $dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
 
@@ -472,7 +472,7 @@ function deleteAdvert(int $id): void
             $sql->execute();
             echo 'Annonce supprimée avec succès.';
         } else {
-            echo 'Annonce non trouvée.';
+            echo 'Annonce non supprimée.';
         }
     } catch (PDOException $e) {
         echo 'Erreur de connexion à la base de données: ' . $e->getMessage();

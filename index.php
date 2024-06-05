@@ -4,7 +4,7 @@ require_once "inc/header.inc.php";
 $annonces = dernieresAnnonces();
 ?>
 <!-- Intro -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous">
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous"> -->
 
 
 <div class="container text-center ">
@@ -25,7 +25,7 @@ $annonces = dernieresAnnonces();
 	</div>
 </section> -->
 <main class="top-space ">
-	<div class="">
+	<div class="margin-content ">
 		<section class="margin-content">
 			<div class="  ">
 				<h2 class="" style="margin-left: 10px;">Popular destinations in Cuba</h2>
@@ -87,41 +87,34 @@ $annonces = dernieresAnnonces();
 
 			</div>
 		</section>
-		<section class="margin-content">
-			<div class="  ">
-				<h2 class="" style="margin-left: 10px;">Meilleurs offres: destinations in Cuba</h2>
+	
 
-				<div class="row gx-3 no-gutters">
-					<?php
-					foreach ($annonces as $annonce) {
-					?>
-						<div class="col-lg-2 col-md-4 col-sm-6">
-							<div class="card3 no-margin" style="width: 100%; max-width: 350px;">
-								<img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="<?= $annonce['description'] ?>">
-								<div class="card-img-overlay" style="position: absolute; top: 3%; left: 7%; width: 33%;">
-									<button type="button" class="button" style="padding: 0.5rem 3rem;">9.8</button>
-								</div>
-								<div class="card-body">
-									<h5 class="card-title"><?= $annonce['title'] ?></h5>
-									<p class="card-text"><?= $annonce['city'] ?></p>
-									<b>À partir de <?= $annonce['price'] ?></b>
-								</div>
+		<section class="margin-content">
+			
+			<h2 class="" style="margin-left: 10px;">Meilleurs offres: destinations in Cuba</h2>
+
+			<div class="row d-flex justify-content-around flex-wrap">
+				<?php
+				foreach ($annonces as $annonce) {
+				?>
+					<div class="col-lg-2 col-md-4 col-sm-6 "style="margin-right: 50px;">
+						<div class="card3 " style="width: 100%; max-width: 350px;">
+							<img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="<?= $annonce['description'] ?>">
+							<div class="card-img-overlay" style="position: absolute; top: 3%; left: 7%; width: 33%;">
+								<button type="button" class="button" style="padding: 0.5rem 3rem;">9.8</button>
+							</div>
+							<div class="card-body">
+								<h5 class="card-title"><?= $annonce['title'] ?></h5>
+								<p class="card-text"><?= $annonce['city'] ?></p>
+								<b>À partir de <?= $annonce['price'] ?></b>
 							</div>
 						</div>
-					<?php
-					}
-					?>
-
-
-
-
-
-
-
-				</div>
-		</section>
-
-
+					</div>
+				<?php
+				}
+				?>
+			</div>
+	</section>
 
 
 	</div>
@@ -177,11 +170,7 @@ $annonces = dernieresAnnonces();
 		</div>
 	</div>
 </main>
-<footer>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</footer>
 
-</body>
 
 
 
@@ -267,7 +256,7 @@ $annonces = dernieresAnnonces();
 
 	<div class="jumbotron ">
 		<h4>Dicta, nostrum nemo soluta sapiente sit dolor quae voluptas quidem doloribus recusandae facere magni ullam suscipit sunt atque rerum eaque iusto facilis esse nam veniam incidunt officia perspiciatis at voluptatibus. Libero, aliquid illum possimus numquam fuga.</h4>
-		<p class="text-right"><a class="btn btn-primary btn-large">Learn more »</a></p>
+		<p class="text-right"><a class="btn  btn-large">Learn more »</a></p>
 	</div>
 
 </div> <!-- /container -->
@@ -289,11 +278,11 @@ $annonces = dernieresAnnonces();
 </section>
 
 
-</body>
+
 <?php
 require_once "inc/footer.inc.php";
 
 
 ?>
-
+</body>
 </html>
