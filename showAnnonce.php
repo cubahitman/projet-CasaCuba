@@ -7,18 +7,42 @@ require_once "inc/header.inc.php";
 $id_advert = $_GET['annonce'];
 
 $annonce = showAnonnce($id_advert);
-$reserv = showReservations($_SESSION['user']['id_user']);
+$reservations = showReservations($_SESSION['user']['id_user']);
 $info = "";
 $reservation = "";
+// print_r($reserv); // affichera toutes les valeurs du tableau $reserv
 
-
-
+// foreach ($reserv as $reservation) {
+//     foreach ($reservation as $key => $value) {
+//         // echo "$key: $value<br>"; // affichera toutes les valeurs de tous les champs
+//     }
+// }
 // debug($annonce['id_advert']);
 // debug($reserv[0]['id_annonce']);
 // debug($_SESSION);
 
+foreach ($reservations as $reservation) {
+
+    $id_annonce = $reservation['id_annonce'];
+    if ($reservation['id_annonce'] == $id_advert) {
+
+        $date_reservation = $reservation['date_reservation'];
+
+        break; // Sortir de la boucle car nous avons trouvé la réservation correspondante
+
+    }
+}
 
 
+// foreach ($reserv as $reservation) {
+
+//     $id_annonce = $annonce['id_advert'];
+
+//     // Utilisez la valeur de $id_annonce ici
+// $value= $id_annonce ;
+//     echo "ID annonce : $id_annonce : $value<br>";
+
+// }
 
 
 
@@ -106,7 +130,7 @@ ob_end_flush();
 
 
 ?>
-<main class="">
+<main class="maincontent">
 
 
 
@@ -124,12 +148,12 @@ ob_end_flush();
 
 
 
-                        if ($annonce['id_advert'] == $reserv[0]['id_annonce']  ) {
-
-                            echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé par vous le </sub></h5>";// ". $reserv[0]['date_reservation']. ".
+                        if ($annonce['id_advert'] == $id_annonce) {
+                            // debug($id_annonce);
+                            echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé par vous le $date_reservation</sub></h5>"; // 
                         } else {
 
-                            echo "<h5 class='card-title'>" . $annonce['title'] . "<sub class='bg-success text-white rounded px-1'></sub></h5>";
+                            echo "<h5 class='card-title'>" . $annonce['title'] . "<sub class='bg-success text-white rounded px-1'>noo</sub></h5>";
                         }
 
 
@@ -187,10 +211,10 @@ ob_end_flush();
 
                 </div>
 
-              <?php
+            <?php
                             } else {
                                 // Formulaire de réservation pour les utilisateurs normaux
-               ?>
+            ?>
 
                 <form method="POST" action="reservation_traitement.php">
 
@@ -204,7 +228,7 @@ ob_end_flush();
                 </form>
 
 
-                 <?php
+        <?php
 
                             }
                         } else {
@@ -213,7 +237,7 @@ ob_end_flush();
 
                             echo "<p class=' '>Pour réserver, veuillez vous <a href='" . RACINE_SITE . "authentification.php'>connecter</a> ou <a href='" . RACINE_SITE . "inscription.php'>inscrire</a>.</p>";
                         }
-                  ?>
+        ?>
             </div>
 
             <!-- changer default par un -->
