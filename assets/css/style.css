@@ -56,7 +56,7 @@
 .head1{
 	background: #e9e9f1 ;
 	background-size: cover;
-	min-height: 1120px;
+	min-height: 320px;
 	
 	padding-top: 140px;
 	color: var(--rouge);
@@ -140,7 +140,21 @@ a:hover {
     cursor: pointer;
 
 }
+.btn1 {
 
+    background-color: var(--bleu);
+
+    color: var(--rouge) !important;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+}
 
 
 

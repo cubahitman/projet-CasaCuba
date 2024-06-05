@@ -35,7 +35,7 @@ require_once "inc/header.inc.php";
     // && $reservation['etat_reservation'] == 'validée'
            ?>
     
-            <a class="list-group-item list-group-item-action bg-bleuNav ">RÉSERVATION, date du : <?= $reservation['date_reservation']?> de l'annonce      <?= $annonce['title']?> de la date <?= $reservation['date_arrivee']?> a <?= $reservation['date_depart']?> est en etat de <?= $reservation['etat_reservation']?>  </a>
+            <a class="list-group-item list-group-item-action bg-bleuNav ">Id-<?= $annonce['id_advert']?>  RÉSERVATION        <?= $annonce['title']?>  •  fait le : <?= $reservation['date_reservation']?>  arrivé <?= $reservation['date_arrivee']?> depart <?= $reservation['date_depart']?> <span class=" text-danger ">   •         •          •  <?= $reservation['etat_reservation']?> </span> </a>
     
     
         <?php }?>

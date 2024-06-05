@@ -361,12 +361,12 @@ function annoncesByType($types = [])
 
 // ===============================petit paneau qui montre que ce reservee ============================//
 
-function displayAdvertAnnonce($annonce)
+function displayAdvertAnnonce($annonce, $user_id = null)
 {
-    if ($annonce['is_reserved']) {
-        return "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
+    if ($annonce['is_reserved'] && ($user_id!== null && $annonce['reserved_by'] == $user_id)) {
+        return "<h5 class='card-title'>". $annonce['title']. " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
     } else {
-        return "<h5 class='card-title'>" . $annonce['title'] . "</h5>";
+        return "<h5 class='card-title'>". $annonce['title']. "</h5>";
     }
 }
 

@@ -159,8 +159,7 @@ ob_end_flush();
                     <?php
                     if (isset($_SESSION['user'])) {
 
-                        // Afficher les boutons "Annuler" et "Supprimer" pour l'admin
-
+                      
                     ?>
 
 
@@ -169,11 +168,11 @@ ob_end_flush();
                             <!-- Le reste du formulaire -->
                             <?php if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
 
-                                <label for="reservation_message">Message de Réservation :</label>
+                                <!-- <label for="reservation_message">Message de Réservation :</label>
 
-                                <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'readonly' : '' ?>>
+                                <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'readonly' : '' ?>> -->
 
-                      <?= isset($annonce['reservation_message']) ? $annonce['reservation_message'] : '' ?>
+                      <!-- <?= isset($annonce['reservation_message']) ? $annonce['reservation_message'] : '' ?> -->
                     
                       </textarea>
 
@@ -220,11 +219,11 @@ ob_end_flush();
 
                 <form method="POST" action="reservation_traitement.php">
 
-                    <label for="reservation_message">Message de Réservation :</label>
+                    <!-- <label for="reservation_message">Message de Réservation :</label> -->
 
-                    <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'readonly' : '' ?>>
+                    <!-- <textarea id="reservation_message" name="reservation_message" class="form-control <?= !empty($annonce['reservation_message']) ? 'bg-dark text-white' : '' ?>" required <?= !empty($annonce['reservation_message']) ? 'readonly' : '' ?>> -->
 
-                     <?= isset($annonce['reservation_message']) ? $annonce['reservation_message'] : '' ?>
+                     <!-- <?= isset($annonce['reservation_message']) ? $annonce['reservation_message'] : '' ?> -->
                     
                      </textarea>
 
