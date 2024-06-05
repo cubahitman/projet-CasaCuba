@@ -14,7 +14,7 @@ $reservation = "";
 // Maintenant, vous pouvez utiliser les détails de $annonce pour afficher l'annonce
 
 // debug($annonce);
-// debug($uuu);
+debug($reserv[0]['id_utilisateur']);
 // debug($_SESSION);
 
 
