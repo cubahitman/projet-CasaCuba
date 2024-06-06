@@ -95,34 +95,7 @@ if (isset($_POST['action'])) {
             break;
     }
 }
-//  premiere verification 
 
-// if (isset($_POST['action'])) {
-//     switch ($_POST['action']) {
-//         case 'reserve':
-//             reserveAdvert($id_advert, $reservation_message);
-//             debug($id_advert);
-//             debug($reservation);
-//             var_dump($id_advert);
-
-//             var_dump($reservation_message);
-//             header('Location: confirmation.php?annonce=' . $id_advert);
-//             exit();
-//             break;
-//         case 'cancel':
-//             cancelAdvert($id_advert);
-//             header('Location: confirmation.php?annonce=' . $id_advert);
-//             exit();
-//             break;
-//         case 'delete':
-//             deleteAdvert($id_advert);
-
-//             header('Location: admin/dashboard.php?gestionMaisons_php');
-//             exit();
-//             break;
-//     }
-// }
-// Désactive le tampon de sortie et envoie la sortie mise en mémoire tampon
 
 ob_end_flush();
 // debug($_POST);
@@ -134,9 +107,9 @@ ob_end_flush();
 
 
 
-    <section class=" container ">
+    <section class=" margin-content ">
         <div class="row d-flex justify-content-center m-auto">
-            <h1 class="text-center text-light">Ici<?= $info ?></h1>
+            <h1 class="text-center text-light"><?= $info ?></h1>
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                 <div class="card">
                     <div> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
@@ -159,16 +132,19 @@ ob_end_flush();
 
                         ?>
                         <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
-                        <div class="btn no-hover bg-blanc">
-                            <a href="<?= RACINE_SITE ?>explorer.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux annonces</a>
-                            <a href="<?= RACINE_SITE ?>admin/dashboard.php?gestionMaisons_php" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
+                        <div class="buttons">
+                            <a href="<?= RACINE_SITE ?>explorer.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux annonces</a> <?php if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
+                                <a href="<?= RACINE_SITE ?>admin/dashboard.php?gestionMaisons_php" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
+                            <?php
+                                                                                                                                                            }
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 form-group">
-                <div class=" nav-css top-space  ">
+                <div class="buttons  ">
                     <?php
                     if (isset($_SESSION['user'])) {
                     ?>
@@ -188,33 +164,54 @@ ob_end_flush();
 
                             <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
-                            <input type="hidden" name="action" value="delete">
+                            <input type="hidden" name="action" value="cancel">
 
-                            <input type="submit" value="Supprimer" class="btn "><?= displaySupTag($_SESSION['user']['role']) ?>
+                            <input type="submit" value="Annuler" class="btn btn-secondary">
 
                         </form>
+                        <form method="POST">
 
+                            <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+
+                            <input type="hidden" name="action" value="delete">
+
+                            <input type="submit" value="Supprimer" class="btn "><?= displaySupTag($_SESSION['user']['role'], $_SESSION['user']) ?>
+
+                        </form>
+                        <form method="post" enctype="multipart/form-data">
+
+                            <input type="file" name="image">
+
+                            <button type="submit">Ajouter image</button>
+
+                        </form>
                 </div>
 
-                <div class="nav-css top-space ">
 
-                    <!-- <form method="POST">
-
-                        <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
-
-                        <input type="hidden" name="action" value="cancel">
-
-                        <input type="submit" value="Annuler" class="btn btn-secondary">
-
-                    </form> -->
-
-
-                </div>
 
             <?php
                             } else {
                                 // Formulaire de réservation pour les utilisateurs normaux
             ?>
+                <div class="images img">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="..." class="d-block w-100" alt="...">
+                            </div>
+
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <h2>Bonjour <?php echo $_SESSION['user']['firstName'] ?></h2>
 
                 <form method="POST" action="reservation_traitement.php">
 
@@ -223,9 +220,9 @@ ob_end_flush();
                     <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
 
                     <input type="submit" name="action" value="Réserver">
-                    <h2>Bonjour <?php echo $_SESSION['user']['firstName'] ?></h2>
 
                 </form>
+
 
 
         <?php
