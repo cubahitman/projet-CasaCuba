@@ -212,7 +212,9 @@ img.pull-left {
 }
 
 /* Main content block */
-.maincontent {}
+.maincontent {
+	height: 70vh;
+}
 
 /* Sidebars */
 .sidebar {

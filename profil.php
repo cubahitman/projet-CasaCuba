@@ -36,6 +36,9 @@ require_once "inc/header.inc.php";
            ?>
     
             <a class="list-group-item list-group-item-action bg-bleuNav ">Id-<?= $annonce['id_advert']?>  RÉSERVATION        <?= $annonce['title']?>  •  fait le : <?= $reservation['date_reservation']?>  arrivé <?= $reservation['date_arrivee']?> depart <?= $reservation['date_depart']?> <span class=" text-danger ">   •         •          •  <?= $reservation['etat_reservation']?> </span> </a>
+                <a href="<?= RACINE_SITE ?>showAnnonce.php?annonce=<?= $annonce['id_advert'] ?>" 
+                         class="list-group-item list-group-item-action bg-bleuNav ">
+                                  Id-<?= $annonce['id_advert'] ?> RÉSERVATION <?= $annonce['title'] ?> • fait le : <?= $reservation['date_reservation'] ?> arrivé <?= $reservation['date_arrivee'] ?> depart <?= $reservation['date_depart'] ?> <span class=" text-danger "> • • • <?= $reservation['etat_reservation'] ?> </span> </a>
     
     
         <?php }?>
