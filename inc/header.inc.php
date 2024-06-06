@@ -127,7 +127,7 @@ ob_start(); // Active le tampon de sortie
 <!-- Header -->
 <?php
 $current_page = basename($_SERVER['REQUEST_URI']);
-if (!in_array($current_page, array('authentification.php', 'contact.php', 'profil.php', 'register.php'))) {?>
+if (!in_array($current_page, array('authentification.php', 'contact.php','annoceLocation.php','annonceVente.php' ,'profil.php', 'register.php'))) {?>
     <header id="head">
         <div class="container">
             <div class="row">

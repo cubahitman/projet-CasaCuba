@@ -131,7 +131,7 @@ ob_end_flush();
 
 
                         ?>
-                        <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
+                        <p class="card-text"><?= $annonce['description'] ?>...</p>
                         <div class="buttons">
                             <a href="<?= RACINE_SITE ?>explorer.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux annonces</a> <?php if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
                                 <a href="<?= RACINE_SITE ?>admin/dashboard.php?gestionMaisons_php" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
@@ -144,7 +144,24 @@ ob_end_flush();
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 mb-4 form-group">
+            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/images/bg_header.jpg" class="d-block w-100" alt="...">
+    </div>
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
                 <div class="buttons  ">
+                
                     <?php
                     if (isset($_SESSION['user'])) {
                     ?>
@@ -193,23 +210,8 @@ ob_end_flush();
                             } else {
                                 // Formulaire de réservation pour les utilisateurs normaux
             ?>
-                <div class="images img">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="..." class="d-block w-100" alt="...">
-                            </div>
-
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
+                                                                                                  <div class="images img">
+                   
                 </div>
                 <h2>Bonjour <?php echo $_SESSION['user']['firstName'] ?></h2>
 

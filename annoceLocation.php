@@ -19,7 +19,7 @@ require_once "inc/header.inc.php";
 // annonces location //
 $annonces = annoncesByType(['location']);
 ?>
-<div class="container-fluid text-center border no-margin">
+<div class="container text-center   top-space1">
     <!-- <br> <br> -->
     <h2 class="">Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
     <p class="">
@@ -31,7 +31,7 @@ $annonces = annoncesByType(['location']);
 
     </a> -->
 </div>
-<main class="bg-capitoliounuit  ">
+<main class="bg-capitoliounuit top-space">
 
 
     <section class=" container m-5 text-center  ">

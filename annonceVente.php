@@ -22,7 +22,7 @@ $type = 'achat'; // Le type ici
 $annonces = annoncesByType([$type]);
 
 ?>
-<div class="container text-center ">
+<div class="container text-center top-space">
     <br> <br>
     <h2 class="">Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
     <p class="">
@@ -39,7 +39,7 @@ $annonces = annoncesByType([$type]);
 
 
     </section>
-    <section class=" container body text-center  ">
+    <section class=" container body text-center ">
         <div class="row">
             <?php
             foreach ($annonces as $annonce) {
