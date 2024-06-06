@@ -22,7 +22,7 @@ if (isset($_GET['annonce'])) {
 <header  class="">
 <div  class="container  superposerR ">
 	<br> <br>
-	<h1 class="text-center">Veuillez confirmer votre requete !</h1>
+	<h1 class="text-center ">Veuillez confirmer votre requete !</h1>
 	<p class="text-center">
   Nous avons bien noté que vous souhaitez annuler votre réservation. Avant de finaliser cette action, nous tenons à vous rappeler que toute annulation peut entraîner des frais selon nos conditions générales. Si vous avez des questions ou si vous souhaitez discuter d'autres options, n'hésitez pas à contacter notre service client. Si vous êtes sûr de vouloir procéder à l'annulation, veuillez cliquer sur le bouton 'Confirmer l'annulation'.
 
