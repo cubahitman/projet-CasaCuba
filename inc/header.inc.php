@@ -79,13 +79,13 @@ ob_start(); // Active le tampon de sortie
 
         <?php if (isset($_SESSION['user'])) {?>
 
-            <li><a class="dropdown-item" href="<?= RACINE_SITE?>profil.php">Mon compte</a></li>
+            <li><a class="dropdown-item" href="profil.php">Mon compte</a></li>
 
         <?php } else {?>
 
-            <li><a class="dropdown-item" href="<?= RACINE_SITE?>authentification.php">Connexion</a></li>
+            <li><a class="dropdown-item" href="authentification.php">Connexion</a></li>
 
-            <li><a class="dropdown-item" href="<?= RACINE_SITE?>register.php">Inscriptions</a></li>
+            <li><a class="dropdown-item" href="register.php">Inscriptions</a></li>
 
         <?php }?>
 
