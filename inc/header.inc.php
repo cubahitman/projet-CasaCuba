@@ -63,35 +63,35 @@ ob_start(); // Active le tampon de sortie
 
                 <li class="dropdown">
 
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profil 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Profil
 
-        <?php if (isset($_SESSION['user'])) {?>
+                        <?php if (isset($_SESSION['user'])) { ?>
 
-            <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName']?></sup>
+                            <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup>
 
-        <?php }?> 
+                        <?php } ?>
 
-        <b class="caret"></b>
+                        <b class="caret"></b>
 
-    </a>
+                    </a>
 
-    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu">
 
-        <?php if (isset($_SESSION['user'])) {?>
+                        <?php if (isset($_SESSION['user'])) { ?>
 
-            <li><a class="dropdown-item" href="<?= RACINE_SITE?>profil.php">Mon compte</a></li>
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>profil.php">Mon compte</a></li>
 
-        <?php } else {?>
+                        <?php } else { ?>
 
-            <li><a class="dropdown-item" href="<?= RACINE_SITE?>authentification.php">Connexion</a></li>
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>authentification.php">Connexion</a></li>
 
-            <li><a class="dropdown-item" href="<?= RACINE_SITE?>register.php">Inscriptions</a></li>
+                            <li><a class="dropdown-item" href="<?= RACINE_SITE ?>register.php">Inscriptions</a></li>
 
-        <?php }?>
+                        <?php } ?>
 
-    </ul>
+                    </ul>
 
-</li>
+                </li>
                 <li class="espace-pro ">
                     <a href="<?= RACINE_SITE ?>admin/dashboard.php" class=" btn ">Espace Pro</a>
                     <?php if (empty($_SESSION['user'])) { ?>
@@ -127,15 +127,15 @@ ob_start(); // Active le tampon de sortie
 <!-- Header -->
 <?php
 $current_page = basename($_SERVER['REQUEST_URI']);
-if (!in_array($current_page, array('authentification.php', 'contact.php','annoceLocation.php','annonceVente.php' ,'profil.php', 'register.php'))) {?>
+if (!in_array($current_page, array('authentification.php', 'contact.php', 'annoceLocation.php', 'annonceVente.php', 'profil.php', 'register.php', 'explorer.php'))) { ?>
     <header id="head">
         <div class="container">
             <div class="row">
                 <h1 class="lead">DESTINATION, RAFFINEMENT, INSPIRATION</h1>
                 <p class="tagline">Votre portail pour les maisons de rêve à Cuba </p>
-                <p><a href="<?= RACINE_SITE?>a_propos.php" class="btn btn-default btn-lg" role="button">INFORMATIONS</a> <a href="<?= RACINE_SITE?>register.php" class="btn btn-action btn-lg" role="button">INSCRIVEZ-VOUS MAINTENANT</a></p>
+                <p><a href="<?= RACINE_SITE ?>a_propos.php" class="btn btn-default btn-lg" role="button">INFORMATIONS</a> <a href="<?= RACINE_SITE ?>register.php" class="btn btn-action btn-lg" role="button">INSCRIVEZ-VOUS MAINTENANT</a></p>
             </div>
         </div>
     </header>
-<?php }?>
+<?php } ?>
 <!-- /Header -->

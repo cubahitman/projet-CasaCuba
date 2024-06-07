@@ -11,7 +11,7 @@ require_once "inc/header.inc.php";
 
 $annonces = annoncesByType();
 ?>
-<div class="container text-center ">
+<div class="container text-center top-space">
     <br> <br>
     <h2 class="color-jaune"> Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
     <p class="">

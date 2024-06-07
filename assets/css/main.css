@@ -114,7 +114,9 @@
 	margin-bottom: 20px;
 }
 
-.h-body {}
+.h-body {
+	height: 100vh;
+}
 
 
 /* Typography */
