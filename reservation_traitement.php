@@ -184,7 +184,7 @@ if (!empty($_POST)) {
 
 <script src="assets/js/scripts.js"></script>
 
-</body>
+
 
 
 </html>
