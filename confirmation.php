@@ -6,7 +6,9 @@ require_once "inc/__navbar.php";
 $id_advert = $_GET['annonce'];
 $id_utilisateur = $_SESSION['user']['id_user'];
 $annonce = showAnonnce($id_advert);
-
+if (isset($_POST)) {
+  # code...
+}
 ?>
 
 <main>
