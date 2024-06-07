@@ -75,7 +75,7 @@ if (isset($_POST['action'])) {
 
         case 'cancel':
 
-            cancelAdvert($id_advert);
+            // cancelAdvert($id_advert);
 
             header('Location: confirmation.php?annonce=' . $id_advert);
 
