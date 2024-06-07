@@ -83,9 +83,10 @@
 
 /* avec cabane a la plage */
 .back {
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     /* height: 100vh; */
-    background-image: url('https://source.unsplash.com/-c4Stt0rvQ8o');
+    background: url('assets/img/balcon-mar.jpg');
+    
     background-size: cover;
     background-position: center;
 
