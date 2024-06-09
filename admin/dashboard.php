@@ -44,6 +44,22 @@ if (isset($_GET['action']) && isset($_GET['id_annonce'])) {
         exit();
     }
 }
+if (isset($_GET['action']) && isset($_GET['id_reservation'])) {
+    if (!empty($_GET['action']) && $_GET['action'] == 'annulation' && !empty($_GET['id_reservation'])) {
+        $idReservation = (int) htmlentities($_GET['id_reservation']);
+        $anulation = updateReservation($idReservation, 'annuler');
+        header('Location: dashboard.php?gestionReservation_php');
+          
+        exit();
+    }
+    if (!empty($_GET['action']) && $_GET['action'] == 'confirmation' && !empty($_GET['id_reservation'])) {
+        $idReservation = (int) htmlentities($_GET['id_reservation']);
+        $anulation = updateReservation($idReservation, 'confirmer');
+        header('Location: dashboard.php?gestionReservation_php');
+          
+        exit();
+    }
+}
 
 
 

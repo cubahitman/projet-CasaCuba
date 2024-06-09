@@ -88,7 +88,7 @@ if (!empty($_POST)) {
 
 <main>
 
-    <div class="container superposerR ">
+    <div class="container   ">
 
 
         <h1 class="text-center">Réserver une annonce</h1>

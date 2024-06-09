@@ -500,12 +500,25 @@ function deleteAdvert(int $id): bool
         return false;
     }
 }
+// ////////////////////  Fonction pour update reservation//////////////
+
+function updateReservation($idReservation, $action): void
+{
+    $pdo = connexionBdd();
+    $sql = "UPDATE  reservations SET etat_reservation  = :action WHERE id_reservation = :id_reservation";
+    $request = $pdo->prepare($sql);
+    $request->execute(array(
+        ':action' => $action,
+        ':id_reservation' => $idReservation
+
+    ));
+}
 
 function isAdvertReserved(int $id): bool
 {
     try {
         $pdo =connexionBdd();
-        $sql = $pdo->prepare("SELECT * FROM reservations WHERE 	id_annonce = :	id_annonce AND etat_reservation != 'annulee'");
+        $sql = $pdo->prepare("SELECT * FROM reservations WHERE 	id_annonce = :	id_annonce AND etat_reservation != 'annuler'");
         $sql->bindParam(':id_annonce', $id, PDO::PARAM_INT);
         $sql->execute();
         return $sql->rowCount() > 0;

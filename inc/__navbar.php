@@ -7,7 +7,7 @@ logOut();
 <body>
 
 
-    <div class="nav-resp ">
+    <div class=" ">
         <header class="header-navresp">
             <div class="navbar-resp">
                 <div class="logo">

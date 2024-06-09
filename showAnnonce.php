@@ -25,7 +25,7 @@ if (!empty($_POST)) {
         error_reporting(E_ALL);
 
         try {
-            entreCommentaire($id_annonce, $id_utilisateur, $comment_text, $rating );
+            entreCommentaire($id_annonce, $id_utilisateur, $comment_text, $rating);
         } catch (PDOException $e) {
 
             echo 'Erreur PDO : ' . $e->getMessage();
@@ -38,7 +38,7 @@ if (!empty($_POST)) {
             echo "Erreur lors de la commentaire";
         }
 
-        header('Location: showAnnonce.php?annonce='.$id_annonce);
+        header('Location: showAnnonce.php?annonce=' . $id_annonce);
 
         exit;
     }
@@ -182,13 +182,13 @@ ob_end_flush();
                             <?php if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
 
                                 <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
-                                <?php if($annonce['type'] == 'location') { ?>
+                                <?php if ($annonce['type'] == 'location') { ?>
 
                                     <input type="submit" name="action" value="Réserver" class="btn ">
-                                    <?php } ?>
-                                    <?php if($annonce['type'] == 'achat') { ?>
-                                        <input type="submit" name="action" value="Acheter" class="btn ">
-                                    <?php } ?>
+                                <?php } ?>
+                                <?php if ($annonce['type'] == 'achat') { ?>
+                                    <input type="submit" name="action" value="Acheter" class="btn ">
+                                <?php } ?>
 
                         </form>
                         <form method="POST">
@@ -221,13 +221,15 @@ ob_end_flush();
 
 
             <?php
-            } else {                                // Formulaire de réservation pour les utilisateurs normaux
+                            } else {                                // Formulaire de réservation pour les utilisateurs normaux
             ?>
-                <div class="images img">
+                            <!-- Carousel Column -->
+
+               <div> <div class="images img">
                     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="..." class="d-block w-100" alt="...">
+                                <img src="assets/img/appartBellevues.jpeg" class="d-block w-100" alt="images de l'annonce ">
                             </div>
 
                         </div>
@@ -248,11 +250,11 @@ ob_end_flush();
 
 
                     <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
-                    <?php if($annonce['type'] == 'location') { ?>
+                    <?php if ($annonce['type'] == 'location') { ?>
 
-                        <input type="submit" name="action"  value="Réserver">
+                        <input type="submit" name="action" value="Réserver">
                     <?php } ?>
-                    <?php if($annonce['type'] == 'achat') { ?>
+                    <?php if ($annonce['type'] == 'achat') { ?>
                         <input type="submit" name="action" value="Acheter">
                     <?php } ?>
                 </form>
@@ -270,55 +272,55 @@ ob_end_flush();
                         }
         ?>
             </div>
+            <!-- Commentaires Column -->
+            <div class="container col-lg-4 col-md-4 col-sm-12">
 
-        <div class="container col-lg-4 col-md-4 col-sm-12">
+                <h1 class="mt-5">Commentaires</h1>
 
-        <h1 class="mt-5">Commentaires</h1>
-        
-        <div class="comments-section mt-5">
-            <h3>Liste des commentaires</h3>
-            <?php
-            if (isset($commentaires) ) {
-                foreach ($commentaires as $commentaire) {
-                    $user = showUser($commentaire['id_utilisateur']);
-                    echo '<div class="comment mb-3">';
-                    echo '<h5>' . htmlspecialchars($user['pseudo']) . '</h5>';
-                    echo '<p>' . htmlspecialchars($commentaire['comment_text']) . '</p>';
-                    echo '<p>Rating: ' . htmlspecialchars($commentaire['rating']) . ' / 5</p>';
-                    echo '<small>Posted on ' . htmlspecialchars($commentaire['created_at']) . '</small>';
-                    echo '</div>';
-                }
-            } else {
-                echo '<p>No comments yet.</p>';
-            }
-            ?>
-        </div>
-
-        <div class="add-comment-section mt-5 ">
-            <form action="showAnnonce.php" method="post">   
-                <input type="hidden" name="form_name" value="commentaire_form">
-                 <input type="hidden" name="id_annonce" value="<?= $id_advert ?>">
-                <div class="form-group">
-                    <label for="comment_text">Votre commentaire</label>
-                    <textarea class="form-control" id="comment_text" name="comment_text" rows="3" required></textarea>
+                <div class="comments-section mt-5">
+                    <h3>Liste des commentaires</h3>
+                    <?php
+                    if (isset($commentaires)) {
+                        foreach ($commentaires as $commentaire) {
+                            $user = showUser($commentaire['id_utilisateur']);
+                            echo '<div class="comment mb-3">';
+                            echo '<h5>' . htmlspecialchars($user['pseudo']) . '</h5>';
+                            echo '<p>' . htmlspecialchars($commentaire['comment_text']) . '</p>';
+                            echo '<p>Rating: ' . htmlspecialchars($commentaire['rating']) . ' / 5</p>';
+                            echo '<small>Posted on ' . htmlspecialchars($commentaire['created_at']) . '</small>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo '<p>No comments yet.</p>';
+                    }
+                    ?>
                 </div>
-                <div class="form-group">
-                    <label for="rating">Notation</label>
-                    <select class="form-control" id="rating" name="rating" required>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-                <input type="hidden" name="id_advert" value="1"> <!-- Replace with the actual advert ID -->
-                <button type="submit" class="btn btn-primary">Ajouter</button>
-            </form>
-        </div>
-        </div>
 
-        </div>
+                <div class="add-comment-section mt-5 ">
+                    <form action="showAnnonce.php" method="post">
+                        <input type="hidden" name="form_name" value="commentaire_form">
+                        <input type="hidden" name="id_annonce" value="<?= $id_advert ?>">
+                        <div class="form-group">
+                            <label for="comment_text">Votre commentaire</label>
+                            <textarea class="form-control" id="comment_text" name="comment_text" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="rating">Notation</label>
+                            <select class="form-control" id="rating" name="rating" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <input type="hidden" name="id_advert" value="1"> <!-- Replace with the actual advert ID -->
+                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+
+        </div></div>
     </section>
 </main>
 </footer>

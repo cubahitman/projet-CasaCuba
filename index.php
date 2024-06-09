@@ -2,6 +2,11 @@
 $title = "Accueil";
 require_once "inc/header.inc.php";
 $annonces = dernieresAnnonces();
+foreach ($annonces as $annonce => $value) {
+	$id_advert = $value['id_advert'];
+}
+// debug($annonces);
+$commentaires = showCommentaires($id_advert);
 ?>
 <!-- Intro -->
 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl7/1L_dstPt3HV5HzF6Gvk/e3s4Wz6iJgD/+ub2oU" crossorigin="anonymous"> -->
@@ -32,7 +37,7 @@ $annonces = dernieresAnnonces();
 
 				<div class="row no-margin gutters">
 
-					<div class="col-lg-3 col-md-6 col-sm-12  ">
+					<div class="col-lg-3 col-md-6   ">
 						<!-- <a href="explorer.php?ville=Havana" > -->
 						<img src="assets/img/femmeBalance.png" class="img-fluid" alt="Rue de l'Havane vieille avec des anciennes voitures qui roulent.">
 						<div class="card-img-overlay text-left" style="position: absolute; top: 85%; left: 7%; width: 70%;">
@@ -40,7 +45,7 @@ $annonces = dernieresAnnonces();
 						</div>
 					</div>
 
-					<div class="col-lg-3 col-md-6 col-sm-12  ">
+					<div class="col-lg-3 col-md-6   ">
 						<img src="assets/img/havane.png" class="img-fluid" alt="Homme qui joue de la guitare" style="margin-bottom: 20px;">
 						<div class="card-img-overlay text-left" style="position: absolute; top: 40%; left: 7%; width: 70%;">
 
@@ -57,7 +62,7 @@ $annonces = dernieresAnnonces();
 
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6 col-sm-12  ">
+					<div class="col-lg-3 col-md-6   ">
 						<!-- <a href="explorer.php?ville=Havana" > -->
 						<img src="assets/img/vinallesLink.jpeg" class="img-fluid" alt="Homme qui fait de la marche en montagne avec un beau paysage derrière">
 						<div class="card-img-overlay text-left" style="position: absolute; top: 85%; left: 7%; width: 70%;">
@@ -65,7 +70,7 @@ $annonces = dernieresAnnonces();
 						</div>
 					</div>
 
-					<div class="col-lg-3 col-md-6 col-sm-12  ">
+					<div class="col-lg-3 col-md-6 ">
 						<img src="assets/img/trinidadLink.jpeg" class="img-fluid" alt="Beau paysage montagneux à Trinidad" style="margin-bottom: 20px;">
 						<div class="card-img-overlay text-left" style="position: absolute; top: 25%; left: 7%; width: 70%;">
 
@@ -87,17 +92,17 @@ $annonces = dernieresAnnonces();
 
 			</div>
 		</section>
-	
+
 
 		<section class="margin-content">
-			
+
 			<h2 class="" style="margin-left: 10px;">Meilleurs offres: destinations in Cuba</h2>
 
 			<div class="row d-flex justify-content-around flex-wrap">
 				<?php
 				foreach ($annonces as $annonce) {
 				?>
-					<div class="col-lg-2 col-md-4 col-sm-6 "style="margin-right: 50px;">
+					<div class="col-lg-2 col-md-4 col-sm-6 " style="margin-right: 50px;">
 						<div class="card3 " style="width: 100%; max-width: 350px;">
 							<img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="<?= $annonce['description'] ?>">
 							<div class="card-img-overlay" style="position: absolute; top: 3%; left: 7%; width: 33%;">
@@ -116,7 +121,7 @@ $annonces = dernieresAnnonces();
 				}
 				?>
 			</div>
-	</section>
+		</section>
 
 
 	</div>
@@ -131,9 +136,28 @@ $annonces = dernieresAnnonces();
 					<div class="card text-bg-dark">
 						<img src="assets/img/couple.avif" class="card-img" alt="...">
 						<div class="card-img-overlay">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small>Last updated 3 mins ago</small></p>
+							<div class="comments-section mt-5">
+								<h3>Liste des commentaires</h3>
+								<?php
+								// debug($id_advert);
+								// echo  $id_advert;
+								if (!empty($commentaires)) {
+									foreach ($commentaires as $commentaire) {
+										$user = showUser($commentaire['id_utilisateur']);
+										echo '<div class="comment mb-3">';
+										echo '<h5>' . htmlspecialchars($user['pseudo']) . '</h5>';
+										echo '<p>' . htmlspecialchars($commentaire['comment_text']) . '</p>';
+										echo '<p>Rating: ' . htmlspecialchars($commentaire['rating']) . ' / 5</p>';
+										echo '<small>Posted on ' . htmlspecialchars($commentaire['created_at']) . '</small>';
+										echo '</div>';
+									}
+								} else {
+									echo '<p class="card-text"><small>Pas encore de commentaire</small></p>';
+								}
+								?>
+							</div>
+
+
 						</div>
 					</div>
 				</div>
@@ -145,16 +169,16 @@ $annonces = dernieresAnnonces();
 				<!-- Ajoutez ici les images des destinations -->
 				<div class="pen ">
 					<ul class='list'>
-						<li class='item' alt="image de solei derrier la mer"><img src='https://source.unsplash.com/JP23z_-dA74'></li>
-						<li class='item' alt="image"><img src='https://source.unsplash.com/FCCtL3oyRDY'></li>
-						<li class='item' alt="image"><img src='https://source.unsplash.com/_MljkIzvcHw'></li>
-						<li class='item' alt="image"><img src='https://source.unsplash.com/XfZPhwf_BtI'></li>
-						<li class='item' alt="image"><img src='https://source.unsplash.com/v0Aiibob-Q8'></li>
-						<li class='item' alt="image"><img src='https://source.unsplash.com/6NT7jy6OU9I'></li>
-						<li class='item' alt="image"><img src='https://source.unsplash.com/fwtXC2sP7Tg'></li>
-						<li class='item' alt="image"><img src='https://source.unsplash.com/JP23z_-dA74'></li>
-						<li class='item' alt="image fauteuil-a-bascule-en-bois-marron-sous-un-arbre-vert-a Cuba"><img src='https://source.unsplash.com/CXV0EVK8QSU'></li>
-						<li class='item' alt="image une-chaise-rouge-posee-au-sommet-dune-plage-au-bord-de-locean-a Cuba"><img src='https://source.unsplash.com/wM8R6CLynUk'></li>
+						<li class='item' alt="image Cabare cubano images"><img src='assets/img/espectaculo-en-el-cabaret.jpg'></li>
+						<li class='item' alt="image ville Cienfiegos"><img src='assets/img/cienfuegos.jpg'></li>
+						<li class='item' alt="image rue Obispo a Cuba"><img src='assets/img/Obispo.jpg'></li>
+						<li class='item' alt="image la Baie de Baracoa "><img src='assets/img/1280px-Cuidad_de_Baracoa.jpg'></li>
+						<li class='item' alt="image de la ville de Bayamo"><img src='assets/img/bayamo.jpeg'></li>
+						<li class='item' alt="image El capitolio de la havane"><img src='assets/img/capitolio.nuit(1).jpg'></li>
+						<li class='item' alt="image femme dans pisine relax"><img src='assets/img/CasaMontaña.jpeg'></li>
+						<li class='item' alt="image vue de la mer "><img src='assets/img/balcon-mar.jpg'></li>
+						<li class='item' alt="image Hôtel a Cuba"><img src='assets/img/CasaDeLaPlaya.jpeg'></li>
+						<li class='item' alt="Rue de la havane"><img src='assets/img/havane.png'></li>
 						<li class='item' alt="image personne-flottant-sur-un-plan-deau-a varadero"><img src='https://source.unsplash.com/GjiTNrl6xoo'></li>
 						<li class='item' alt="une-voiture-jaune-roulant-dans-une-rue-la-nuit"><img src='https://source.unsplash.com/T8PZvVQQ8t0'></li>
 						<li class='item'><img src='https://source.unsplash.com/d_Nd6W0dd4Q'></li>
@@ -287,4 +311,5 @@ require_once "inc/footer.inc.php";
 
 ?>
 </body>
+
 </html>

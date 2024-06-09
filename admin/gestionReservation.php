@@ -5,8 +5,8 @@ require_once "../inc/boostrap.inc.php";
 
 
 <div class="d-flex flex-column m-5  table-responsive">
-    <h2 class="text-center fw-bolder mb-5">Liste des Annonce</h2>
-    <button class="btn btn-primary mb-5"><a href="?gestionMaisons_php" class="text-white text-decoration-none">Ajouter une annonce</a></button>
+    <h2 class="text-center fw-bolder mb-5">Liste des Reservations</h2>
+    <!-- <button class="btn btn-primary mb-5"><a href="?gestionMaisons_php" class="text-white text-decoration-none">Ajouter une annonce</a></button> -->
     <table class="table table-light table-bordered mt-5">
         <thead>
             <tr>
@@ -39,8 +39,8 @@ require_once "../inc/boostrap.inc.php";
                     <td><?= $reservation['nombre_personnes'] ?></td>
                     <td><?= $reservation['etat_reservation'] ?></td>
                     <td class="text-center">
-                        <a href="dashboard.php?gestionAnnonce&action=delete&id_annonce=<?= $annonce['id_advert'] ?>"> annulation</a>
-                        <a href="dashboard.php?update_annonce_php&action=modifier&id_annonce=<?= $annonce['id_advert'] ?>"> confirmation</a>
+                        <a href="dashboard.php?gestionReservation&action=annulation&id_reservation=<?= $reservation['id_reservation'] ?>"> annulation</a>
+                        <a href="dashboard.php?gestionReservation&action=confirmation&id_reservation=<?= $reservation['id_reservation'] ?>"> confirmation</a>
                     </td>
 
                 </tr>

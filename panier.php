@@ -7,7 +7,7 @@
 
 $title = "Panier";
 require_once "inc/header.inc_copy.php";
-
+$achats = showAchats($_SESSION['user']['id_user']);
 $id_advert = $_GET['annonce'];
 $id_utilisateur = $_SESSION['user']['id_user'];
 $annonce = showAnonnce($id_advert);
@@ -20,11 +20,11 @@ if (!empty($_POST)) {
 
         $id_utilisateur = $_SESSION['user']['id_user'];
 
-        $etat = 0 ;
+        $etat = 0;
 
         error_reporting(E_ALL);
         try {
-            entreAchat($id_annonce, $id_utilisateur,$etat);
+            entreAchat($id_annonce, $id_utilisateur, $etat);
         } catch (PDOException $e) {
 
             echo 'Erreur PDO : ' . $e->getMessage();
@@ -71,12 +71,21 @@ if (!empty($_POST)) {
             </div>
         </div>
     </section> -->
+    <div class="top-space1">
+        <?php foreach ($achats as $achat) {
 
+            $annonce = showAnonnce($achat['id_annonce']); ?>
+
+            <a class="list-group-item list-group-item-action bg-capitoliounuit ">TRANSACTION <?= $annonce['title'] ?> Référence () a <?= $annonce['price'] ?></a>
+
+
+        <?php } ?>
+    </div>
     <section class=" container m-5 text-center top-space1">
         <div class="row">
-<?php if (!isset($id_advert)) {
-   echo"<p> Votre panier est vide </p>";
-}else{ ?>
+            <?php if (!isset($id_advert)) {
+                echo "<p> Votre panier est vide </p>";
+            } else { ?>
                 <div class="col-lg-4 col-md-4 col-sm-12 ">
                     <div class="card1   ">
                         <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top " alt="image de <?= $annonce['title'] ?>" style="height: 200px; width: 100%; object-fit: cover;">
@@ -89,11 +98,7 @@ if (!empty($_POST)) {
                 </div>
 
                 <div class="col-lg-8 col-md-8 col-sm-12 ">
-                    <p class="mt-5">We are <span class="red ">MASSIVE Academy.</span> We aim to improve
-                            education through both methods -effective project-based learning - and material - by
-                            teaching
-                            skills that are applicatble to improving your life today.
-                    </p>
+                  
 
                     <form method="POST" action="panier.php">
                         <input type="hidden" name="id_annonce" value="<?= $annonce['id_advert'] ?>">
@@ -105,7 +110,8 @@ if (!empty($_POST)) {
 
                 </div>
 
-        <?php    } ?> </div>
+            <?php    } ?>
+        </div>
     </section>
 </main>
 
