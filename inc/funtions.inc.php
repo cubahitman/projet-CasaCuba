@@ -302,6 +302,26 @@ function updateUser($id_user, $firstName, $lastName, $pseudo, $email, $phone, $c
     }
 }
 
+function updateAdvert($id_advert, $photo, $title, $description, $postal_code, $city, $type, $price)
+{
+    $pdo = connexionBdd();
+    $sql = $pdo->prepare("UPDATE advert SET photo = :photo, title = :title, description = :description, postal_code = :postal_code, city = :city, type = :type, price = :price WHERE id_advert = :id_advert LIMIT 1");
+    $sql->bindParam(':photo', $photo);
+    $sql->bindParam(':title', $title);
+    $sql->bindParam(':description', $description);
+    $sql->bindParam(':postal_code', $postal_code);
+    $sql->bindParam(':city', $city);
+    $sql->bindParam(':type', $type);
+    $sql->bindParam(':price', $price);
+    $sql->bindParam(':id_advert', $id_advert);
+    if ($sql->execute()) {
+
+        echo '<h3 class="text-center">Mise à jour réussie</h3>';
+    } else {
+        $errorInfo = $sql->errorInfo();
+        echo "Erreur lors de la mise à jour : " . $errorInfo[2];
+    }
+}
 // ==========Function ajouter annonce =============//
 
 
@@ -458,24 +478,26 @@ function cancelAdvert($id_advert)
 
 //   ====================function  pour suprimer annonce================================//
 
-function deleteAdvert(int $id): void
+function deleteAdvert(int $id): bool
 {
-
     try {
         $pdo = connexionBdd();
-        $sql = $pdo->prepare("SELECT * FROM advert WHERE id_advert = :id_advert");
-        $sql->bindParam(':id_advert', $id);
+        $sql = $pdo->prepare("SELECT is_reserved FROM advert WHERE id_advert = :id_advert");
+        $sql->bindParam(':id_advert', $id, PDO::PARAM_INT);
         $sql->execute();
-        if ($sql->rowCount() > 0) {
+        $advert = $sql->fetch(PDO::FETCH_ASSOC);
+
+        if ($advert && $advert['is_reserved'] == 0) {
             $sql = $pdo->prepare("DELETE FROM advert WHERE id_advert = :id_advert");
-            $sql->bindParam(':id_advert', $id);
+            $sql->bindParam(':id_advert', $id, PDO::PARAM_INT);
             $sql->execute();
-            echo 'Annonce supprimée avec succès.';
+            return true; 
         } else {
-            echo 'Annonce non supprimée.';
+            return false; 
         }
     } catch (PDOException $e) {
         echo 'Erreur de connexion à la base de données: ' . $e->getMessage();
+        return false;
     }
 }
 
@@ -501,6 +523,42 @@ function entreReservation($id_annonce, $id_utilisateur, $date_arrivee, $date_dep
         echo "Erreur lors de la réservation";
     }
 }
+
+function entreAchat($id_annonce, $id_utilisateur, $etat) {
+    $pdo = connexionBdd();
+    $sql = $pdo->prepare("INSERT INTO achats (id_annonce, id_utilisateur, etat_achat) VALUES (:id_annonce, :id_utilisateur, :etat)");
+    $sql->bindParam(':id_annonce', $id_annonce);    
+    $sql->bindParam(':id_utilisateur', $id_utilisateur);
+    $sql->bindParam(':etat', $etat);
+    try {
+        $sql->execute();
+        header('Location: index.php');
+        exit;
+    } catch (PDOException $e) {
+        // Logger l'erreur dans un fichier ou une base de données
+        error_log($e->getMessage());
+        echo "Erreur lors de la réservation";
+    }
+}
+
+function entreCommentaire($id_annonce, $id_utilisateur, $comment_text, $rating ) {
+
+    $pdo = connexionBdd();
+    $sql = $pdo->prepare("INSERT INTO commentaires (id_advert, id_utilisateur, comment_text, rating) VALUES (:id_annonce, :id_utilisateur, :comment_text, :rating)");
+    $sql->bindParam(':id_annonce', $id_annonce);
+    $sql->bindParam(':id_utilisateur', $id_utilisateur);
+    $sql->bindParam(':comment_text', $comment_text);
+    $sql->bindParam(':rating', $rating);
+    try {
+        $sql->execute();
+        header('Location: showAnnonce.php?annonce='.$id_annonce);
+        exit;
+    } catch (PDOException $e) {
+        // Logger l'erreur dans un fichier ou une base de données
+        error_log($e->getMessage());
+        echo "Erreur lors de la commantaire";
+    }
+}
 //  ==================================Funtions afiche reservations  =====================/
 
 function showReservations($id_utilisateur )
@@ -514,7 +572,25 @@ function showReservations($id_utilisateur )
 }
 
 
+function showAchats($id_utilisateur )
+{
+    $pdo = connexionBdd();
+    $sql = $pdo->prepare("SELECT * FROM achats WHERE id_utilisateur  = :id_utilisateur ");
+    $sql->bindParam(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
+    $sql->execute();
+    $achat = $sql->fetchAll();
+    return $achat;
+}
 
+function showCommentaires($id_advert){
+
+    $pdo = connexionBdd();
+    $sql = $pdo->prepare("SELECT * FROM commentaires WHERE id_advert = :id_annonce ");
+    $sql->bindParam(':id_annonce', $id_advert, PDO::PARAM_INT);
+    $sql->execute();
+    $commentaires = $sql->fetchAll();
+    return $commentaires;
+}
 
 
 

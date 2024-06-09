@@ -1,6 +1,5 @@
 <?php
 
-
 $title = "Reservations";
 require_once "inc/header.inc.php";
 
@@ -10,6 +9,40 @@ $annonce = showAnonnce($id_advert);
 $reservations = showReservations($_SESSION['user']['id_user']);
 $info = "";
 $reservation = "";
+$commentaires = showCommentaires($id_advert);
+
+if (!empty($_POST)) {
+    if (isset($_POST['form_name']) && $_POST['form_name'] == 'commentaire_form') {
+
+        $id_annonce = $_POST['id_annonce'];
+
+        $id_utilisateur = $_SESSION['user']['id_user'];
+
+        $comment_text = $_POST['comment_text'];
+
+        $rating = $_POST['rating'];
+
+        error_reporting(E_ALL);
+
+        try {
+            entreCommentaire($id_annonce, $id_utilisateur, $comment_text, $rating );
+        } catch (PDOException $e) {
+
+            echo 'Erreur PDO : ' . $e->getMessage();
+
+            $errorInfo = $pdo->errorInfo();
+
+            print_r($errorInfo);
+            error_log("Erreur lors de la commentaire : " . $e->getMessage() . "\n", 3, "erreur.log");
+
+            echo "Erreur lors de la commentaire";
+        }
+
+        header('Location: showAnnonce.php?annonce='.$id_annonce);
+
+        exit;
+    }
+}
 // print_r($reserv); // affichera toutes les valeurs du tableau $reserv
 
 // foreach ($reserv as $reservation) {
@@ -75,7 +108,7 @@ if (isset($_POST['action'])) {
 
         case 'cancel':
 
-            // cancelAdvert($id_advert);
+            cancelAdvert($id_advert);
 
             header('Location: confirmation.php?annonce=' . $id_advert);
 
@@ -110,17 +143,12 @@ ob_end_flush();
     <section class=" margin-content ">
         <div class="row d-flex justify-content-center m-auto">
             <h1 class="text-center text-light"><?= $info ?></h1>
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-4">
                 <div class="card">
                     <div> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= 'Id= ' .  $annonce['id_advert'] . "  "  . 'Type= ' . $annonce['type'] ?></sup></div>
                     <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title']  ?>">
                     <div class="card-body">
                         <?php
-
-
-
-
-
                         if ($annonce['id_advert'] == $id_annonce) {
                             // debug($id_annonce);
                             echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé par vous le $date_reservation</sub></h5>"; // 
@@ -128,10 +156,8 @@ ob_end_flush();
 
                             echo "<h5 class='card-title'>" . $annonce['title'] . "<sub class='bg-success text-white rounded px-1'>noo</sub></h5>";
                         }
-
-
                         ?>
-                        <p class="card-text"><?= $annonce['description'] ?>...</p>
+                        <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
                         <div class="buttons">
                             <a href="<?= RACINE_SITE ?>explorer.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux annonces</a> <?php if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
                                 <a href="<?= RACINE_SITE ?>admin/dashboard.php?gestionMaisons_php" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
@@ -143,25 +169,8 @@ ob_end_flush();
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 mb-4 form-group">
-            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/images/bg_header.jpg" class="d-block w-100" alt="...">
-    </div>
-    
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-4 form-group">
                 <div class="buttons  ">
-                
                     <?php
                     if (isset($_SESSION['user'])) {
                     ?>
@@ -173,8 +182,13 @@ ob_end_flush();
                             <?php if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
 
                                 <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+                                <?php if($annonce['type'] == 'location') { ?>
 
-                                <input type="submit" name="action" value="Réserver" class="btn ">
+                                    <input type="submit" name="action" value="Réserver" class="btn ">
+                                    <?php } ?>
+                                    <?php if($annonce['type'] == 'achat') { ?>
+                                        <input type="submit" name="action" value="Acheter" class="btn ">
+                                    <?php } ?>
 
                         </form>
                         <form method="POST">
@@ -207,22 +221,40 @@ ob_end_flush();
 
 
             <?php
-                            } else {
-                                // Formulaire de réservation pour les utilisateurs normaux
+            } else {                                // Formulaire de réservation pour les utilisateurs normaux
             ?>
-                                                                                                  <div class="images img">
-                   
+                <div class="images img">
+                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="..." class="d-block w-100" alt="...">
+                            </div>
+
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
                 </div>
                 <h2>Bonjour <?php echo $_SESSION['user']['firstName'] ?></h2>
 
-                <form method="POST" action="reservation_traitement.php">
+                <form method="POST" action="showAnnonce.php">
 
 
 
                     <input type="hidden" name="id_advert" value="<?= $annonce['id_advert'] ?>">
+                    <?php if($annonce['type'] == 'location') { ?>
 
-                    <input type="submit" name="action" value="Réserver">
-
+                        <input type="submit" name="action"  value="Réserver">
+                    <?php } ?>
+                    <?php if($annonce['type'] == 'achat') { ?>
+                        <input type="submit" name="action" value="Acheter">
+                    <?php } ?>
                 </form>
 
 
@@ -239,17 +271,51 @@ ob_end_flush();
         ?>
             </div>
 
-            <!-- changer default par un -->
-            <!-- <input type="hidden" value=""> <sup class="badge rounded-pill text-bg-danger ms-1 fs-16"></sup> -->
+        <div class="container col-lg-4 col-md-4 col-sm-12">
 
+        <h1 class="mt-5">Commentaires</h1>
+        
+        <div class="comments-section mt-5">
+            <h3>Liste des commentaires</h3>
+            <?php
+            if (isset($commentaires) ) {
+                foreach ($commentaires as $commentaire) {
+                    $user = showUser($commentaire['id_utilisateur']);
+                    echo '<div class="comment mb-3">';
+                    echo '<h5>' . htmlspecialchars($user['pseudo']) . '</h5>';
+                    echo '<p>' . htmlspecialchars($commentaire['comment_text']) . '</p>';
+                    echo '<p>Rating: ' . htmlspecialchars($commentaire['rating']) . ' / 5</p>';
+                    echo '<small>Posted on ' . htmlspecialchars($commentaire['created_at']) . '</small>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>No comments yet.</p>';
+            }
+            ?>
+        </div>
 
-            <!-- afficher l'id  si l'ont veut -->
-
-
-
-
-
-
+        <div class="add-comment-section mt-5 ">
+            <form action="showAnnonce.php" method="post">   
+                <input type="hidden" name="form_name" value="commentaire_form">
+                 <input type="hidden" name="id_annonce" value="<?= $id_advert ?>">
+                <div class="form-group">
+                    <label for="comment_text">Votre commentaire</label>
+                    <textarea class="form-control" id="comment_text" name="comment_text" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Notation</label>
+                    <select class="form-control" id="rating" name="rating" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <input type="hidden" name="id_advert" value="1"> <!-- Replace with the actual advert ID -->
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+            </form>
+        </div>
         </div>
 
         </div>

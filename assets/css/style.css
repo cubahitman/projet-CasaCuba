@@ -85,7 +85,7 @@
 .back {
     /* background-attachment: fixed; */
     /* height: 100vh; */
-    background: url('assets/img/balcon-mar.jpg');
+    background: url('../../assets/img/balcon-mar.jpg');
     
     background-size: cover;
     background-position: center;

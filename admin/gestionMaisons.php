@@ -72,7 +72,7 @@ require_once "../inc/navHeader.inc.php";
 
 <main class="">
     <div class="row">
-        <section class="index-img  container p-3 text-center w-50 col-lg-4 col-md-6 col-sm-12 ">
+        <!-- <section class="index-img  container p-3 text-center w-50 col-lg-4 col-md-6 col-sm-12 ">
             <h2 class="mb-5 bg-capitoliounuit">Gestionaire maison</h2>
             <div class="row " style="max-height: 900px; overflow-y: auto;">
 
@@ -94,12 +94,12 @@ require_once "../inc/navHeader.inc.php";
                 }
                 ?>
             </div>
-        </section>
+        </section> -->
 
 
 
         <!-- Formulaire  -->
-        <section class="  p-3 col-lg-4 col-md-6 col-sm-12 m-4 bg-capitoliounuit ">
+        <section class="  p-3 col-lg-12 col-md-12 col-sm-12 m-4 bg-capitoliounuit ">
             <h2 class="text-center">Ajouter un annonce</h2>
             <form action="" method="post" enctype="multipart/form-data" class="container mt-4">
                 <div class="form-group">

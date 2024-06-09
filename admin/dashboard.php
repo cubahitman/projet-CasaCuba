@@ -32,6 +32,13 @@ if (!isset($_SESSION['user'])) {
     }
 }
 
+if (isset($_GET['action']) && isset($_GET['id_annonce'])) {
+    if (!empty($_GET['action']) && $_GET['action'] == 'delete' && !empty($_GET['id_annonce'])) {
+        $idAnnonce = htmlentities($_GET['id_annonce']);
+        deleteAdvert($idAnnonce);
+    }
+}
+
 
 
 
@@ -45,11 +52,9 @@ require_once "../inc/boostrap.inc.php";
 
 <main>
     <div class="row back1">
-        <div class="col-sm-6 col-md-4 col-lg-2 ">
-
+        <div class="col-sm-6 col-md-2 col-lg-2 text-bg-dark p-3 sidebarre">
             <div class="d-flex flex-column text-bg-dark p-3 sidebarre">
                 <hr>
-
                 <ul class="nav1 nav-pills flex-column mb-auto">
                     <li>
                         <a href="?dashboard_php" class="nav-link ">Backoffice</a>
@@ -57,22 +62,24 @@ require_once "../inc/boostrap.inc.php";
                     <li>
                         <a href="?compte_php" class="nav-link ">Compte</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="?gestionMaisons_php" class="nav-link ">Gestions maison</a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="?users_php" class="nav-link ">Utilisateurs</a>
                     </li>
 
+                    <li>
+                        <a href="?gestionAnnonce_php" class="nav-link ">Gestion Annonces </a>
+                    </li>
+
                 </ul>
                 <hr>
-            </div>
-        </div>
-
-
-
+            </div> 
 
     </div>
+
+
     <?php
     if (isset($_GET['dashboard_php'])) :
     ?>
@@ -89,7 +96,7 @@ require_once "../inc/boostrap.inc.php";
     endif;
 
     ?>
-    <div class="col-sm-12">
+    <div class="col-sm-6 col-md-10 col-lg-10">
         <?php
 
         /** $_GET représente les données qui transitent par l'URL. Il s'agit d'une Super Globale et comme toutes les superglobales elle sont de type array
@@ -116,13 +123,21 @@ require_once "../inc/boostrap.inc.php";
                 require_once "form_modifier-user.php";
             } else if (isset($_GET['users_php'])) {
                 require_once "showUsers.php";
-            } else {
+            } else if (isset($_GET['gestionAnnonce_php'])) {
+                require_once "gestionAnnonce.php";
+            }
+            else if (isset($_GET['update_annonce_php'])) {
+                require_once "updateAnnonce.php";
+            } 
+             else {
                 require_once "dashboard.php";
             }
         }
         ?>
     </div>
     </div>
+    </div>
+
 </main>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

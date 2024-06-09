@@ -9,6 +9,7 @@ if (!isset($_SESSION['user'])) {
 
 $user = showUser($_SESSION['user']['id_user']);
 $reservations = showReservations($_SESSION['user']['id_user']);
+$achats = showAchats($_SESSION['user']['id_user']);
 
 
 
@@ -27,27 +28,23 @@ require_once "inc/header.inc.php";
         <?php
        foreach ($reservations as $reservation) {
 
-        $annonce = showAnonnce($reservation['id_annonce']);
-    
-        // debug( $annonce);debug($reservation['id_annonce']);debug($annonce['title']);
-    
-        if ($annonce['type'] == 'location') {
-    // && $reservation['etat_reservation'] == 'validée'
+            $annonce = showAnonnce($reservation['id_annonce']);
            ?>
     
                 <a href="<?= RACINE_SITE ?>showAnnonce.php?annonce=<?= $annonce['id_advert'] ?>" 
                          class="list-group-item list-group-item-action bg-bleuNav ">
-                                  Id-<?= $annonce['id_advert'] ?> RÉSERVATION <?= $annonce['title'] ?> • fait le : <?= $reservation['date_reservation'] ?> arrivé <?= $reservation['date_arrivee'] ?> depart <?= $reservation['date_depart'] ?> <span class=" text-danger "> • • • <?= $reservation['etat_reservation'] ?><input type="button" value="annule"></a>
+                                  Id-<?= $annonce['id_advert'] ?> RÉSERVATION <?= $annonce['title'] ?> • fait le : <?= $reservation['date_reservation'] ?> arrivé <?= $reservation['date_arrivee'] ?> depart <?= $reservation['date_depart'] ?> <span class=" text-danger "> • • • <?= $reservation['etat_reservation'] ?> </span> </a>
     
     
-        <?php }?>
+        <?php }
+        foreach ($achats as $achat) {
+
+            $annonce = showAnonnce($achat['id_annonce']);?>
     
-        <?php if ($annonce['type'] == 'achat') {?>
-    
-            <a class="list-group-item list-group-item-action bg-bleuNav ">TRANSACTION <?= $annonce['title']?> Référence () a <?= $annonce['price']?></a>
-    
-    
-        <?php }}?>
+            <a class="list-group-item list-group-item-action bg-capitoliounuit ">TRANSACTION <?= $annonce['title']?> Référence () a <?= $annonce['price']?></a>
+
+
+        <?php } ?>
 
         <!-- <a class="list-group-item list-group-item-action ">Adresse: <?= $user['firstName'] ?> </a> -->
 
