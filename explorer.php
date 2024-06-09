@@ -11,9 +11,9 @@ require_once "inc/header.inc.php";
 
 $annonces = annoncesByType();
 ?>
-<div class="container text-center ">
+<div class="container text-center top-space">
     <br> <br>
-    <h2 class="">Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
+    <h2 class="color-jaune"> Votre Pied-à-Terre à Cuba : Maisons et Appartements à Saisir !</h2>
     <p class="">
         Que vous cherchiez une résidence secondaire ou un investissement locatif, notre collection de maisons et d'appartements à Cuba répondra à vos attentes.
     </p>
@@ -23,14 +23,10 @@ $annonces = annoncesByType();
     <section class=" ">
 
         <div class="  text-center   ">
-            <h1 class="   ">Votre maison de rêve vous attend à Cuba</h1>
-            <a href="index.php" class="display-5  btn btn-primary text-white text-decoration-none">
-
-                Page d'Accueil
-
-            </a>
+            <h1 class=" color-jaune "> Votre maison de rêve vous attend à Cuba</h1>
+           
             <!-- Section "WHO WE ARE" -->
-            <div class="container">
+            <!-- <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <img src="assets/images/academy-brand-med.png" class="mt-5" alt="">
@@ -44,7 +40,7 @@ $annonces = annoncesByType();
                             skills that are applicatble to improving your life today.</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <section class=" container m-5 text-center">

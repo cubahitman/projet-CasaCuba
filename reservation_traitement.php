@@ -21,8 +21,11 @@ require_once "inc/__navbar.php";
 
 
 
+if (isset($_GET['annonce'])) {
 
-$id_advert = $_GET['annonce'];
+    $id_advert = $_GET['annonce'];
+}
+
 $id_utilisateur = $_SESSION['user']['id_user'];
 $annonce = showAnonnce($id_advert);
 // debug($id_advert);
@@ -30,10 +33,6 @@ $annonce = showAnonnce($id_advert);
 // debug($annonce);
 
 
-if (isset($_GET['annonce'])) {
-
-    $id_advert = $_GET['annonce'];
-} 
 
 
 // if (isset($_POST['reserver'])) {
@@ -139,21 +138,25 @@ if (!empty($_POST)) {
 
             <button type="submit" name="action" class="btn btn-primary btn-block" value="confirmer">Réserver</button>
 
-            <div class=" ">
-        <div class="card1  ">
-            
-            <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title']  ?>">
-            <div class="">
-                <?php if ($annonce['is_reserved']) {
-                    echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
-                } else {
-                    echo "<h5 class='card-title'>" . $annonce['title'] . "</h5>";
-                } ?>
-                <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
+            <div class="buttons ">
+                <div class="card1  ">
 
+                    <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top" alt="image de <?= $annonce['title']  ?>">
+                    <div class="">
+                        <?php if ($annonce['is_reserved']) {
+                            echo "<h5 class='card-title'>" . $annonce['title'] . " <sub class='bg-danger text-white rounded px-1'>Réservé</sub></h5>";
+                        } else {
+                            echo "<h5 class='card-title'>" . $annonce['title'] . "</h5>";
+                        } ?>
+                        <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
+
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-center ">Reservation pour l'annonce <span class=" text-danger"><?= $annonce['title'] ?></span></h2>
+                   
+                </div>
             </div>
-        </div>
-    </div>
 
         </form>
 
@@ -161,7 +164,7 @@ if (!empty($_POST)) {
 
     </div>
 
-   
+
 </main>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -184,7 +187,7 @@ if (!empty($_POST)) {
 
 <script src="assets/js/scripts.js"></script>
 
-</body>
+
 
 
 </html>

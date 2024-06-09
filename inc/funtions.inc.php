@@ -90,7 +90,7 @@ function connexionBdd()
 
     // avec la variable DSN (Data Source Name) et les constantes
 
-    // $dsn = "mysql:host=localhost;dbname=cinema;charset=utf8";
+    // $dsn = "mysql:host=localhost;dbname=house;charset=utf8";
 
     $dsn = "mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8";
 
@@ -383,11 +383,11 @@ function displaySupTag($value = null)
 }
 // ==========================Afiche le 1( derniers annnces )
 function dernieresAnnonces(): array
-{
 
+{
     $pdo = connexionBdd();
-    $sql = "SELECT * FROM advert ORDER BY id_advert DESC
-    LIMIT 15";
+    $sql = "SELECT * FROM advert ORDER BY price ASC
+    LIMIT 5";
     $request = $pdo->query($sql);
     $result = $request->fetchAll();
     return $result;
@@ -472,7 +472,7 @@ function deleteAdvert(int $id): void
             $sql->execute();
             echo 'Annonce supprimée avec succès.';
         } else {
-            echo 'Annonce non trouvée.';
+            echo 'Annonce non supprimée.';
         }
     } catch (PDOException $e) {
         echo 'Erreur de connexion à la base de données: ' . $e->getMessage();
