@@ -487,7 +487,7 @@ function deleteAdvert(int $id): bool
         $sql->execute();
         $advert = $sql->fetch(PDO::FETCH_ASSOC);
 
-        if ($advert && $advert['is_reserved'] == 0) {
+        if ($advert && isAdvertReserved($id) == false) {
             $sql = $pdo->prepare("DELETE FROM advert WHERE id_advert = :id_advert");
             $sql->bindParam(':id_advert', $id, PDO::PARAM_INT);
             $sql->execute();
@@ -495,6 +495,20 @@ function deleteAdvert(int $id): bool
         } else {
             return false; 
         }
+    } catch (PDOException $e) {
+        echo 'Erreur de connexion à la base de données: ' . $e->getMessage();
+        return false;
+    }
+}
+
+function isAdvertReserved(int $id): bool
+{
+    try {
+        $pdo =connexionBdd();
+        $sql = $pdo->prepare("SELECT * FROM reservations WHERE 	id_annonce = :	id_annonce AND etat_reservation != 'annulee'");
+        $sql->bindParam(':id_annonce', $id, PDO::PARAM_INT);
+        $sql->execute();
+        return $sql->rowCount() > 0;
     } catch (PDOException $e) {
         echo 'Erreur de connexion à la base de données: ' . $e->getMessage();
         return false;
@@ -561,14 +575,23 @@ function entreCommentaire($id_annonce, $id_utilisateur, $comment_text, $rating )
 }
 //  ==================================Funtions afiche reservations  =====================/
 
-function showReservations($id_utilisateur )
+function showReservations($id_utilisateur = null) 
 {
+    if(!$id_utilisateur){
+        $pdo = connexionBdd();
+        $sql = $pdo->prepare("SELECT * FROM reservations");
+        $sql->execute();
+        $reservation = $sql->fetchAll();
+        return $reservation;
+    }
+    else{
     $pdo = connexionBdd();
     $sql = $pdo->prepare("SELECT * FROM reservations WHERE id_utilisateur  = :id_utilisateur ");
     $sql->bindParam(':id_utilisateur', $id_utilisateur, PDO::PARAM_INT);
     $sql->execute();
     $reservation = $sql->fetchAll();
     return $reservation;
+    }
 }
 
 

@@ -1,6 +1,7 @@
 <?php
 
 require_once "../inc/funtions.inc.php";
+$message = isset($_GET['message']) ? $_GET['message'] : '';
 
 ////////////////////////////////////////////////////
 // GestionUser rediretion a partir de showUsers.php:
@@ -31,14 +32,18 @@ if (!isset($_SESSION['user'])) {
         header("location:" . RACINE_SITE . "index.php");
     }
 }
-
 if (isset($_GET['action']) && isset($_GET['id_annonce'])) {
     if (!empty($_GET['action']) && $_GET['action'] == 'delete' && !empty($_GET['id_annonce'])) {
-        $idAnnonce = htmlentities($_GET['id_annonce']);
-        deleteAdvert($idAnnonce);
+        $idAnnonce = (int) htmlentities($_GET['id_annonce']);
+        $deleted = deleteAdvert($idAnnonce);
+        if ($deleted) {
+            header('Location: dashboard.php?gestionAnnonce_php&message=success');
+        } else {
+            header('Location: dashboard.php?gestionAnnonce_php&message=failed');
+        }
+        exit();
     }
 }
-
 
 
 
@@ -62,9 +67,6 @@ require_once "../inc/boostrap.inc.php";
                     <li>
                         <a href="?compte_php" class="nav-link ">Compte</a>
                     </li>
-                    <!-- <li>
-                        <a href="?gestionMaisons_php" class="nav-link ">Gestions maison</a>
-                    </li> -->
                     <li>
                         <a href="?users_php" class="nav-link ">Utilisateurs</a>
                     </li>
@@ -73,11 +75,18 @@ require_once "../inc/boostrap.inc.php";
                         <a href="?gestionAnnonce_php" class="nav-link ">Gestion Annonces </a>
                     </li>
 
+                    <li>
+                        <a href="?gestionReservation_php" class="nav-link ">Gestion Reservation </a>
+                    </li>
+
                 </ul>
                 <hr>
             </div> 
 
     </div>
+
+
+
 
 
     <?php
@@ -97,6 +106,13 @@ require_once "../inc/boostrap.inc.php";
 
     ?>
     <div class="col-sm-6 col-md-10 col-lg-10">
+
+        <?php if ($message === 'success'): ?>
+            <div class="alert alert-success" role="alert">Annonce supprimée avec succès.</div>
+        <?php elseif ($message === 'failed'): ?>
+            <div class="alert alert-danger" role="alert">Vous ne pouvez supprimer cette annonce car elle est réservée.</div>
+        <?php endif; ?>
+
         <?php
 
         /** $_GET représente les données qui transitent par l'URL. Il s'agit d'une Super Globale et comme toutes les superglobales elle sont de type array
@@ -129,6 +145,9 @@ require_once "../inc/boostrap.inc.php";
             else if (isset($_GET['update_annonce_php'])) {
                 require_once "updateAnnonce.php";
             } 
+            else if (isset($_GET['gestionReservation_php'])) {
+                require_once "gestionReservation.php";
+            }
              else {
                 require_once "dashboard.php";
             }

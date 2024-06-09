@@ -74,7 +74,9 @@ if (!empty($_POST)) {
 
     <section class=" container m-5 text-center top-space1">
         <div class="row">
-
+<?php if (!isset($id_advert)) {
+   echo"<p> Votre panier est vide </p>";
+}else{ ?>
                 <div class="col-lg-4 col-md-4 col-sm-12 ">
                     <div class="card1   ">
                         <img src="<?= RACINE_SITE . "assets/img/" . $annonce['photo'] ?>" class="card-img-top " alt="image de <?= $annonce['title'] ?>" style="height: 200px; width: 100%; object-fit: cover;">
@@ -103,7 +105,7 @@ if (!empty($_POST)) {
 
                 </div>
 
-        </div>
+        <?php    } ?> </div>
     </section>
 </main>
 

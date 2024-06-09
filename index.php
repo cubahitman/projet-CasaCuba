@@ -106,7 +106,9 @@ $annonces = dernieresAnnonces();
 							<div class="card-body">
 								<h5 class="card-title"><?= $annonce['title'] ?></h5>
 								<p class="card-text"><?= $annonce['city'] ?></p>
+
 								<b>À partir de <?= $annonce['price'] ?></b>
+								<a href="<?= RACINE_SITE ?>showAnnonce.php?annonce=<?= $annonce['id_advert'] ?>" class=" hoverCart">Voir plus</a>
 							</div>
 						</div>
 					</div>
