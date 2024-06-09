@@ -160,7 +160,7 @@ ob_end_flush();
                         <p class="card-text"><?= substr($annonce['description'], 0, 100) ?>...</p>
                         <div class="buttons">
                             <a href="<?= RACINE_SITE ?>explorer.php?annonce=<?= $annonce['id_advert'] ?>" class="btn btn-primary">Revenir aux annonces</a> <?php if ($_SESSION['user']['role'] == 'ROLE_ADMIN') {     ?>
-                                <a href="<?= RACINE_SITE ?>admin/dashboard.php?gestionMaisons_php" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
+                                <a href="<?= RACINE_SITE ?>admin/dashboard.php?gestionAnnonce_php" class="btn btn-primary">Revenir aux gestionaire maison -ADMIN</a>
                             <?php
                                                                                                                                                             }
                             ?>

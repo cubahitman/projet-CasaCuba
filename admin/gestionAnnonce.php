@@ -31,10 +31,11 @@ require_once "../inc/boostrap.inc.php";
             foreach ($annonces as $annonce) {
             ?>
                 <tr>
-                    <td><?= $annonce['id_advert'] ?></td>
+                    <td><?= $annonce['id_advert'] ?> <a href="<?= RACINE_SITE ?>showAnnonce.php?annonce=<?= $annonce['id_advert'] ?>" class=" hoverCart">Voir l'annonce</a>
+                    </td>
                     <td><?= ucfirst($annonce['title']) ?></td>
-                    <td><?= "<img style='width: 100px' src=".RACINE_SITE ."assets/img/".$annonce['photo']." />" ?></td>
-                    <td><?= substr($annonce['description'] , 0 , 100) . "..." ?></td>
+                    <td><?= "<img style='width: 100px' src=" . RACINE_SITE . "assets/img/" . $annonce['photo'] . " />" ?></td>
+                    <td><?= substr($annonce['description'], 0, 100) . "..." ?></td>
                     <td><?= $annonce['postal_code'] ?></td>
                     <td><?= $annonce['city'] ?></td>
                     <td><?= $annonce['type'] ?></td>
