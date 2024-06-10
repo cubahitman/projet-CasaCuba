@@ -5,9 +5,7 @@ logOut();
 ?>
 
 <body>
-
-
-    <div class=" ">
+    <div>
         <header class="header-navresp">
             <div class="navbar-resp">
                 <div class="logo">
@@ -17,14 +15,9 @@ logOut();
                     <li><a href="<?= RACINE_SITE ?>annoceLocation.php">LOCATIONS</a></li>
                     <li><a href="<?= RACINE_SITE ?>annonceVente.php">VENTES</a></li>
                     <li><a href="<?= RACINE_SITE ?>explorer.php">Explorer</a></li>
-
                     <li><a href="<?= RACINE_SITE ?>contact.php">Contact</a></li>
                     <li><a href="<?= RACINE_SITE ?>profil.php">Profil</a><sup class="badge rounded-pill text-bg-danger ms-1 fs-16"><?= $_SESSION['user']['firstName'] ?></sup></li>
                     </a>
-
-
-
-
                 </ul>
                 <div class="buttons">
                     <a href="#" class="action-button pro">Espace Pro</a>

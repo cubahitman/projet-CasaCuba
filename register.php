@@ -15,15 +15,6 @@ if (!empty($_SESSION['user'])) {
 
 
 $info = '';
-// $contact = '';
-
-// if (isset($_GET['contact_Pro'])) {
-
-
-
-//     $contact = alert(" message de professionnel", "danger");
-// }
-
 
 if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" ) 
 {
@@ -52,7 +43,6 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
         // On stock les values de nos champs dans des variables et en les passant dans la fonction trim()
 
 
-
         $firstName = isset($_POST['firstName']) ? $_POST['firstName'] : null;
         $lastName = isset($_POST['lastName']) ? $_POST['lastName'] : null;
         $pseudo = isset($_POST['pseudo']) ? $_POST['pseudo'] : null;
@@ -61,12 +51,10 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
         $confirmMdp = isset($_POST['confirmMdp']) ? $_POST['confirmMdp'] : null;
         $phone = isset($_POST['phone']) ? $_POST['phone'] : null;
         $civility = isset($_POST['civility']) ? $_POST['civility'] : null;
-
         $address = isset($_POST['address']) ? $_POST['address'] : null;
         $zipCode = isset($_POST['zipCode']) ? $_POST['zipCode'] : null;
         $city = isset($_POST['city']) ? $_POST['city'] : null;
         $country = isset($_POST['country']) ? $_POST['country'] : null;
-
 
 
 

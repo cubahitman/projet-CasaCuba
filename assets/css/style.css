@@ -471,12 +471,6 @@ a:hover {
 
 }
 
-/* .navbar .logo a {
-    font-size: 1.5rem;
-    font-weight: bold;
-
-} */
-
 .navbar-resp .links {
     display: flex;
     gap: 2rem;
