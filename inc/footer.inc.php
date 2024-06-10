@@ -41,10 +41,10 @@
             </div> <!-- /row of widgets -->
         </div>
     </div>
-    <footer class=" footer  mt-5">
+  
 
 
-        <div class="footer2">
+        <div class="footer2 mt-5">
             <div class="container">
                 <div class="row">
 

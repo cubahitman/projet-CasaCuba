@@ -305,11 +305,11 @@ $commentaires = showCommentaires($id_advert);
 
 
 
+
+</body>
 <?php
 require_once "inc/footer.inc.php";
 
 
 ?>
-</body>
-
 </html>

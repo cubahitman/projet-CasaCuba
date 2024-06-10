@@ -72,9 +72,18 @@ if (!empty($_POST)) {
         </div>
     </section> -->
     <div class="top-space1">
-        <?php foreach ($achats as $achat) {
 
-            $annonce = showAnonnce($achat['id_annonce']); ?>
+        <?php 
+         if (empty($achats)) {
+         echo "<p> Votre panier est vide </p>";} else{
+
+        
+            foreach ($achats as $achat) {
+
+            $annonce = showAnonnce($achat['id_annonce']);
+
+
+         ?>
 
             <a class="list-group-item list-group-item-action bg-capitoliounuit ">TRANSACTION <?= $annonce['title'] ?> Référence () a <?= $annonce['price'] ?></a>
 
@@ -84,7 +93,6 @@ if (!empty($_POST)) {
     <section class=" container m-5 text-center top-space1">
         <div class="row">
             <?php if (!isset($id_advert)) {
-                echo "<p> Votre panier est vide </p>";
             } else { ?>
                 <div class="col-lg-4 col-md-4 col-sm-12 ">
                     <div class="card1   ">
@@ -98,7 +106,7 @@ if (!empty($_POST)) {
                 </div>
 
                 <div class="col-lg-8 col-md-8 col-sm-12 ">
-                  
+
 
                     <form method="POST" action="panier.php">
                         <input type="hidden" name="id_annonce" value="<?= $annonce['id_advert'] ?>">
@@ -110,7 +118,7 @@ if (!empty($_POST)) {
 
                 </div>
 
-            <?php    } ?>
+            <?php      } } ?>
         </div>
     </section>
 </main>
