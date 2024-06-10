@@ -124,7 +124,7 @@ if (!empty($_POST)) // l'envoi du Formulaire (button "S'inscrire" )
 
             if ($emailExist || $pseudoExist) {
 
-                $info = alert("Vous avez déjà un compte", "succe");
+                $info = alert("Vous avez déjà un compte", "success");
                 // ***************** REDIRECTION "authentification.php"
 
 
