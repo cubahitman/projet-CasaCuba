@@ -3,7 +3,7 @@
 
 <footer id="footer" class="">
     <!-- class="top-space" -->
-    <div class="footer1">
+    <div class="footer1  bg-bleuNav">
         <div class="container">
             <div class="row">
 

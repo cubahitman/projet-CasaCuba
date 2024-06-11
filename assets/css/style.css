@@ -76,7 +76,7 @@
 /* avec back Business */
 .bg-Business{
     background-attachment: fixed;
-    background-image: url('https://source.unsplash.com/-HJckKnwCXxQ');
+    background-image: url('../../assets/img/capitolio.jpg');
     background-size: cover;
     background-position: center;
 } 
@@ -84,7 +84,7 @@
 /* avec cabane a la plage */
 .back {
     background-attachment: fixed;
-    height: 100vh;
+    /* height: 100vh; */
     background: url('../../assets/img/cabagna-mar.jpg');
     
     background-size: cover;
@@ -170,7 +170,17 @@ a:hover {
     outline: none;
     z-index: 3;
   }
- 
+  .center-alert {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 5px; 
+   max-width: 30%;
+   margin: auto;
+    height: 50px; 
+    background-color:#003554;
+    
+  }
 /* Autres éléments */
 .margin-content{
     margin-right: 70px;
